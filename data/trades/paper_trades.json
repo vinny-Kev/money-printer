@@ -1,0 +1,22 @@
+[
+  {
+    "symbol": "BTC",
+    "index": 0,
+    "action": "BUY",
+    "trade_amount": 2.5,
+    "price_buy": 30000,
+    "price_sell": 30100,
+    "profit": 0.0083,
+    "balance_after": 10.0083
+  },
+  {
+    "symbol": "ETH",
+    "index": 1,
+    "action": "BUY",
+    "trade_amount": 1.0,
+    "price_buy": 2000,
+    "price_sell": 2020,
+    "profit": 0.01,
+    "balance_after": 10.0183
+  }
+]
