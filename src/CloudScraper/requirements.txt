@@ -1,0 +1,10 @@
+aiohttp
+b2sdk
+python-dotenv
+pandas
+cryptography
+requests
+backoff
+python-binance
+pyarrow
+fastparquet

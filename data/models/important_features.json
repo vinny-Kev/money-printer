@@ -1,0 +1,13 @@
+[
+  "open",
+  "high",
+  "low",
+  "close",
+  "volume",
+  "rsi",
+  "macd",
+  "volume_change",
+  "volume_zscore",
+  "price_volume_corr",
+  "symbol_id"
+]

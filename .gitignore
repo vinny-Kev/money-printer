@@ -1,0 +1,12 @@
+# Ignore environment and API key files
+.env
+src/live_trading/.env
+configs/api.txt
+*.env
+*.key
+*.pem
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+.venv/
+venv/
