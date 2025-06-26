@@ -108,16 +108,22 @@ except ImportError as e:
 
 # Import scraper functionality with Railway-safe fallbacks
 try:
-    # UPDATED IMPORT PATH - SIMPLE MODULES
-    from data_collector.data_scraper_simple import main as start_scraper
+    # UPDATED IMPORT PATH - REAL SCRAPER MODULES
+    from data_collector.data_scraper import main as start_scraper
     SCRAPER_AVAILABLE = True
-    logger.info("✅ Scraper modules loaded successfully - SIMPLE VERSION ACTIVE")
+    logger.info("✅ Scraper modules loaded successfully - REAL SCRAPER ACTIVE")
 except ImportError as e:
-    logger.warning(f"⚠️ Scraper modules not available: {e}")
-    SCRAPER_AVAILABLE = False
-    def start_scraper():
-        logger.warning("Scraper not available in this deployment")
-        return False
+    logger.warning(f"⚠️ Real scraper not available: {e}, trying simple version")
+    try:
+        from data_collector.data_scraper_simple import main as start_scraper
+        SCRAPER_AVAILABLE = True
+        logger.info("✅ Scraper modules loaded successfully - SIMPLE VERSION ACTIVE")
+    except ImportError as e2:
+        logger.warning(f"⚠️ Scraper modules not available: {e2}")
+        SCRAPER_AVAILABLE = False
+        def start_scraper():
+            logger.warning("Scraper not available in this deployment")
+            return False
 
 # Import model training with Railway-safe fallbacks
 try:

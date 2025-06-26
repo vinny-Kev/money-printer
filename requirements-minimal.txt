@@ -7,6 +7,7 @@ requests==2.31.0
 
 # Basic trading functionality
 python-binance==1.0.19
+backoff==2.2.1
 
 # Essential data science (lightweight versions)
 pandas==2.0.3
