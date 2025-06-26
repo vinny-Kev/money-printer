@@ -69,7 +69,7 @@ STOP_QUOTES = [
 try:
     sys.path.append('/app')  # Ensure app directory is in path
     sys.path.append('/app/src')  # Ensure src directory is in path
-    from trading_bot.trade_runner import run_single_trade, get_usdt_balance
+    from src.trading_bot.trade_runner import run_single_trade, get_usdt_balance
     dry_trade_budget = 1000.0  # Default budget
     TRADING_AVAILABLE = True
     logger.info("✅ Trading modules loaded successfully")
@@ -85,7 +85,7 @@ except ImportError as e:
 
 # Import trading stats with fallback
 try:
-    from trading_stats import get_stats_manager
+    from src.trading_stats import get_stats_manager
     TRADING_STATS_AVAILABLE = True
     logger.info("✅ Trading stats module loaded")
 except ImportError as e:
@@ -106,7 +106,7 @@ except ImportError as e:
 
 # Import scraper functionality with Railway-safe fallbacks
 try:
-    from data_collector.data_scraper import main as start_scraper
+    from src.data_collector.data_scraper import main as start_scraper
     SCRAPER_AVAILABLE = True
     logger.info("✅ Scraper modules loaded successfully")
 except ImportError as e:
@@ -118,7 +118,7 @@ except ImportError as e:
 
 # Import model training with Railway-safe fallbacks
 try:
-    from model_training.random_forest_trainer import main as train_rf_model
+    from src.model_training.random_forest_trainer import main as train_rf_model
     MODEL_TRAINING_AVAILABLE = True
     logger.info("✅ Model training modules loaded successfully")
 except ImportError as e:
