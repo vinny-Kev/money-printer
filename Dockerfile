@@ -28,6 +28,11 @@ RUN pip install --no-cache-dir -r requirements-linux.txt
 # Copy source code with trading modules
 COPY src/ ./src/
 
+# Copy essential configuration and data files
+COPY *.py ./
+COPY *.json ./
+COPY *.toml ./
+
 # Create necessary directories
 RUN mkdir -p data logs cache ohlcv_cache
 
@@ -48,5 +53,5 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import requests; requests.get('http://localhost:8000/health', timeout=5)" || exit 1
 
-# Start the Discord bot directly (debug environment first)
-CMD ["sh", "-c", "python debug_railway.py && python src/lightweight_discord_bot.py"]
+# Start the Discord bot directly
+CMD ["python", "src/lightweight_discord_bot.py"]
