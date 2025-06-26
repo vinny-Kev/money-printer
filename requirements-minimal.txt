@@ -1,0 +1,17 @@
+# Ultra-Lightweight Requirements for Railway
+# Core Discord bot functionality
+discord.py==2.3.2
+python-dotenv==1.1.0
+aiohttp==3.12.13
+requests==2.31.0
+
+# Basic trading functionality
+python-binance==1.0.19
+
+# Essential data science (lightweight versions)
+pandas==2.0.3
+numpy==1.24.3
+scikit-learn==1.3.0
+
+# Remove problematic packages
+# No TensorFlow, no TA-Lib, no heavy ML libraries

@@ -1,0 +1,142 @@
+{
+  "timestamp": "2025-06-25T11:49:21.246171",
+  "duration_seconds": 8.659069,
+  "total_tests": 22,
+  "passed_tests": 16,
+  "failed_tests": 6,
+  "success_rate": 72.72727272727273,
+  "test_results": [
+    {
+      "test_name": "Config Loading",
+      "passed": true,
+      "details": "Loaded config with 1 settings",
+      "timestamp": "2025-06-25T11:49:12.585100"
+    },
+    {
+      "test_name": "Runtime Safety Check",
+      "passed": true,
+      "details": "All safety parameters validated",
+      "timestamp": "2025-06-25T11:49:12.586101"
+    },
+    {
+      "test_name": "Environment Variables",
+      "passed": true,
+      "details": "All critical variables present",
+      "timestamp": "2025-06-25T11:49:12.586101"
+    },
+    {
+      "test_name": "Safety Manager Init",
+      "passed": true,
+      "details": "Successfully initialized",
+      "timestamp": "2025-06-25T11:49:12.586101"
+    },
+    {
+      "test_name": "Trade Permission Check",
+      "passed": true,
+      "details": "Status: Ready to trade",
+      "timestamp": "2025-06-25T11:49:12.587101"
+    },
+    {
+      "test_name": "Position Sizing",
+      "passed": true,
+      "details": "$38.25 <= $50.00",
+      "timestamp": "2025-06-25T11:49:12.587101"
+    },
+    {
+      "test_name": "Dynamic Stop Loss",
+      "passed": true,
+      "details": "SL: 2.50%",
+      "timestamp": "2025-06-25T11:49:12.587101"
+    },
+    {
+      "test_name": "Trade Registration",
+      "passed": true,
+      "details": "Registered BTCUSDT",
+      "timestamp": "2025-06-25T11:49:12.587101"
+    },
+    {
+      "test_name": "Daily Trade Limits",
+      "passed": false,
+      "details": "Daily limits not enforced",
+      "timestamp": "2025-06-25T11:49:12.587101"
+    },
+    {
+      "test_name": "WebSocket Manager",
+      "passed": false,
+      "details": "Error: BinanceWebSocketManager.__init__() missing 1 required positional argument: 'safety_manager'",
+      "timestamp": "2025-06-25T11:49:12.587101"
+    },
+    {
+      "test_name": "Model Validator Init",
+      "passed": true,
+      "details": "Successfully initialized",
+      "timestamp": "2025-06-25T11:49:12.588100"
+    },
+    {
+      "test_name": "Model Validation",
+      "passed": true,
+      "details": "All models passed validation",
+      "timestamp": "2025-06-25T11:49:12.588100"
+    },
+    {
+      "test_name": "Model Validation",
+      "passed": false,
+      "details": "Error: 'ModelValidationService' object has no attribute 'record_prediction_result'",
+      "timestamp": "2025-06-25T11:49:12.588100"
+    },
+    {
+      "test_name": "Pre-flight Safety Check",
+      "passed": true,
+      "details": "Status: Ready to trade",
+      "timestamp": "2025-06-25T11:49:12.596595"
+    },
+    {
+      "test_name": "Volatility Filter",
+      "passed": true,
+      "details": "High volatility correctly identified",
+      "timestamp": "2025-06-25T11:49:12.596595"
+    },
+    {
+      "test_name": "Trading Execution Safety",
+      "passed": false,
+      "details": "Error: 'SafeConfig' object has no attribute 'min_usdt_balance'",
+      "timestamp": "2025-06-25T11:49:12.596595"
+    },
+    {
+      "test_name": "Error Handling",
+      "passed": false,
+      "details": "Error: Test error",
+      "timestamp": "2025-06-25T11:49:18.711219"
+    },
+    {
+      "test_name": "API Rate Limiting",
+      "passed": true,
+      "details": "Rate limiting active",
+      "timestamp": "2025-06-25T11:49:18.711724"
+    },
+    {
+      "test_name": "Humanlike Delays",
+      "passed": true,
+      "details": "Delay: 2.5s",
+      "timestamp": "2025-06-25T11:49:21.230342"
+    },
+    {
+      "test_name": "Monitoring and Logging",
+      "passed": false,
+      "details": "Error: cannot import name 'get_system_status' from 'bot_status' (Z:\\money_printer\\bot_status.py)",
+      "timestamp": "2025-06-25T11:49:21.231348"
+    },
+    {
+      "test_name": "Data Validation - Valid Data",
+      "passed": true,
+      "details": "Valid DataFrame passed",
+      "timestamp": "2025-06-25T11:49:21.243164"
+    },
+    {
+      "test_name": "Data Validation - Invalid Data",
+      "passed": true,
+      "details": "Invalid DataFrame rejected",
+      "timestamp": "2025-06-25T11:49:21.244169"
+    }
+  ]
+}

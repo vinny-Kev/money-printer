@@ -1,0 +1,76 @@
+2025-06-26 00:34:17,684 [INFO] 🛑 Cancelling all Drive operations...
+2025-06-26 00:40:17,692 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-26 00:40:17,693 [ERROR] Google API libraries not installed. Install with: pip install google-api-python-client google-auth
+2025-06-26 00:40:17,694 [INFO] 🛑 Cancelling all Drive operations...
+2025-06-26 00:42:16,917 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-26 00:42:17,141 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-26 00:42:17,152 [INFO] ✅ Google Drive service initialized with service account
+2025-06-26 00:42:18,456 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:42:18,457 [INFO] 🚀 Batch upload manager started
+2025-06-26 00:42:18,827 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:42:22,550 [INFO] ✅ Uploaded: trading_data/diagnostics/2025/06/26/tmpw_d50pi_.json (116 bytes)
+2025-06-26 00:42:22,550 [INFO] ⏱️ Batch complete (1/1 files). Sleeping 52.6s
+2025-06-26 00:42:24,094 [INFO] 📁 Trading data sync queued: {'models': 3, 'trades': 1, 'market_data': 28, 'diagnostics': 0, 'stats': 3, 'logs': 4}
+2025-06-26 00:42:24,526 [INFO] 📥 Download complete: {'models': 0, 'configs': 0, 'critical_files': 0}
+2025-06-26 00:42:24,526 [INFO] 🛑 Cancelling all Drive operations...
+2025-06-26 00:42:24,526 [INFO] 🛑 Batch upload manager stopped
+2025-06-26 00:42:24,907 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-26 00:42:24,910 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-26 00:42:24,911 [INFO] ✅ Google Drive service initialized with service account
+2025-06-26 00:42:25,966 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:42:25,966 [INFO] 🚀 Batch upload manager started
+2025-06-26 00:44:41,505 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-26 00:44:41,631 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-26 00:44:41,633 [INFO] ✅ Google Drive service initialized with service account
+2025-06-26 00:44:42,901 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:44:42,902 [INFO] 🚀 Batch upload manager started
+2025-06-26 00:44:43,297 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:44:47,012 [INFO] ✅ Uploaded: trading_data/diagnostics/2025/06/26/tmpsitkwfqb.json (116 bytes)
+2025-06-26 00:44:47,012 [INFO] ⏱️ Batch complete (1/1 files). Sleeping 47.0s
+2025-06-26 00:44:48,328 [INFO] 📁 Trading data sync queued: {'models': 3, 'trades': 1, 'market_data': 28, 'diagnostics': 0, 'stats': 3, 'logs': 4}
+2025-06-26 00:44:48,716 [INFO] 📥 Download complete: {'models': 0, 'configs': 0, 'critical_files': 0}
+2025-06-26 00:44:48,716 [INFO] 🛑 Cancelling all Drive operations...
+2025-06-26 00:44:48,716 [INFO] 🛑 Batch upload manager stopped
+2025-06-26 00:44:49,007 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-26 00:44:49,010 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-26 00:44:49,011 [INFO] ✅ Google Drive service initialized with service account
+2025-06-26 00:44:50,062 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:44:50,062 [INFO] 🚀 Batch upload manager started
+2025-06-26 00:45:40,681 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-26 00:45:40,803 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-26 00:45:40,804 [INFO] ✅ Google Drive service initialized with service account
+2025-06-26 00:45:41,977 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:45:41,978 [INFO] 🚀 Batch upload manager started
+2025-06-26 00:45:42,336 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:45:46,127 [INFO] ✅ Uploaded: trading_data/diagnostics/2025/06/26/tmpp9pvo26e.json (116 bytes)
+2025-06-26 00:45:46,127 [INFO] ⏱️ Batch complete (1/1 files). Sleeping 46.1s
+2025-06-26 00:45:47,362 [INFO] 📁 Trading data sync queued: {'models': 3, 'trades': 1, 'market_data': 28, 'diagnostics': 0, 'stats': 3, 'logs': 4}
+2025-06-26 00:45:47,698 [INFO] 📥 Download complete: {'models': 0, 'configs': 0, 'critical_files': 0}
+2025-06-26 00:45:47,698 [INFO] 🛑 Cancelling all Drive operations...
+2025-06-26 00:45:47,698 [INFO] 🛑 Batch upload manager stopped
+2025-06-26 00:45:47,994 [WARNING] Railway watchdog not available: Railway API token and project ID are required
+2025-06-26 00:45:47,995 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-26 00:45:47,997 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-26 00:45:47,998 [INFO] ✅ Google Drive service initialized with service account
+2025-06-26 00:45:49,058 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:45:49,059 [INFO] 🚀 Batch upload manager started
+2025-06-26 00:45:49,059 [INFO] ✅ Drive manager initialized
+2025-06-26 00:48:47,644 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-26 00:48:47,783 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-26 00:48:47,784 [INFO] ✅ Google Drive service initialized with service account
+2025-06-26 00:48:49,055 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:48:49,056 [INFO] 🚀 Batch upload manager started
+2025-06-26 00:48:49,553 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:48:53,315 [INFO] ✅ Uploaded: trading_data/diagnostics/2025/06/26/tmpeq139qqt.json (116 bytes)
+2025-06-26 00:48:53,315 [INFO] ⏱️ Batch complete (1/1 files). Sleeping 53.3s
+2025-06-26 00:48:54,580 [INFO] 📁 Trading data sync queued: {'models': 3, 'trades': 1, 'market_data': 28, 'diagnostics': 0, 'stats': 3, 'logs': 4}
+2025-06-26 00:48:55,054 [INFO] 📥 Download complete: {'models': 0, 'configs': 0, 'critical_files': 0}
+2025-06-26 00:48:55,054 [INFO] 🛑 Cancelling all Drive operations...
+2025-06-26 00:48:55,054 [INFO] 🛑 Batch upload manager stopped
+2025-06-26 00:48:55,346 [WARNING] Railway watchdog not available: Railway API token and project ID are required
+2025-06-26 00:48:55,346 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-26 00:48:55,349 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-26 00:48:55,350 [INFO] ✅ Google Drive service initialized with service account
+2025-06-26 00:48:56,411 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-26 00:48:56,411 [INFO] 🚀 Batch upload manager started
+2025-06-26 00:48:56,412 [INFO] ✅ Drive manager initialized

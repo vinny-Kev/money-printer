@@ -1,0 +1,172 @@
+{
+  "timestamp": "2025-06-25T11:53:14.392754",
+  "duration_seconds": 8.81663,
+  "total_tests": 27,
+  "passed_tests": 23,
+  "failed_tests": 4,
+  "success_rate": 85.18518518518519,
+  "test_results": [
+    {
+      "test_name": "Config Loading",
+      "passed": true,
+      "details": "Loaded config with 1 settings",
+      "timestamp": "2025-06-25T11:53:05.574119"
+    },
+    {
+      "test_name": "Runtime Safety Check",
+      "passed": true,
+      "details": "All safety parameters validated",
+      "timestamp": "2025-06-25T11:53:05.574119"
+    },
+    {
+      "test_name": "Environment Variables",
+      "passed": true,
+      "details": "All critical variables present",
+      "timestamp": "2025-06-25T11:53:05.574119"
+    },
+    {
+      "test_name": "Safety Manager Init",
+      "passed": true,
+      "details": "Successfully initialized",
+      "timestamp": "2025-06-25T11:53:05.575119"
+    },
+    {
+      "test_name": "Trade Permission Check",
+      "passed": true,
+      "details": "Status: Ready to trade",
+      "timestamp": "2025-06-25T11:53:05.575119"
+    },
+    {
+      "test_name": "Position Sizing",
+      "passed": true,
+      "details": "$38.25 <= $50.00",
+      "timestamp": "2025-06-25T11:53:05.576119"
+    },
+    {
+      "test_name": "Dynamic Stop Loss",
+      "passed": true,
+      "details": "SL: 2.50%",
+      "timestamp": "2025-06-25T11:53:05.576119"
+    },
+    {
+      "test_name": "Trade Registration",
+      "passed": true,
+      "details": "Registered BTCUSDT",
+      "timestamp": "2025-06-25T11:53:05.576119"
+    },
+    {
+      "test_name": "Daily Trade Limits",
+      "passed": false,
+      "details": "Daily limits not enforced",
+      "timestamp": "2025-06-25T11:53:05.576119"
+    },
+    {
+      "test_name": "WebSocket Manager Init",
+      "passed": true,
+      "details": "Successfully initialized",
+      "timestamp": "2025-06-25T11:53:05.585129"
+    },
+    {
+      "test_name": "WebSocket Connection",
+      "passed": true,
+      "details": "Connected to 2 streams",
+      "timestamp": "2025-06-25T11:53:05.586130"
+    },
+    {
+      "test_name": "WebSocket Data Reception",
+      "passed": true,
+      "details": "Received data for 2 symbols",
+      "timestamp": "2025-06-25T11:53:07.587376"
+    },
+    {
+      "test_name": "WebSocket Cleanup",
+      "passed": true,
+      "details": "Connections closed",
+      "timestamp": "2025-06-25T11:53:07.698190"
+    },
+    {
+      "test_name": "Model Validator Init",
+      "passed": true,
+      "details": "Successfully initialized",
+      "timestamp": "2025-06-25T11:53:07.702194"
+    },
+    {
+      "test_name": "Model Validation",
+      "passed": true,
+      "details": "All models passed validation",
+      "timestamp": "2025-06-25T11:53:07.702194"
+    },
+    {
+      "test_name": "Model Validation",
+      "passed": false,
+      "details": "Error: 'ModelValidationService' object has no attribute 'record_prediction_result'",
+      "timestamp": "2025-06-25T11:53:07.702194"
+    },
+    {
+      "test_name": "Pre-flight Safety Check",
+      "passed": true,
+      "details": "Status: Ready to trade",
+      "timestamp": "2025-06-25T11:53:07.704194"
+    },
+    {
+      "test_name": "Volatility Filter",
+      "passed": true,
+      "details": "High volatility correctly identified",
+      "timestamp": "2025-06-25T11:53:07.704194"
+    },
+    {
+      "test_name": "Trading Execution Safety",
+      "passed": false,
+      "details": "Error: 'SafeConfig' object has no attribute 'min_usdt_balance'",
+      "timestamp": "2025-06-25T11:53:07.704194"
+    },
+    {
+      "test_name": "Error Handling",
+      "passed": false,
+      "details": "Error: Test error",
+      "timestamp": "2025-06-25T11:53:12.766503"
+    },
+    {
+      "test_name": "API Rate Limiting",
+      "passed": true,
+      "details": "Rate limiting active",
+      "timestamp": "2025-06-25T11:53:12.767016"
+    },
+    {
+      "test_name": "Humanlike Delays",
+      "passed": true,
+      "details": "Delay: 1.3s",
+      "timestamp": "2025-06-25T11:53:14.058456"
+    },
+    {
+      "test_name": "Status Monitoring",
+      "passed": true,
+      "details": "Status includes 7 metrics",
+      "timestamp": "2025-06-25T11:53:14.374140"
+    },
+    {
+      "test_name": "Log File Creation",
+      "passed": true,
+      "details": "Log has 336 entries",
+      "timestamp": "2025-06-25T11:53:14.388749"
+    },
+    {
+      "test_name": "CSV Export Setup",
+      "passed": true,
+      "details": "CSV export functionality available",
+      "timestamp": "2025-06-25T11:53:14.388749"
+    },
+    {
+      "test_name": "Data Validation - Valid Data",
+      "passed": true,
+      "details": "Valid DataFrame passed",
+      "timestamp": "2025-06-25T11:53:14.389749"
+    },
+    {
+      "test_name": "Data Validation - Invalid Data",
+      "passed": true,
+      "details": "Invalid DataFrame rejected",
+      "timestamp": "2025-06-25T11:53:14.390749"
+    }
+  ]
+}
