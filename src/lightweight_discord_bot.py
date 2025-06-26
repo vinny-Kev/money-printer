@@ -65,14 +65,16 @@ STOP_QUOTES = [
     "The market winds grow silent...",
 ]
 
+# FORCE RAILWAY UPDATE - timestamp: 2025-06-26 14:00
 # Import trading functionality with Railway-safe fallbacks
 try:
     sys.path.append('/app')  # Ensure app directory is in path
     sys.path.append('/app/src')  # Ensure src directory is in path
+    # UPDATED IMPORT PATH - SIMPLE MODULES
     from trading_bot.trade_runner_simple import run_single_trade, get_usdt_balance
     dry_trade_budget = 1000.0  # Default budget
     TRADING_AVAILABLE = True
-    logger.info("✅ Trading modules loaded successfully")
+    logger.info("✅ Trading modules loaded successfully - SIMPLE VERSION ACTIVE")
 except ImportError as e:
     logger.warning(f"⚠️ Trading modules not available: {e}")
     TRADING_AVAILABLE = False
@@ -106,9 +108,10 @@ except ImportError as e:
 
 # Import scraper functionality with Railway-safe fallbacks
 try:
+    # UPDATED IMPORT PATH - SIMPLE MODULES
     from data_collector.data_scraper_simple import main as start_scraper
     SCRAPER_AVAILABLE = True
-    logger.info("✅ Scraper modules loaded successfully")
+    logger.info("✅ Scraper modules loaded successfully - SIMPLE VERSION ACTIVE")
 except ImportError as e:
     logger.warning(f"⚠️ Scraper modules not available: {e}")
     SCRAPER_AVAILABLE = False
@@ -118,9 +121,10 @@ except ImportError as e:
 
 # Import model training with Railway-safe fallbacks
 try:
+    # UPDATED IMPORT PATH - SIMPLE MODULES
     from model_training.random_forest_trainer_simple import main as train_rf_model
     MODEL_TRAINING_AVAILABLE = True
-    logger.info("✅ Model training modules loaded successfully")
+    logger.info("✅ Model training modules loaded successfully - SIMPLE VERSION ACTIVE")
 except ImportError as e:
     logger.warning(f"⚠️ Model training modules not available: {e}")
     MODEL_TRAINING_AVAILABLE = False
