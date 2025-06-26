@@ -1,0 +1,36 @@
+{
+  "coin": "SKLUSDT",
+  "qty": 1314.4058885383809,
+  "buy_price": 0.01902,
+  "take_profit_price": 0.019931057999999998,
+  "stop_loss_price": 0.018792140399999997,
+  "timestamp": "2025-06-25T11:18:21.952810",
+  "confidence": 0.8,
+  "predicted_profit_pct": 8.0,
+  "rsi_at_buy": 10.841069957788203,
+  "macd_at_buy": -0.008375703827451883,
+  "volume_change_at_buy": 0.21142014783221375,
+  "total_value": 25.0,
+  "fee": 0.05,
+  "net_value": 24.95,
+  "final_sell_price": 0.018792140399999997,
+  "trade_duration_secs": 0.073775,
+  "pnl_amount": -0.3492005000000019,
+  "pnl_percent": -1.3968020000000074,
+  "was_successful": false,
+  "end_timestamp": "2025-06-25T11:18:22.027128",
+  "trade_duration_formatted": "0.0h",
+  "action": "BUY",
+  "sell_orders": [
+    {
+      "qty": 1314.4058885383809,
+      "price": 0.019931057999999998,
+      "type": "TAKE_PROFIT"
+    },
+    {
+      "qty": 1314.4058885383809,
+      "price": 0.018792140399999997,
+      "type": "STOP_LOSS"
+    }
+  ]
+}

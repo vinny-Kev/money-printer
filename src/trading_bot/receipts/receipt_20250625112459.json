@@ -1,0 +1,36 @@
+{
+  "coin": "GALAUSDT",
+  "qty": 69.34812760055478,
+  "buy_price": 0.01442,
+  "take_profit_price": 0.015110718000000002,
+  "stop_loss_price": 0.0142472484,
+  "timestamp": "2025-06-25T11:24:59.030309",
+  "confidence": 0.7510838461363455,
+  "predicted_profit_pct": 8.0,
+  "rsi_at_buy": 7.364933906955143,
+  "macd_at_buy": -0.0199325973731665,
+  "volume_change_at_buy": 0.0483021089069704,
+  "total_value": 1.0,
+  "fee": 0.002,
+  "net_value": 0.998,
+  "final_sell_price": 0.0142472484,
+  "trade_duration_secs": 0.074367,
+  "pnl_amount": -0.01396801999999999,
+  "pnl_percent": -1.3968019999999992,
+  "was_successful": false,
+  "end_timestamp": "2025-06-25T11:24:59.105683",
+  "trade_duration_formatted": "0.0h",
+  "action": "BUY",
+  "sell_orders": [
+    {
+      "qty": 69.34812760055478,
+      "price": 0.015110718000000002,
+      "type": "TAKE_PROFIT"
+    },
+    {
+      "qty": 69.34812760055478,
+      "price": 0.0142472484,
+      "type": "STOP_LOSS"
+    }
+  ]
+}

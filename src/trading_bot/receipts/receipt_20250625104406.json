@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-06-25T10:44:06.043071",
+  "coin": "USDCUSDT",
+  "qty": 25.025025025025027,
+  "buy_price": 0.999,
+  "sell_orders": [
+    {
+      "qty": 25.025025025025027,
+      "price": 1.0468521,
+      "type": "TAKE_PROFIT"
+    },
+    {
+      "qty": 25.025025025025027,
+      "price": 0.9870319799999999,
+      "type": "STOP_LOSS"
+    }
+  ],
+  "total_out": 50.897999999999996,
+  "pnl_amount": 25.895999999999997,
+  "pnl_percent": 103.58399999999999,
+  "predicted_profit_pct": 8.0,
+  "confidence": 71.97293999624523,
+  "action": "BUY",
+  "total_value": 25.0,
+  "fee": 0.05,
+  "net_value": 24.95
+}

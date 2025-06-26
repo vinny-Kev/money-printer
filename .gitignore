@@ -5,6 +5,12 @@ configs/api.txt
 *.env
 *.key
 *.pem
+
+# Ignore secrets and credentials
+secrets/
+service_account.json
+*service_account*.json
+
 # Ignore Python cache and virtual environments
 __pycache__/
 *.pyc

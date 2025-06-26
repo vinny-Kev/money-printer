@@ -1,0 +1,60 @@
+# Docker ignore file to reduce container size
+
+# Test files and reports
+test_*.py
+test_*.json
+*_test.py
+comprehensive_*.py
+validation_*.py
+debug_*.py
+demo_*.py
+simple_*.py
+final_*.py
+
+# Documentation files
+*.md
+*.MD
+
+# Cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+cache/
+ohlcv_cache/
+*.sqlite
+*.db
+*.pkl
+coingecko_cache.sqlite
+trained_model.pkl
+
+# Data directories (we use Google Drive for storage)
+data/
+logs/
+secrets/
+failed_coins.json
+paper_trader_results.csv
+
+# Development files
+.env
+.env.example
+.gitignore
+requirements_backup.txt
+requirements_clean.txt
+# requirements-linux.txt  # Needed for Docker build
+deploy.py
+main.py
+start_*.py
+bot_status.py
+background_services.py
+setup_*.py
+system_status_report.py
+production_summary.py
+generate_*.py
+
+# Batch files
+*.bat
+
+# Railway config (handled separately)
+railway.toml

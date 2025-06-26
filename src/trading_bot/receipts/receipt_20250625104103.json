@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-06-25T10:41:03.563592",
+  "coin": "SUSDT",
+  "qty": 15.586034912718207,
+  "buy_price": 0.3208,
+  "sell_orders": [
+    {
+      "qty": 15.586034912718207,
+      "price": 0.33616631999999996,
+      "type": "TAKE_PROFIT"
+    },
+    {
+      "qty": 15.586034912718207,
+      "price": 0.316956816,
+      "type": "STOP_LOSS"
+    }
+  ],
+  "total_out": 10.1796,
+  "pnl_amount": 5.177600000000001,
+  "pnl_percent": 103.55200000000002,
+  "predicted_profit_pct": 8.0,
+  "confidence": 80.0,
+  "action": "BUY",
+  "total_value": 5.0,
+  "fee": 0.01,
+  "net_value": 4.99
+}

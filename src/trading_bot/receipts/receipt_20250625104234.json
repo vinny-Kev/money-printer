@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-06-25T10:42:34.847280",
+  "coin": "ENSUSDT",
+  "qty": 0.05299417064122946,
+  "buy_price": 18.87,
+  "sell_orders": [
+    {
+      "qty": 0.05299417064122946,
+      "price": 19.773873000000002,
+      "type": "TAKE_PROFIT"
+    },
+    {
+      "qty": 0.05299417064122946,
+      "price": 18.6439374,
+      "type": "STOP_LOSS"
+    }
+  ],
+  "total_out": 2.03592,
+  "pnl_amount": 1.03392,
+  "pnl_percent": 103.392,
+  "predicted_profit_pct": 8.0,
+  "confidence": 76.67821840024357,
+  "action": "BUY",
+  "total_value": 1.0,
+  "fee": 0.002,
+  "net_value": 0.998
+}
