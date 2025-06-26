@@ -6,7 +6,7 @@ test_*.json
 *_test.py
 comprehensive_*.py
 validation_*.py
-debug_*.py
+# debug_*.py  # Allow debug_railway.py for deployment diagnostics
 demo_*.py
 simple_*.py
 final_*.py
