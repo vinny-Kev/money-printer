@@ -32,7 +32,7 @@ COPY src/ ./src/
 RUN mkdir -p data logs cache ohlcv_cache
 
 # Environment variables for Python and Railway
-ENV PYTHONPATH=/app
+ENV PYTHONPATH=/app:/app/src
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PORT=8000
