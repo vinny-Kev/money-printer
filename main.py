@@ -46,7 +46,19 @@ def run_discord_data_bot():
 def run_discord_trading_bot():
     """Run the Discord trading bot."""
     print("🤖 Starting Discord Trading Bot...")
-    from trading_bot.discord_trader_bot import main
+    from src.lightweight_discord_bot import main
+    main()
+
+def run_production_bot():
+    """Run the full production bot with Discord interface."""
+    print("🚀 Starting Money Printer Production Bot...")
+    print("🤖 Discord Bot Interface Active")
+    print("💰 Trading System Ready")
+    print("📊 Data Collection Ready") 
+    print("🧠 Model Training Ready")
+    
+    # Start the lightweight Discord bot which handles everything
+    from src.lightweight_discord_bot import main
     main()
 
 def test_notifications():
@@ -99,9 +111,9 @@ def show_status():
 
 def main():
     parser = argparse.ArgumentParser(description="Money Printer - Automated Crypto Trading System")
-    parser.add_argument("command", choices=[
-        "collect", "train", "trade", "discord-data", "discord-trade", "status", "test-notifications"
-    ], help="Command to run")
+    parser.add_argument("command", nargs='?', default="production", choices=[
+        "collect", "train", "trade", "discord-data", "discord-trade", "status", "test-notifications", "production"
+    ], help="Command to run (default: production)")
     parser.add_argument("--model", default="random_forest", 
                        choices=["random_forest", "rf", "xgboost", "xgb"],
                        help="Model type for training")
@@ -123,6 +135,8 @@ def main():
             show_status()
         elif args.command == "test-notifications":
             test_notifications()
+        elif args.command == "production":
+            run_production_bot()
     except KeyboardInterrupt:
         print("\n🛑 Operation cancelled by user")
     except Exception as e:

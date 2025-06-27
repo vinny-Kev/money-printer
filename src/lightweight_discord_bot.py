@@ -1177,3 +1177,54 @@ async def trading_stats(interaction: discord.Interaction):
     except Exception as e:
         logger.error(f"Error in trading_stats command: {e}")
         await interaction.response.send_message(f"❌ Error retrieving trading stats: {str(e)[:200]}")
+
+# Health check endpoint for Railway
+async def health_check(request):
+    """Health check endpoint for Railway deployment."""
+    return web.json_response({
+        "status": "healthy",
+        "bot_ready": bot.is_ready(),
+        "timestamp": datetime.now().isoformat(),
+        "service": "money-printer-discord-bot"
+    })
+
+async def start_web_server():
+    """Start the web server for health checks."""
+    app = web.Application()
+    app.router.add_get('/health', health_check)
+    app.router.add_get('/', health_check)  # Default route also returns health
+    
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, '0.0.0.0', PORT)
+    await site.start()
+    logger.info(f"🌐 Web server started on port {PORT} for health checks")
+
+async def main_async():
+    """Main async function to run both Discord bot and web server."""
+    logger.info("🚀 Starting Money Printer Discord Bot with Health Check Server")
+    
+    # Start web server for health checks
+    await start_web_server()
+    
+    # Start Discord bot
+    try:
+        await bot.start(TOKEN)
+    except KeyboardInterrupt:
+        logger.info("🛑 Bot stopped by user")
+    except Exception as e:
+        logger.error(f"❌ Bot error: {e}")
+        raise
+
+def main():
+    """Main entry point for the Discord bot."""
+    try:
+        asyncio.run(main_async())
+    except KeyboardInterrupt:
+        logger.info("🛑 Application stopped by user")
+    except Exception as e:
+        logger.error(f"❌ Application error: {e}")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
