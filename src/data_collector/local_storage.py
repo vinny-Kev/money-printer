@@ -158,17 +158,24 @@ def save_parquet_file(data, filename, symbol=None):
             # Import here to avoid circular imports
             from src.config import USE_GOOGLE_DRIVE
             if USE_GOOGLE_DRIVE:
-                logger.info(f"🔄 Uploading {filename} to Google Drive...")
+                logger.info(f"🔄 Queuing {filename} for Google Drive upload...")
                 from src.drive_manager import EnhancedDriveManager
+                from pathlib import Path
                 
                 # Initialize drive manager and upload
                 drive_manager = EnhancedDriveManager()
-                upload_result = drive_manager.upload_file_sync(filepath, f"{symbol}/{filename}" if symbol else filename)
+                upload_result = drive_manager.upload_file_async(
+                    local_path=Path(filepath), 
+                    category="scraped_data",
+                    subcategory=symbol.lower() if symbol else None,
+                    priority=1,
+                    date_based=True
+                )
                 
                 if upload_result:
-                    logger.info(f"☁️ Successfully uploaded {filename} to Google Drive")
+                    logger.info(f"☁️ Successfully queued {filename} for Google Drive upload")
                 else:
-                    logger.warning(f"⚠️ Failed to upload {filename} to Google Drive")
+                    logger.warning(f"⚠️ Failed to queue {filename} for Google Drive upload")
             else:
                 logger.debug("Google Drive integration disabled")
         except Exception as drive_error:

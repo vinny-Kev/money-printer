@@ -88,7 +88,85 @@ def main():
     logger.info("🚂 Starting XGBoost training pipeline with advanced features...")
     send_xgb_trainer_notification("🚂 **XGBoost Training Started**: Initializing advanced XGBoost training pipeline")
 
+    # Get raw data and show detailed statistics
+    logger.info("📊 Loading data from local storage...")
     df = fetch_parquet_data_from_local()
+    
+    if df is not None and not df.empty:
+        # Show extremely detailed data breakdown
+        symbol_counts = df['symbol'].value_counts()
+        total_rows = len(df)
+        unique_symbols = df['symbol'].nunique()
+        date_range = df['timestamp'].agg(['min', 'max'])
+        
+        # Calculate time span
+        time_span = pd.to_datetime(date_range['max']) - pd.to_datetime(date_range['min'])
+        hours_span = time_span.total_seconds() / 3600
+        
+        # Data quality metrics
+        data_sources = df['source_file'].nunique() if 'source_file' in df.columns else 'Unknown'
+        missing_values = df.isnull().sum().sum()
+        duplicate_rows = df.duplicated().sum()
+        
+        logger.info(f"📈 **🔍 EXTREMELY DETAILED XGBoost DATA ANALYSIS:**")
+        logger.info(f"   📊 🚨 TOTAL ROWS FOR TRAINING: {total_rows:,} 🚨")
+        logger.info(f"   🎯 Unique Symbols: {unique_symbols}")
+        logger.info(f"   📅 Date Range: {date_range['min']} to {date_range['max']}")
+        logger.info(f"   ⏰ Time Span: {hours_span:.1f} hours ({time_span.days} days, {time_span.seconds//3600} hours, {(time_span.seconds%3600)//60} minutes)")
+        logger.info(f"   � Data Sources: {data_sources} files")
+        logger.info(f"   ❌ Missing Values: {missing_values}")
+        logger.info(f"   🔄 Duplicate Rows: {duplicate_rows}")
+        logger.info(f"   📋 📊 COMPLETE Symbol Breakdown (ALL {len(symbol_counts)} symbols):")
+        
+        # Show ALL symbols with their row counts
+        for i, (symbol, count) in enumerate(symbol_counts.items(), 1):
+            percentage = (count / total_rows) * 100
+            status = "✅ GOOD" if count >= 50 else "❌ INSUFFICIENT"
+            logger.info(f"      {i:2d}. {symbol}: {count:,} rows ({percentage:.1f}%) - {status}")
+        
+        # Show symbols with insufficient data
+        insufficient_symbols = symbol_counts[symbol_counts < 50]
+        sufficient_symbols = symbol_counts[symbol_counts >= 50]
+        
+        logger.info(f"   📊 DATA QUALITY SUMMARY:")
+        logger.info(f"      ✅ Symbols with sufficient data (≥50): {len(sufficient_symbols)}")
+        logger.info(f"      ❌ Symbols with insufficient data (<50): {len(insufficient_symbols)}")
+        logger.info(f"      📈 Usable rows for training: {sufficient_symbols.sum():,}")
+        logger.info(f"      📉 Excluded rows (insufficient data): {insufficient_symbols.sum():,}")
+        
+        if len(insufficient_symbols) > 0:
+            logger.warning(f"   ⚠️ EXCLUDED SYMBOLS (will not be used for training):")
+            for symbol, count in insufficient_symbols.items():
+                logger.warning(f"      • {symbol}: {count} rows (needs 50+)")
+        
+        # Send detailed data notification to Discord
+        data_summary = f"""📊 **🔍 DETAILED XGBoost Training Data:**
+
+🔢 **DATA VOLUME ANALYSIS:**
+• **🚨 TOTAL ROWS**: {total_rows:,} records loaded
+• **📊 Usable Rows**: {sufficient_symbols.sum():,} (from {len(sufficient_symbols)} symbols)
+• **❌ Excluded Rows**: {insufficient_symbols.sum():,} (from {len(insufficient_symbols)} symbols)
+• **⏰ Time Span**: {hours_span:.1f} hours ({time_span.days} days)
+
+📈 **TOP DATA CONTRIBUTORS:**
+{chr(10).join([f"• {sym}: {cnt:,} rows ({(cnt/total_rows)*100:.1f}%)" for sym, cnt in symbol_counts.head(8).items()])}
+
+� **DATA QUALITY:**
+• Missing Values: {missing_values}
+• Duplicate Rows: {duplicate_rows}
+• Data Sources: {data_sources} files
+
+⚡ **TRAINING STATUS:**
+• ✅ Symbols Ready: {len(sufficient_symbols)}/{unique_symbols}
+• 🔄 Processing {sufficient_symbols.sum():,} rows for XGBoost ensemble training..."""
+        send_xgb_trainer_notification(data_summary)
+    else:
+        logger.error("❌ No data loaded from local storage!")
+        send_xgb_trainer_notification("❌ **Training Failed**: No data found in local storage")
+        return
+    
+    # Process data for training
+    logger.info("🔄 Preprocessing data for XGBoost ensemble training...")
     X, y, groups = preprocess_data(df)
 
     # Sanity check before training

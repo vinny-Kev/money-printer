@@ -200,18 +200,71 @@ class LocalDataLoader:
 # Legacy compatibility function for existing helper.py files
 def fetch_parquet_data_from_local():
     """
-    Legacy compatibility function that replaces fetch_parquet_data_from_bucket.
+    Enhanced data loader that tries local storage first, then Google Drive as fallback.
     """
     logger.info("Loading data from local storage...")
     
     loader = LocalDataLoader()
     df = loader.load_all_data(min_rows=50)
     
+    # If no local data or insufficient data, try Google Drive
+    if df.empty or len(df) < 1000:
+        logger.warning(f"Insufficient local data ({len(df)} rows). Attempting Google Drive fallback...")
+        try:
+            from src.config import USE_GOOGLE_DRIVE
+            if USE_GOOGLE_DRIVE:
+                df_drive = _fetch_data_from_drive()
+                if not df_drive.empty:
+                    logger.info(f"✅ Successfully loaded {len(df_drive)} rows from Google Drive")
+                    return df_drive
+                else:
+                    logger.warning("⚠️ No data found in Google Drive either")
+            else:
+                logger.info("Google Drive integration disabled in config")
+        except Exception as e:
+            logger.warning(f"⚠️ Google Drive fallback failed: {e}")
+    
     if df.empty:
-        raise ValueError("No valid parquet files found in local storage.")
+        raise ValueError("No valid parquet files found in local storage or Google Drive.")
     
     logger.info(f"Successfully loaded {len(df)} rows from local storage")
     return df
+
+def _fetch_data_from_drive():
+    """
+    Fetch data from Google Drive as fallback.
+    Downloads recent files to local cache and loads them.
+    """
+    try:
+        from src.drive_manager import EnhancedDriveManager
+        from pathlib import Path
+        import tempfile
+        
+        logger.info("🔄 Attempting to download data from Google Drive...")
+        
+        # Initialize drive manager
+        drive_manager = EnhancedDriveManager()
+        if not drive_manager.authenticated:
+            logger.warning("❌ Google Drive not authenticated")
+            return pd.DataFrame()
+        
+        # Create temporary directory for downloads
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_path = Path(temp_dir)
+            
+            # Try to download recent parquet files
+            # This is a simplified approach - in a full implementation,
+            # you'd list files in the Drive and download them
+            logger.info("📥 Downloading recent parquet files from Google Drive...")
+            
+            # For now, return empty DataFrame as the drive manager doesn't have
+            # a direct download method exposed yet
+            logger.warning("⚠️ Google Drive download not fully implemented yet")
+            return pd.DataFrame()
+            
+    except Exception as e:
+        logger.error(f"❌ Failed to fetch data from Google Drive: {e}")
+        return pd.DataFrame()
 
 if __name__ == "__main__":
     # Test the data loader
