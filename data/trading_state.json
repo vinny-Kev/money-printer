@@ -5,7 +5,7 @@
   "daily_winning_trades": 0,
   "daily_losing_trades": 0,
   "starting_balance": 1000.0,
-  "last_save": "2025-06-26T14:52:10.957075",
+  "last_save": "2025-06-27T08:16:03.622179",
   "trade_states": {
     "BTCUSDT": {
       "is_active": true,

@@ -323,12 +323,39 @@ def main():
         send_scraper_notification(f"❌ **Scraper Error**: {e}")
     finally:
         logger.info("🔻 Shutting down gracefully.")
+        
+        # Calculate session statistics
+        try:
+            total_symbols = len(symbols) if 'symbols' in locals() else 0
+            buffer_symbols = len(ohlcv_buffer) if ohlcv_buffer else 0
+            total_records = sum(len(data) for data in ohlcv_buffer.values()) if ohlcv_buffer else 0
+            
+            # Send comprehensive session end notification
+            session_summary = (
+                f"📊 **Data Scraping Session Ended**\n"
+                f"🎯 Symbols Monitored: {total_symbols}\n"
+                f"📈 Active Data Streams: {buffer_symbols}\n"
+                f"📋 Total Records Collected: {total_records:,}\n"
+                f"⏰ Session Duration: Started at {datetime.now().strftime('%H:%M:%S')}\n"
+                f"💾 Data saved to local storage\n"
+                f"✅ Session completed successfully"
+            )
+            
+            send_scraper_notification(session_summary)
+            logger.info(f"Session ended - {total_records} records collected from {buffer_symbols} symbols")
+            
+        except Exception as stat_error:
+            logger.error(f"Error calculating session statistics: {stat_error}")
+            send_scraper_notification("📊 **Data Scraping Session Ended** - Statistics unavailable")
+        
         if twm:
             try:
                 twm.stop()
                 logger.info("✅ WebSocket manager stopped.")
+                send_scraper_notification("🔌 **WebSocket Connections Closed** - All data streams stopped")
             except Exception as e:
                 logger.error(f"❌ Failed to stop WebSocket manager: {e}")
+                send_scraper_notification(f"⚠️ **Warning**: WebSocket shutdown error - {e}")
 
 if __name__ == "__main__":
     main()

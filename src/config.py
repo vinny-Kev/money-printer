@@ -170,6 +170,49 @@ def validate_environment():
     
     return True
 
+# Configuration object for backwards compatibility
+class Config:
+    """Configuration object containing all settings"""
+    
+    # Trading settings
+    PAPER_TRADING = PAPER_TRADING
+    live_trading = live_trading
+    DEFAULT_TRADE_AMOUNT = DEFAULT_TRADE_AMOUNT
+    STOP_LOSS_PERCENT = STOP_LOSS_PERCENT
+    TAKE_PROFIT_PERCENT = TAKE_PROFIT_PERCENT
+    
+    # API settings
+    BINANCE_API_KEY = BINANCE_API_KEY
+    BINANCE_SECRET_KEY = BINANCE_SECRET_KEY
+    
+    # Discord settings
+    DISCORD_WEBHOOK = DISCORD_WEBHOOK
+    DISCORD_BOT_TOKEN = DISCORD_BOT_TOKEN
+    
+    # File paths
+    PROJECT_ROOT = PROJECT_ROOT
+    DATA_ROOT = DATA_ROOT
+    MODELS_DIR = MODELS_DIR
+    PARQUET_DATA_DIR = PARQUET_DATA_DIR
+    
+    # Technical indicators
+    TECHNICAL_INDICATORS = TECHNICAL_INDICATORS
+    
+    # Model parameters
+    RANDOM_FOREST_PARAMS = RANDOM_FOREST_PARAMS
+    XGBOOST_PARAMS = XGBOOST_PARAMS
+    RANDOM_STATE = RANDOM_STATE
+    
+    # Safety parameters (defaults for production)
+    max_position_size_percent = 10  # 10% of balance max
+    min_free_disk_gb = 1.0  # Minimum 1GB free disk space
+    max_trades_per_day = 20
+    max_trades_per_hour = 5
+    risk_percentage = 2.0
+
+# Create config instance
+config = Config()
+
 if __name__ == "__main__":
     # Test configuration
     print("=== Money Printer Configuration ===")

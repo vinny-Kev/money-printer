@@ -32,6 +32,57 @@ XGB_PARAMS = XGBOOST_PARAMS
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("XGB_Trainer")
 
+class XGBoostTrainer:
+    """XGBoost model trainer class"""
+    
+    def __init__(self, params=None):
+        """Initialize the trainer with parameters"""
+        self.params = params or XGB_PARAMS
+        self.model = None
+        self.scaler = StandardScaler()
+        
+    def prepare_features(self, X):
+        """Prepare features for training"""
+        return self.scaler.fit_transform(X)
+        
+    def train(self, X, y):
+        """Train the XGBoost model"""
+        logger.info("🚂 Training XGBoost model...")
+        
+        # Prepare features
+        X_scaled = self.prepare_features(X)
+        
+        # Create and train model
+        self.model = XGBClassifier(**self.params)
+        self.model.fit(X_scaled, y)
+        
+        logger.info("✅ XGBoost training completed")
+        return self.model
+        
+    def predict(self, X):
+        """Make predictions using the trained model"""
+        if self.model is None:
+            raise ValueError("Model not trained yet")
+            
+        X_scaled = self.scaler.transform(X)
+        return self.model.predict(X_scaled)
+        
+    def save_model(self, filepath):
+        """Save the trained model"""
+        if self.model is None:
+            raise ValueError("No model to save")
+            
+        model_data = {
+            'model': self.model,
+            'scaler': self.scaler,
+            'params': self.params
+        }
+        
+        with open(filepath, 'wb') as f:
+            pickle.dump(model_data, f)
+            
+        logger.info(f"✅ Model saved to {filepath}")
+
 # --- MAIN ---
 def main():
     logger.info("🚂 Starting XGBoost training pipeline with advanced features...")

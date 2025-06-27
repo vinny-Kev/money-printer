@@ -29,6 +29,57 @@ RF_PARAMS = RANDOM_FOREST_PARAMS
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("Trainer")
 
+class RandomForestTrainer:
+    """Random Forest model trainer class"""
+    
+    def __init__(self, params=None):
+        """Initialize the trainer with parameters"""
+        self.params = params or RF_PARAMS
+        self.model = None
+        self.scaler = StandardScaler()
+        
+    def prepare_features(self, X):
+        """Prepare features for training"""
+        return self.scaler.fit_transform(X)
+        
+    def train(self, X, y):
+        """Train the Random Forest model"""
+        logger.info("🚂 Training Random Forest model...")
+        
+        # Prepare features
+        X_scaled = self.prepare_features(X)
+        
+        # Create and train model
+        self.model = RandomForestClassifier(**self.params)
+        self.model.fit(X_scaled, y)
+        
+        logger.info("✅ Random Forest training completed")
+        return self.model
+        
+    def predict(self, X):
+        """Make predictions using the trained model"""
+        if self.model is None:
+            raise ValueError("Model not trained yet")
+            
+        X_scaled = self.scaler.transform(X)
+        return self.model.predict(X_scaled)
+        
+    def save_model(self, filepath):
+        """Save the trained model"""
+        if self.model is None:
+            raise ValueError("No model to save")
+            
+        model_data = {
+            'model': self.model,
+            'scaler': self.scaler,
+            'params': self.params
+        }
+        
+        with open(filepath, 'wb') as f:
+            pickle.dump(model_data, f)
+            
+        logger.info(f"✅ Model saved to {filepath}")
+
 # --- MAIN ---
 def main():
     logger.info("🚂 Starting training pipeline...")

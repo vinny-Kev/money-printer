@@ -1,0 +1,393 @@
+{
+  "timestamp": "2025-06-27T16:16:01.000828",
+  "duration_seconds": 2.622357,
+  "summary": {
+    "total_tests": 54,
+    "passed": 54,
+    "failed": 0,
+    "warnings": 0,
+    "critical_failures": 0
+  },
+  "test_results": [
+    {
+      "test": "Import pandas",
+      "status": "PASS",
+      "message": "Data processing framework available",
+      "timestamp": "2025-06-27T16:16:01.001825",
+      "critical": false
+    },
+    {
+      "test": "Import numpy",
+      "status": "PASS",
+      "message": "Numerical computing available",
+      "timestamp": "2025-06-27T16:16:01.001825",
+      "critical": false
+    },
+    {
+      "test": "Import sklearn",
+      "status": "PASS",
+      "message": "Machine learning library available",
+      "timestamp": "2025-06-27T16:16:01.573885",
+      "critical": false
+    },
+    {
+      "test": "Import binance",
+      "status": "PASS",
+      "message": "Binance API client available",
+      "timestamp": "2025-06-27T16:16:02.250988",
+      "critical": false
+    },
+    {
+      "test": "Import discord",
+      "status": "PASS",
+      "message": "Discord bot framework available",
+      "timestamp": "2025-06-27T16:16:02.360740",
+      "critical": false
+    },
+    {
+      "test": "Import ta",
+      "status": "PASS",
+      "message": "Technical analysis library available",
+      "timestamp": "2025-06-27T16:16:02.366254",
+      "critical": false
+    },
+    {
+      "test": "Import requests",
+      "status": "PASS",
+      "message": "HTTP client available",
+      "timestamp": "2025-06-27T16:16:02.366254",
+      "critical": false
+    },
+    {
+      "test": "Import dotenv",
+      "status": "PASS",
+      "message": "Environment variable loader available",
+      "timestamp": "2025-06-27T16:16:02.369759",
+      "critical": false
+    },
+    {
+      "test": "Import aiohttp",
+      "status": "PASS",
+      "message": "Async HTTP server available",
+      "timestamp": "2025-06-27T16:16:02.369759",
+      "critical": false
+    },
+    {
+      "test": "Import joblib",
+      "status": "PASS",
+      "message": "Model serialization available",
+      "timestamp": "2025-06-27T16:16:02.369759",
+      "critical": false
+    },
+    {
+      "test": "Import threading",
+      "status": "PASS",
+      "message": "Multithreading support available",
+      "timestamp": "2025-06-27T16:16:02.369759",
+      "critical": false
+    },
+    {
+      "test": "Import asyncio",
+      "status": "PASS",
+      "message": "Async programming available",
+      "timestamp": "2025-06-27T16:16:02.369759",
+      "critical": false
+    },
+    {
+      "test": "Import json",
+      "status": "PASS",
+      "message": "JSON handling available",
+      "timestamp": "2025-06-27T16:16:02.369759",
+      "critical": false
+    },
+    {
+      "test": "Import time",
+      "status": "PASS",
+      "message": "Time utilities available",
+      "timestamp": "2025-06-27T16:16:02.369759",
+      "critical": false
+    },
+    {
+      "test": "Import datetime",
+      "status": "PASS",
+      "message": "Date/time operations available",
+      "timestamp": "2025-06-27T16:16:02.369759",
+      "critical": false
+    },
+    {
+      "test": "Module config",
+      "status": "PASS",
+      "message": "Configuration management loaded",
+      "timestamp": "2025-06-27T16:16:02.372268",
+      "critical": false
+    },
+    {
+      "test": "Module safe_config",
+      "status": "PASS",
+      "message": "Safe configuration loader loaded",
+      "timestamp": "2025-06-27T16:16:02.375277",
+      "critical": false
+    },
+    {
+      "test": "Module trade_runner",
+      "status": "PASS",
+      "message": "Trading execution engine loaded",
+      "timestamp": "2025-06-27T16:16:02.547838",
+      "critical": false
+    },
+    {
+      "test": "Trading Functions",
+      "status": "PASS",
+      "message": "Core trading functions available",
+      "timestamp": "2025-06-27T16:16:02.547838",
+      "critical": false
+    },
+    {
+      "test": "Module technical_indicators",
+      "status": "PASS",
+      "message": "Technical analysis loaded",
+      "timestamp": "2025-06-27T16:16:02.547838",
+      "critical": false
+    },
+    {
+      "test": "Technical Analysis",
+      "status": "PASS",
+      "message": "Technical indicators class available",
+      "timestamp": "2025-06-27T16:16:02.547838",
+      "critical": false
+    },
+    {
+      "test": "Module data_scraper",
+      "status": "PASS",
+      "message": "Data collection system loaded",
+      "timestamp": "2025-06-27T16:16:02.688769",
+      "critical": false
+    },
+    {
+      "test": "Module random_forest_trainer",
+      "status": "PASS",
+      "message": "Random Forest training loaded",
+      "timestamp": "2025-06-27T16:16:03.401784",
+      "critical": false
+    },
+    {
+      "test": "Module xgboost_trainer",
+      "status": "PASS",
+      "message": "XGBoost training loaded",
+      "timestamp": "2025-06-27T16:16:03.421040",
+      "critical": false
+    },
+    {
+      "test": "Module lightweight_discord_bot",
+      "status": "PASS",
+      "message": "Discord interface loaded",
+      "timestamp": "2025-06-27T16:16:03.599631",
+      "critical": false
+    },
+    {
+      "test": "Discord Bot",
+      "status": "PASS",
+      "message": "Discord bot instance available",
+      "timestamp": "2025-06-27T16:16:03.599631",
+      "critical": false
+    },
+    {
+      "test": "Module trading_safety",
+      "status": "PASS",
+      "message": "Trading safety systems loaded",
+      "timestamp": "2025-06-27T16:16:03.600630",
+      "critical": false
+    },
+    {
+      "test": "Module discord_notifications",
+      "status": "PASS",
+      "message": "Notification system loaded",
+      "timestamp": "2025-06-27T16:16:03.600630",
+      "critical": false
+    },
+    {
+      "test": "Module drive_manager",
+      "status": "PASS",
+      "message": "Google Drive integration loaded",
+      "timestamp": "2025-06-27T16:16:03.603140",
+      "critical": false
+    },
+    {
+      "test": "Technical Indicators",
+      "status": "PASS",
+      "message": "All 6 indicators calculated",
+      "timestamp": "2025-06-27T16:16:03.620673",
+      "critical": false
+    },
+    {
+      "test": "Indicator Data Quality",
+      "status": "PASS",
+      "message": "No NaN values in calculated indicators",
+      "timestamp": "2025-06-27T16:16:03.620673",
+      "critical": false
+    },
+    {
+      "test": "Safety Manager Init",
+      "status": "PASS",
+      "message": "Safety manager initialized successfully",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Position Sizing",
+      "status": "PASS",
+      "message": "Position size: $76.50",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Trade Validation",
+      "status": "PASS",
+      "message": "Trade validation works (can trade: False)",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "File main.py",
+      "status": "PASS",
+      "message": "Main application entry point exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "File requirements.txt",
+      "status": "PASS",
+      "message": "Python dependencies exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "File Dockerfile.full",
+      "status": "PASS",
+      "message": "Production Docker configuration exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "File railway.toml",
+      "status": "PASS",
+      "message": "Railway deployment configuration exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "File src/config.py",
+      "status": "PASS",
+      "message": "Application configuration exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "File src/safe_config.py",
+      "status": "PASS",
+      "message": "Safe configuration loader exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "File README.md",
+      "status": "PASS",
+      "message": "Documentation exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Directory src",
+      "status": "PASS",
+      "message": "Directory exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Directory src/trading_bot",
+      "status": "PASS",
+      "message": "Directory exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Directory src/data_collector",
+      "status": "PASS",
+      "message": "Directory exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Directory src/model_training",
+      "status": "PASS",
+      "message": "Directory exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Directory src/model_variants",
+      "status": "PASS",
+      "message": "Directory exists",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Random Forest Trainer",
+      "status": "PASS",
+      "message": "RF trainer initialized",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "XGBoost Trainer",
+      "status": "PASS",
+      "message": "XGBoost trainer initialized",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Feature Engineering",
+      "status": "PASS",
+      "message": "Feature preparation available",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Discord Bot Instance",
+      "status": "PASS",
+      "message": "Bot instance created",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Command Tree",
+      "status": "PASS",
+      "message": "Command tree available",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Notification System",
+      "status": "PASS",
+      "message": "Notification functions available",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Data Storage",
+      "status": "PASS",
+      "message": "Data storage functions available",
+      "timestamp": "2025-06-27T16:16:03.622179",
+      "critical": false
+    },
+    {
+      "test": "Data Processing",
+      "status": "PASS",
+      "message": "Data processing pipeline functional",
+      "timestamp": "2025-06-27T16:16:03.623185",
+      "critical": false
+    }
+  ],
+  "critical_failures": [],
+  "warnings": []
+}

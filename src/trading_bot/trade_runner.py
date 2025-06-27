@@ -401,11 +401,30 @@ def monitor_trade_until_exit(trade_info):
                     was_successful = False
                 break
             
-            # Get current price
-            current_price = get_current_price(coin)
+            # Get current price with retry logic
+            current_price = None
+            price_fetch_attempts = 0
+            max_price_attempts = 3
+            
+            while current_price is None and price_fetch_attempts < max_price_attempts:
+                price_fetch_attempts += 1
+                try:
+                    current_price = get_current_price(coin)
+                    if current_price is None:
+                        if price_fetch_attempts < max_price_attempts:
+                            clean_print(f"⚠️ Failed to get price for {coin} (attempt {price_fetch_attempts}), retrying...", "WARNING")
+                            time.sleep(2)  # Brief wait before retry
+                        else:
+                            clean_print(f"❌ Unable to get price for {coin} after {max_price_attempts} attempts", "ERROR")
+                            break
+                except Exception as e:
+                    clean_print(f"❌ Exception getting price for {coin}: {str(e)}", "ERROR")
+                    if price_fetch_attempts < max_price_attempts:
+                        time.sleep(2)
+                    
             if current_price is None:
-                clean_print(f"⚠️ Failed to get price for {coin}, retrying...", "WARNING")
-                time.sleep(TRADE_MONITOR_INTERVAL)
+                clean_print("⚠️ Skipping price check due to data unavailability", "WARNING")
+                time.sleep(TRADE_MONITOR_INTERVAL * 2)  # Wait longer before next attempt
                 continue
             
             check_count += 1
@@ -415,19 +434,44 @@ def monitor_trade_until_exit(trade_info):
                 price_change = ((current_price - buy_price) / buy_price) * 100
                 clean_print(f"💹 {coin}: ${current_price:.4f} ({price_change:+.2f}%)", "INFO")
             
-            # Check if TP hit
-            if current_price >= take_profit_price:
-                clean_print(f"🎉 TAKE PROFIT HIT! {coin} @ ${current_price:.4f}", "SUCCESS")
-                final_sell_price = take_profit_price  # Use TP price for calculations
-                was_successful = True
-                break
-            
-            # Check if SL hit
-            elif current_price <= stop_loss_price:
-                clean_print(f"🛑 STOP LOSS HIT! {coin} @ ${current_price:.4f}", "ERROR")
-                final_sell_price = stop_loss_price  # Use SL price for calculations
-                was_successful = False
-                break
+            # Enhanced TP/SL checking with edge case handling
+            try:
+                # Check if TP hit (with small buffer for market volatility)
+                tp_buffer = take_profit_price * 0.001  # 0.1% buffer
+                if current_price >= (take_profit_price - tp_buffer):
+                    clean_print(f"🎉 TAKE PROFIT HIT! {coin} @ ${current_price:.4f} (Target: ${take_profit_price:.4f})", "SUCCESS")
+                    # Use current price if it's better than TP, otherwise use TP
+                    final_sell_price = max(current_price, take_profit_price)
+                    was_successful = True
+                    break
+                
+                # Check if SL hit (with small buffer for market volatility)
+                sl_buffer = stop_loss_price * 0.001  # 0.1% buffer
+                if current_price <= (stop_loss_price + sl_buffer):
+                    clean_print(f"🛑 STOP LOSS HIT! {coin} @ ${current_price:.4f} (Target: ${stop_loss_price:.4f})", "ERROR")
+                    # Use current price if it's worse than SL, otherwise use SL
+                    final_sell_price = min(current_price, stop_loss_price)
+                    was_successful = False
+                    break
+                
+                # Check for extreme price movements that might indicate data issues
+                price_change_from_buy = abs((current_price - buy_price) / buy_price)
+                if price_change_from_buy > 0.5:  # More than 50% change - suspicious
+                    clean_print(f"⚠️ Extreme price movement detected ({price_change_from_buy:.1%}) - verifying...", "WARNING")
+                    
+                    # Double-check the price
+                    time.sleep(2)
+                    verification_price = get_current_price(coin)
+                    if verification_price and abs(verification_price - current_price) / current_price > 0.1:
+                        clean_print(f"📊 Price discrepancy detected, using verification price: ${verification_price:.4f}", "WARNING")
+                        current_price = verification_price
+                    
+            except Exception as price_check_error:
+                clean_print(f"❌ Error in TP/SL check: {str(price_check_error)}", "ERROR")
+                logger.error(f"TP/SL check error: {price_check_error}")
+                # Continue monitoring even if there's an error in price checking
+                time.sleep(TRADE_MONITOR_INTERVAL)
+                continue
             
             # Wait before next check
             time.sleep(TRADE_MONITOR_INTERVAL)
@@ -447,17 +491,72 @@ def monitor_trade_until_exit(trade_info):
     # Calculate final trade results
     trade_duration_secs = (datetime.utcnow() - start_time).total_seconds()
     
-    # Execute sell order (real or simulated)
+    # Execute sell order with enhanced error handling and retries
+    sell_order_success = False
+    sell_attempts = 0
+    max_sell_attempts = 5
+    
     if LIVE_TRADING:
-        sell_order = place_order("SELL", coin, qty, final_sell_price)
-        if not sell_order["success"]:
-            clean_print("⚠️ Sell order failed, using theoretical price", "WARNING")
+        while not sell_order_success and sell_attempts < max_sell_attempts:
+            sell_attempts += 1
+            try:
+                clean_print(f"🔄 Attempting to place sell order (attempt {sell_attempts}/{max_sell_attempts})", "INFO")
+                sell_order = place_order("SELL", coin, qty, final_sell_price)
+                
+                if sell_order["success"]:
+                    sell_order_success = True
+                    clean_print(f"✅ Sell order placed successfully!", "SUCCESS")
+                    break
+                else:
+                    error_msg = sell_order.get("error", "Unknown error")
+                    clean_print(f"❌ Sell order failed (attempt {sell_attempts}): {error_msg}", "ERROR")
+                    
+                    if sell_attempts < max_sell_attempts:
+                        # Try market order as fallback
+                        if "LIMIT" in error_msg or "price" in error_msg.lower():
+                            clean_print("🔄 Retrying with market order as fallback...", "WARNING")
+                            sell_order = place_order("SELL", coin, qty, None)  # Market order
+                            if sell_order["success"]:
+                                sell_order_success = True
+                                final_sell_price = get_current_price(coin) or final_sell_price
+                                clean_print(f"✅ Market sell order placed at ~${final_sell_price:.4f}!", "SUCCESS")
+                                break
+                        
+                        # Wait before retry
+                        time.sleep(2 ** sell_attempts)  # Exponential backoff
+                    
+            except Exception as e:
+                clean_print(f"❌ Exception during sell order (attempt {sell_attempts}): {str(e)}", "ERROR")
+                if sell_attempts < max_sell_attempts:
+                    time.sleep(2 ** sell_attempts)  # Exponential backoff
+                    
+        if not sell_order_success:
+            clean_print("⚠️ All standard sell attempts failed - initiating emergency exit protocol", "WARNING")
+            
+            # Try emergency exit as final fallback
+            emergency_result = emergency_exit_trade(coin, qty, buy_price, "Standard sell orders failed")
+            if emergency_result and emergency_result["success"]:
+                sell_order_success = True
+                final_sell_price = emergency_result["price"]
+                clean_print(f"✅ Emergency exit successful via {emergency_result['method']}", "SUCCESS")
+            else:
+                clean_print("❌ Emergency exit also failed - position may still be open", "CRITICAL")
+                clean_print("� CRITICAL: Manual intervention required to close position", "CRITICAL")
+                # Log the failed trade for manual review
+                logger.critical(f"CRITICAL FAILURE - MANUAL INTERVENTION REQUIRED: {coin} qty={qty} target_price={final_sell_price}")
+                # Send urgent notification if available
+                try:
+                    send_trader_notification(f"🚨 CRITICAL: Failed to close {coin} position automatically. Manual intervention required!")
+                except:
+                    pass  # Don't let notification failures crash the system
+            
     else:
         # Simulate sell for dry trading
         global dry_trade_budget
         sell_value = qty * final_sell_price
         dry_trade_budget += sell_value
         clean_print(f"[DRY RUN] Sold {qty:.8f} {coin} @ ${final_sell_price:.4f}", "INFO")
+        sell_order_success = True
     
     # Calculate P&L
     buy_value = qty * buy_price
@@ -1633,3 +1732,64 @@ def get_account_balance_safe():
             "message": f"System error: {str(e)}",
             "mode": "unknown"
         }
+
+def emergency_exit_trade(coin, qty, buy_price, reason="Unknown"):
+    """
+    Emergency exit function to close a position when normal TP/SL fails.
+    This function tries multiple methods to exit the trade safely.
+    """
+    try:
+        clean_print(f"🚨 EMERGENCY EXIT INITIATED for {coin}: {reason}", "CRITICAL")
+        
+        # Try to get current market price
+        current_price = get_current_price(coin)
+        if not current_price:
+            clean_print("❌ Cannot get current price for emergency exit", "CRITICAL")
+            return None
+            
+        # Try market order first (fastest execution)
+        try:
+            clean_print("🔄 Attempting emergency market sell...", "WARNING")
+            market_order = place_order("SELL", coin, qty, None)  # Market order
+            if market_order["success"]:
+                clean_print(f"✅ Emergency market sell successful at ~${current_price:.4f}", "SUCCESS")
+                return {
+                    "success": True,
+                    "price": current_price,
+                    "method": "market_order",
+                    "order": market_order
+                }
+        except Exception as market_error:
+            clean_print(f"❌ Market order failed: {str(market_error)}", "ERROR")
+        
+        # Try limit order slightly below current price
+        try:
+            emergency_price = current_price * 0.99  # 1% below current price
+            clean_print(f"🔄 Attempting emergency limit sell at ${emergency_price:.4f}...", "WARNING")
+            limit_order = place_order("SELL", coin, qty, emergency_price)
+            if limit_order["success"]:
+                clean_print(f"✅ Emergency limit sell placed at ${emergency_price:.4f}", "SUCCESS")
+                return {
+                    "success": True,
+                    "price": emergency_price,
+                    "method": "limit_order",
+                    "order": limit_order
+                }
+        except Exception as limit_error:
+            clean_print(f"❌ Limit order failed: {str(limit_error)}", "ERROR")
+        
+        # If all automated methods fail, log for manual intervention
+        clean_print("❌ All automated emergency exit methods failed", "CRITICAL")
+        logger.critical(f"MANUAL INTERVENTION REQUIRED: {coin} qty={qty} current_price={current_price} reason={reason}")
+        
+        return {
+            "success": False,
+            "price": current_price,
+            "method": "manual_required",
+            "message": "Manual intervention required"
+        }
+        
+    except Exception as e:
+        logger.critical(f"Emergency exit function failed: {str(e)}")
+        clean_print(f"🚨 Emergency exit function failed: {str(e)}", "CRITICAL")
+        return None
