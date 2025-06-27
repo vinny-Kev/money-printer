@@ -79,7 +79,8 @@ TRAIN_TEST_SPLIT = 0.7
 RANDOM_STATE = 42
 
 # Trading Settings
-PAPER_TRADING = True  # Set to False for live trading
+PAPER_TRADING = False  # Set to False for live trading - USING LIVE BINANCE API
+live_trading = not PAPER_TRADING  # For compatibility with trade_runner.py
 DEFAULT_TRADE_AMOUNT = 100  # USDT
 STOP_LOSS_PERCENT = 2.0
 TAKE_PROFIT_PERCENT = 4.0

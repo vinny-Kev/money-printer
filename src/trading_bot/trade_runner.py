@@ -70,6 +70,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger()
 
+# Global trading state variables
+dry_trade_budget = DRY_TRADE_BUDGET  # Initialize the global budget variable
+
 # Initialize Binance clients with production safety
 def get_binance_client(live=True):
     """Get Binance client with proper error handling and retries"""
@@ -81,8 +84,9 @@ def get_binance_client(live=True):
                 raise ValueError("Live trading API keys not configured")
             client = Client(api_key=api_key, api_secret=secret_key)
         else:
-            api_key = config.binance_api_key  # Uses testnet keys when live_trading=False
-            secret_key = config.binance_secret_key
+            # Use testnet keys for paper trading
+            api_key = config.binance_api_key_testnet or config.binance_api_key
+            secret_key = config.binance_secret_key_testnet or config.binance_secret_key
             if not api_key or not secret_key:
                 raise ValueError("Testnet API keys not configured")
             client = Client(api_key=api_key, api_secret=secret_key)
@@ -688,14 +692,17 @@ def get_usdt_balance():
     global dry_trade_budget
     if LIVE_TRADING:
         try:
-            balance_info = client.get_asset_balance(asset="USDT")
+            # Use proper client initialization
+            binance_client = get_client()
+            balance_info = binance_client.get_asset_balance(asset="USDT")
             if balance_info is None:
                 logger.warning("No balance info returned for USDT.")
                 return 0.0
             return float(balance_info["free"])
         except Exception as e:
             logger.error(f"Error fetching USDT balance: {e}")
-            return 0.0
+            # Return dry trade budget as fallback
+            return dry_trade_budget
     else:
         return dry_trade_budget
 
@@ -1186,7 +1193,7 @@ def run_single_trade():
         df = df[df["confidence"] > CONFIDENCE_THRESHOLD]
         if df.empty:
             logger.warning("No trades meet the confidence threshold.")
-            clean_print(f"No trades meet confidence threshold ({CONFIDENCE_THRESHOLD:.1%})", "WARNING")
+            clean_print(f"No trades meet the confidence threshold ({CONFIDENCE_THRESHOLD:.1%})", "WARNING")
             return {"error": "No trades meet the confidence threshold."}
         
         # Sort by predicted profit (most profitable first)
@@ -1555,5 +1562,74 @@ def validate_dataframe(df: pd.DataFrame) -> bool:
         
     return True
 
-if __name__ == "__main__":
-    main()
+def get_account_balance_safe():
+    """
+    Safe balance retrieval with comprehensive error handling and fallbacks.
+    Returns a dictionary with balance info and status.
+    """
+    try:
+        # Check if we're in live trading mode
+        if LIVE_TRADING:
+            # Check if API keys are configured
+            if not config.binance_api_key or not config.binance_secret_key:
+                return {
+                    "balance": 0.0,
+                    "status": "error",
+                    "message": "Live trading enabled but API keys not configured. Set BINANCE_API_KEY and BINANCE_SECRET_KEY in Railway.",
+                    "mode": "live",
+                    "suggestion": "Add your Binance API credentials to Railway environment variables"
+                }
+            
+            try:
+                # Initialize client and get balance
+                binance_client = get_client()
+                balance_info = binance_client.get_asset_balance(asset="USDT")
+                
+                if balance_info is None:
+                    return {
+                        "balance": 0.0,
+                        "status": "error", 
+                        "message": "No balance data returned from Binance API",
+                        "mode": "live"
+                    }
+                
+                balance = float(balance_info["free"])
+                return {
+                    "balance": balance,
+                    "status": "success",
+                    "message": "Live trading balance",
+                    "mode": "live"
+                }
+                
+            except BinanceAPIException as e:
+                return {
+                    "balance": 0.0,
+                    "status": "error",
+                    "message": f"Binance API error: {e.message}",
+                    "mode": "live"
+                }
+            except Exception as e:
+                return {
+                    "balance": 0.0,
+                    "status": "error",
+                    "message": f"Connection error: {str(e)}",
+                    "mode": "live"
+                }
+        else:
+            # Paper trading mode - user needs to enable live trading
+            return {
+                "balance": dry_trade_budget,
+                "status": "success",
+                "message": "Paper trading mode active. Set LIVE_TRADING=true in Railway for real balance.",
+                "mode": "paper",
+                "suggestion": "To see real Binance balance, set LIVE_TRADING=true in Railway environment variables"
+            }
+            
+    except Exception as e:
+        # Ultimate fallback
+        return {
+            "balance": 0.0,
+            "status": "error",
+            "message": f"System error: {str(e)}",
+            "mode": "unknown"
+        }

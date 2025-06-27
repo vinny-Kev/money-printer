@@ -29,6 +29,7 @@ BINANCE_API_KEY=your_binance_api_key_here
 BINANCE_SECRET_KEY=your_binance_secret_key_here
 BINANCE_API_KEY_TESTNET=your_testnet_api_key_here
 BINANCE_SECRET_KEY_TESTNET=your_testnet_secret_key_here
+LIVE_TRADING=true
 ```
 
 ### Railway Integration (Optional)

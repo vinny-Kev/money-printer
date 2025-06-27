@@ -470,15 +470,31 @@ async def status(interaction: discord.Interaction):
     embed.add_field(name="⚡ Latency", value=f"{round(bot.latency * 1000)}ms", inline=True)
     embed.add_field(name="🌐 Environment", value="Railway Cloud", inline=True)
     
-    # Get current balance
+    # Get current balance with comprehensive error handling
     try:
-        from trading_bot.trade_runner import get_usdt_balance
-        current_balance = get_usdt_balance()
-        balance_text = f"${current_balance:.2f} USDT"
-    except Exception:
-        balance_text = "Unable to fetch"
+        sys.path.append(os.path.dirname(__file__))  # Add current directory to path
+        from trading_bot.trade_runner import get_account_balance_safe
+        balance_info = get_account_balance_safe()
+        
+        if balance_info["status"] == "success":
+            balance_text = f"${balance_info['balance']:.2f} USDT"
+            if balance_info["mode"] == "paper":
+                balance_text += " (Paper)"
+        else:
+            # Show helpful error message with suggestion
+            error_msg = balance_info['message']
+            if "Paper trading mode" in error_msg:
+                balance_text = "Paper Mode - Set LIVE_TRADING=true for real balance"
+            else:
+                balance_text = f"Unable to fetch: {error_msg[:30]}..."
+            
+    except Exception as e:
+        logger.error(f"Balance fetch error: {e}")
+        balance_text = f"Connection error: {str(e)[:20]}..."
     
-    embed.add_field(name="💰 Current Balance", value=balance_text, inline=True)    # Get trading safety status and PnL info
+    embed.add_field(name="💰 Current Balance", value=balance_text, inline=True)
+    
+    # Get trading safety status and PnL info
     try:
         sys.path.append('/app/src')
         from trading_safety import TradingSafetyManager
@@ -1075,27 +1091,96 @@ async def balance(interaction: discord.Interaction):
             color=0xffd700
         )
         
-        # Get balance information
+        # Get actual balance information
         try:
-            # This would connect to the actual trading client
-            # For now, show placeholder/mock data
-            embed.add_field(
-                name="💵 Available Balance",
-                value="• **USDT**: $1,234.56\n• **BTC**: 0.0234 BTC\n• **ETH**: 0.567 ETH",
-                inline=True
-            )
+            from trading_bot.trade_runner import get_account_balance_safe
+            balance_info = get_account_balance_safe()
             
-            embed.add_field(
-                name="📊 Open Positions",
-                value="• **BTC/USDT**: Long (2.3%)\n• **ETH/USDT**: Short (-1.1%)\n• **Total P&L**: +$45.67",
-                inline=True
-            )
+            if balance_info["status"] == "success":
+                balance_value = f"${balance_info['balance']:.2f} USDT"
+                if balance_info["mode"] == "paper":
+                    balance_value += " (Paper Trading)"
+                
+                embed.add_field(
+                    name="💵 Available Balance",
+                    value=balance_value,
+                    inline=True
+                )
+                
+                # Additional balance details if available
+                if "details" in balance_info:
+                    details = balance_info["details"]
+                    other_balances = []
+                    for asset, amount in details.items():
+                        if asset != "USDT" and float(amount) > 0:
+                            other_balances.append(f"• **{asset}**: {amount}")
+                    
+                    if other_balances:
+                        embed.add_field(
+                            name="🪙 Other Assets",
+                            value="\n".join(other_balances[:5]),  # Limit to 5 assets
+                            inline=True
+                        )
+                
+            else:
+                error_msg = balance_info['message']
+                if "Paper trading mode" in error_msg:
+                    embed.add_field(
+                        name="📊 Paper Trading Mode",
+                        value="**To see real balance:**\nSet `LIVE_TRADING=true` in Railway\n\n⚠️ This will enable real trading!",
+                        inline=False
+                    )
+                    if "suggestion" in balance_info:
+                        embed.add_field(
+                            name="💡 Setup Instructions",
+                            value=balance_info["suggestion"],
+                            inline=False
+                        )
+                else:
+                    embed.add_field(
+                        name="⚠️ Balance Unavailable",
+                        value=f"Error: {error_msg}",
+                        inline=True
+                    )
             
-            embed.add_field(
-                name="📈 Portfolio Performance",
-                value="• **24h Change**: +2.34%\n• **7d Change**: +12.45%\n• **All Time**: +67.89%",
-                inline=False
-            )
+            # Get trading performance data
+            try:
+                sys.path.append('/app/src')
+                from trading_safety import TradingSafetyManager
+                from safe_config import get_config
+                config = get_config()
+                safety_mgr = TradingSafetyManager(config)
+                status_report = safety_mgr.get_status_report()
+                
+                # Daily Performance
+                daily_pnl = status_report.get('daily_pnl', 0)
+                daily_pnl_percent = status_report.get('daily_pnl_percent', 0)
+                daily_color = "🟢" if daily_pnl >= 0 else "🔴"
+                
+                embed.add_field(
+                    name="📊 Today's Performance",
+                    value=f"{daily_color} ${daily_pnl:+.2f} ({daily_pnl_percent:+.2f}%)",
+                    inline=True
+                )
+                
+                # Total Performance
+                total_pnl = status_report.get('total_pnl', 0)
+                total_pnl_percent = status_report.get('total_pnl_percent', 0)
+                total_color = "🟢" if total_pnl >= 0 else "🔴"
+                
+                embed.add_field(
+                    name="📈 Total Performance",
+                    value=f"{total_color} ${total_pnl:+.2f} ({total_pnl_percent:+.2f}%)",
+                    inline=False
+                )
+                
+            except Exception as perf_error:
+                logger.warning(f"Could not get performance data: {perf_error}")
+                embed.add_field(
+                    name="📊 Performance",
+                    value="Performance data unavailable",
+                    inline=True
+                )
             
         except Exception as e:
             embed.add_field(
