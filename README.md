@@ -70,11 +70,21 @@ RAILWAY_API_TOKEN=your_railway_token
 /health_check    # Verify all systems operational
 ```
 
-### 4. **Activate Live Trading** (After Validation)
+### 4. **Production Deployment Workflow** (Recommended)
 ```bash
-# ⚠️ WARNING: Real money trading
+# Phase 1: Data Collection (2+ hours)
+/start_scraper    # Collect market data for training
+
+# Phase 2: Model Training (after data collection)
+/train_model random_forest    # Train AI with fresh data
+
+# Phase 3: Paper Trading Validation
+/start_dry_trade 3    # Test with virtual money first
+
+# Phase 4: Live Trading Pilot (500 PHP / ~$8 USD)
 # Set in Railway: LIVE_TRADING=true
-# Minimum recommended balance: $100+ USDT
+# Fund Binance account with 500 PHP (~$8 USDT)
+# Minimum required: $3 USD | Your $8: Perfect for pilot testing
 ```
 
 > **Enterprise-grade automated cryptocurrency trading system with advanced safety protocols, real-time Discord notifications, and comprehensive machine learning integration.**
@@ -306,12 +316,26 @@ python comprehensive_test.py
 
 ### 🚀 Quick Discord Workflow
 
-**See [USER_GUIDE.md](USER_GUIDE.md) for detailed instructions**
+**RECOMMENDED PRODUCTION DEPLOYMENT SEQUENCE:**
 
-1. **Start Data Collection**: `/start_scraper` - Begin gathering market data
-2. **Train Models**: `/train_model random_forest` - Create trading algorithms
-3. **Test Strategy**: `/start_dry_trade 3` - Paper trade with virtual money
-4. **Monitor Performance**: `/trading_stats` - Track results and optimize
+**Phase 1: Data Collection (2+ hours)**
+1. **Start Data Collection**: `/start_scraper` - Begin gathering live market data
+2. **Monitor Progress**: Check Discord for session notifications and data quality
+
+**Phase 2: Model Training (after data collection)**  
+3. **Train AI Models**: `/train_model random_forest` - Create trading algorithms with fresh data
+4. **Validate Performance**: Review training metrics and model accuracy
+
+**Phase 3: Paper Trading Validation**
+5. **Test Strategy**: `/start_dry_trade 3` - Validate with virtual money (no risk)
+6. **Monitor Results**: `/trading_stats` - Confirm trades execute correctly
+
+**Phase 4: Live Trading Pilot (500 PHP)**
+7. **Enable Live Trading**: Set `LIVE_TRADING=true` in Railway environment
+8. **Fund Account**: Deposit 500 PHP (~$8 USDT) to Binance - exceeds $3 minimum by 167%
+9. **Execute Live Trades**: Monitor real money performance with minimal risk
+
+> **🎯 This 4-phase approach ensures maximum safety and validates all systems before scaling up.**
 
 ### 📱 Discord Integration Features
 

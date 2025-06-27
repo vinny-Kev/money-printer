@@ -34,7 +34,7 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from config import (
     BINANCE_API_KEY, BINANCE_SECRET_KEY, DISCORD_WEBHOOK,
     CACHE_DIR, LOGS_DIR, DEFAULT_SYMBOLS, KLINE_INTERVAL,
-    MAX_BUFFER_SIZE, SAVE_INTERVAL_SECONDS
+    MAX_BUFFER_SIZE, SAVE_INTERVAL_SECONDS, PARQUET_DATA_DIR
 )
 from discord_notifications import send_scraper_notification
 
@@ -89,19 +89,36 @@ def send_discord_alert(message):
 # Save data to a single Parquet file per coin
 def save_data_to_parquet(df, symbol):
     """
-    Save OHLCV data for a symbol to a Parquet file, appending and deduplicating locally.
+    Save OHLCV data for a symbol to local storage using parquet format.
     """
     try:
-        # Define the local file path
-        filename = os.path.join(CACHE_DIR, f"{symbol}.parquet")
-
-        # Handle deduplication and appending locally
-        if os.path.exists(filename):
-            existing_df = pd.read_parquet(filename)
-            existing_df["timestamp"] = pd.to_datetime(existing_df["timestamp"])
-            combined_df = pd.concat([existing_df, df])
+        if df.empty:
+            logger.warning(f"[{symbol}] Cannot save empty DataFrame")
+            return
+            
+        # Remove duplicates and ensure proper timestamp format
+        df = df.drop_duplicates(subset=['timestamp']).sort_values('timestamp')
+        
+        logger.info(f"[{symbol}] Preparing to save {len(df)} records (timestamp range: {df['timestamp'].min()} to {df['timestamp'].max()})")
+        
+        # Check if file exists and merge data
+        filename = f"{symbol}.parquet"
+        symbol_dir = os.path.join(PARQUET_DATA_DIR, symbol.lower())
+        os.makedirs(symbol_dir, exist_ok=True)
+        filepath = os.path.join(symbol_dir, filename)
+        
+        if os.path.exists(filepath):
+            try:
+                existing_df = pd.read_parquet(filepath)
+                existing_df["timestamp"] = pd.to_datetime(existing_df["timestamp"])
+                combined_df = pd.concat([existing_df, df])
+                logger.info(f"[{symbol}] Merged {len(df)} new records with {len(existing_df)} existing records")
+            except Exception as e:
+                logger.warning(f"[{symbol}] Could not read existing file, starting fresh: {e}")
+                combined_df = df
         else:
             combined_df = df
+            logger.info(f"[{symbol}] Creating new file with {len(df)} records")
 
         # Normalize timestamp and float precision
         combined_df["timestamp"] = pd.to_datetime(combined_df["timestamp"])
@@ -113,11 +130,19 @@ def save_data_to_parquet(df, symbol):
         # Drop exact timestamp duplicates and sort
         combined_df = combined_df.drop_duplicates(subset=["timestamp"]).sort_values("timestamp")
         
-        # Save the deduplicated DataFrame locally using our new local storage
-        save_parquet_file(combined_df, f"{symbol}.parquet", symbol)
-        logger.info(f"✅ Saved deduplicated Parquet file locally: {filename}")
+        # Save using local storage function
+        result = save_parquet_file(combined_df, filename, symbol)
+        
+        if result:
+            logger.info(f"✅ Successfully saved {len(combined_df)} records for {symbol}")
+            logger.info(f"[{symbol}] File size: {os.path.getsize(result) / 1024:.2f} KB")
+        else:
+            logger.error(f"❌ Failed to save parquet file for {symbol}")
 
     except Exception as e:
+        logger.error(f"❌ Failed to save Parquet file for {symbol}: {e}")
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
         logger.error(f"❌ Failed to save Parquet file for {symbol}: {e}")
 
 def save_all_to_parquet():
@@ -126,9 +151,13 @@ def save_all_to_parquet():
     """
     global ohlcv_buffer  # Ensure we're modifying the global buffer
     try:
+        saved_count = 0
+        total_records = 0
+        
         for symbol in list(ohlcv_buffer.keys()):
             data = ohlcv_buffer[symbol]
             if not data:
+                logger.debug(f"[{symbol}] No data in buffer, skipping")
                 continue
 
             # Convert to DataFrame
@@ -138,13 +167,31 @@ def save_all_to_parquet():
                 logger.warning(f"[WARN] Skipped saving: OHLCV data for {symbol} is empty.")
                 continue
 
+            # Log buffer status before saving
+            logger.info(f"[{symbol}] Saving {len(df)} records from buffer")
+            
             # Save data to a single Parquet file per coin
             save_data_to_parquet(df, symbol)
+            
+            saved_count += 1
+            total_records += len(df)
 
             # Clear the buffer for the symbol
             ohlcv_buffer[symbol].clear()
+            logger.info(f"[{symbol}] Buffer cleared after save")
+            
+        logger.info(f"✅ Save cycle complete: {saved_count} symbols, {total_records} total records")
+        
+        if saved_count == 0:
+            logger.warning("⚠️ No data was saved this cycle - buffer may be empty")
+            # Log buffer status for debugging
+            buffer_status = {symbol: len(data) for symbol, data in ohlcv_buffer.items()}
+            logger.info(f"Buffer status: {buffer_status}")
+            
     except Exception as e:
         logger.error(f"❌ Failed to save OHLCV data to Parquet: {e}")
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
 
 # Cache directory and file
 CACHE_DIR = "ohlcv_cache"
@@ -187,13 +234,12 @@ def load_ohlcv_buffer_from_disk():
 # Sleep until the next interval (e.g., 0:00, 5:00, 10:00).
 def sleep_until_next_interval(interval_sec=300):
     """
-    Sleep until the next interval (e.g., 0:00, 5:00, 10:00).
+    Simple sleep for interval seconds instead of syncing to time boundaries.
+    This ensures saves happen every 5 minutes from start time.
     :param interval_sec: Interval in seconds (default: 300 seconds = 5 minutes).
     """
-    now = time.time()
-    sleep_time = interval_sec - (now % interval_sec)
-    logger.info(f"Sleeping for {sleep_time:.2f} seconds until the next interval...")
-    time.sleep(sleep_time)
+    logger.info(f"Sleeping for {interval_sec} seconds until next save cycle...")
+    time.sleep(interval_sec)
 
 @backoff.on_exception(backoff.expo, Exception, max_tries=5)
 def start_kline_socket_with_backoff(twm, symbol):
@@ -242,6 +288,10 @@ def handle_kline_message(msg):
 
     # Debug log for processed kline data
     logger.debug(f"✔️ Processed kline for {symbol}: {kline_data}")
+
+    # Log buffer status every 50 messages
+    if len(ohlcv_buffer[symbol]) % 50 == 0:
+        logger.info(f"[{symbol}] Buffer size: {len(ohlcv_buffer[symbol])} records")
 
     logger.info(f"[{symbol}] OHLCV updated: {kline_data}")
 
@@ -307,7 +357,12 @@ def main():
                 logger.error(f"❌ Failed to start WebSocket for {symbol}: {e}")
                 send_scraper_notification(f"❌ Failed to start WebSocket for {symbol}")
 
-        # 👁️ Watchdog loop
+        # Send startup notification
+        send_scraper_notification(f"🚀 **Data Scraper Started**\n📊 Monitoring {len(symbols)} symbols\n⏰ Save interval: 5 minutes")
+        logger.info(f"🚀 Scraper fully started - monitoring {len(symbols)} symbols with 5-minute save intervals")
+
+        # 👁️ Watchdog loop with save counter
+        save_cycle = 0
         while running:
             # Check if no kline messages have been received in the last 60 seconds
             if time.time() - last_kline_time > 60:
@@ -315,7 +370,10 @@ def main():
 
             # Perform periodic tasks
             check_and_pause_if_bucket_full()  # Check if the bucket is full
-            sleep_until_next_interval(interval_sec=300)  # Sync to the next interval
+            sleep_until_next_interval(interval_sec=300)  # Sleep for 5 minutes
+            
+            save_cycle += 1
+            logger.info(f"🔄 Starting save cycle #{save_cycle}")
             save_all_to_parquet()  # Save OHLCV data periodically
             save_ohlcv_buffer_to_disk()  # Periodically save buffer to disk
     except Exception as e:
@@ -323,6 +381,15 @@ def main():
         send_scraper_notification(f"❌ **Scraper Error**: {e}")
     finally:
         logger.info("🔻 Shutting down gracefully.")
+        
+        # Save any remaining data before shutdown
+        try:
+            logger.info("💾 Saving remaining data before shutdown...")
+            save_all_to_parquet()
+            save_ohlcv_buffer_to_disk()
+            logger.info("✅ Final save completed")
+        except Exception as save_error:
+            logger.error(f"❌ Error during final save: {save_error}")
         
         # Calculate session statistics
         try:
