@@ -21,11 +21,16 @@ class LocalDataLoader:
         
         Args:
             data_directory: Path to the directory containing parquet files.
-                           If None, uses default data collector output directory.
+                           If None, uses configuration from config.py.
         """
         if data_directory is None:
-            # Default to data collector's output directory
-            self.data_directory = Path(__file__).parent.parent / "data_collector" / "data" / "scraped_data" / "parquet_files"
+            # Use configuration from config.py
+            try:
+                from src.config import PARQUET_DATA_DIR
+                self.data_directory = Path(PARQUET_DATA_DIR)
+            except ImportError:
+                # Fallback to default path
+                self.data_directory = Path(__file__).parent.parent.parent / "data" / "scraped_data" / "parquet_files"
         else:
             self.data_directory = Path(data_directory)
         

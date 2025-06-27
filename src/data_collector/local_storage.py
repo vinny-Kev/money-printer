@@ -159,10 +159,10 @@ def save_parquet_file(data, filename, symbol=None):
             from src.config import USE_GOOGLE_DRIVE
             if USE_GOOGLE_DRIVE:
                 logger.info(f"🔄 Uploading {filename} to Google Drive...")
-                from src.drive_manager import DriveManager
+                from src.drive_manager import EnhancedDriveManager
                 
                 # Initialize drive manager and upload
-                drive_manager = DriveManager()
+                drive_manager = EnhancedDriveManager()
                 upload_result = drive_manager.upload_file_sync(filepath, f"{symbol}/{filename}" if symbol else filename)
                 
                 if upload_result:
@@ -223,6 +223,7 @@ def list_parquet_files(symbol=None):
                     files.append({
                         'filename': filename,
                         'path': full_path,
+                        'full_path': full_path,  # Add this for compatibility
                         'relative_path': rel_path,
                         'size': os.path.getsize(full_path),
                         'modified': datetime.fromtimestamp(os.path.getmtime(full_path))

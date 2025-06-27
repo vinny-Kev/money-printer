@@ -880,6 +880,42 @@ class EnhancedDriveManager:
         
         if self.batch_manager:
             self.batch_manager.stop()
+    
+    def list_files_in_folder(self, folder_id: str = None) -> List[Dict]:
+        """List all files in the Google Drive folder"""
+        if not self.sync_enabled or not self.authenticated:
+            return []
+        
+        try:
+            search_folder_id = folder_id or self.folder_id
+            
+            # Get all files in the folder
+            query = f"'{search_folder_id}' in parents and trashed=false"
+            results = self.service.files().list(
+                q=query,
+                fields="files(id, name, size, modifiedTime, mimeType, parents)"
+            ).execute()
+            
+            files = results.get('files', [])
+            
+            # Format file information
+            file_list = []
+            for file_info in files:
+                file_list.append({
+                    'id': file_info.get('id'),
+                    'name': file_info.get('name'),
+                    'size': int(file_info.get('size', 0)) if file_info.get('size') else 0,
+                    'modified': file_info.get('modifiedTime'),
+                    'mimeType': file_info.get('mimeType'),
+                    'parents': file_info.get('parents', [])
+                })
+            
+            logger.debug(f"Listed {len(file_list)} files from Google Drive folder")
+            return file_list
+            
+        except Exception as e:
+            logger.error(f"Failed to list files in folder {search_folder_id}: {e}")
+            return []
 
 # Global instance
 _drive_manager = None
