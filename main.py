@@ -1,7 +1,8 @@
 """
 Money Printer - Automated Crypto Trading System
 Main entry point for the trading system with multiple modules.
-Production Ready - Version 1.0.1
+Production Ready - Version 1.0.1 - Railway Deployment Optimized
+Final Production Release: June 27, 2025
 """
 import os
 import sys
