@@ -19,7 +19,7 @@ xgboost>=1.7.0
 
 # Technical analysis
 pandas-ta>=0.3.14b
-TA-Lib>=0.4.25
+pandas-ta>=0.3.14b0
 
 # Data storage
 pyarrow>=12.0.0

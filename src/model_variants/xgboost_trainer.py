@@ -13,14 +13,14 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.utils.class_weight import compute_sample_weight
 import logging
-from model_training.local_data_loader import fetch_parquet_data_from_local
-from model_training.common import preprocess_data, save_model
+from src.model_training.local_data_loader import fetch_parquet_data_from_local
+from src.model_training.common import preprocess_data, save_model
 from src.model_training.trainer_diagnostics import TrainerDiagnostics
 from src.trading_stats import get_stats_manager, TrainingMetrics
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from config import XGBOOST_PARAMS, get_model_path, TRAIN_TEST_SPLIT
-from discord_notifications import send_xgb_trainer_notification
+from src.config import XGBOOST_PARAMS, get_model_path, TRAIN_TEST_SPLIT
+from src.discord_notifications import send_xgb_trainer_notification
 
 # --- CONFIG ---
 MODEL_OUT_PATH = get_model_path("xgboost", "trained_model.pkl")

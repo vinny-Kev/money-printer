@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-06-27T14:33:19.686577",
+  "status": "MOSTLY_READY",
+  "tests_passed": 6,
+  "tests_total": 7,
+  "validation_time": 3.0,
+  "test_results": {
+    "Requirements & Dependencies": true,
+    "Configuration": true,
+    "Technical Indicators": false,
+    "Model Training": true,
+    "Discord Bot Structure": true,
+    "Data Integration": true,
+    "Safety & Monitoring": true
+  },
+  "deployment_recommendation": "\u26a0\ufe0f Review issues and deploy with caution"
+}

@@ -43,10 +43,20 @@ schedule>=1.2.0
 seaborn>=0.12.2
 plotly>=5.15.0
 
-# System monitoring
+# System monitoring (optional but helpful)
 psutil>=5.9.0
 
-# Additional performance packages
+# JSON handling for complex data
 ujson>=5.7.0
+
+# Async utilities
+asyncio-throttle>=1.0.2
+
+# Additional data processing
 scipy>=1.10.0,<1.12.0
+
+# Time handling
 python-dateutil>=2.8.2
+
+# Environment detection
+distro>=1.8.0

@@ -10,7 +10,7 @@ from binance.client import Client
 from binance.enums import *
 from binance.exceptions import BinanceAPIException
 from dotenv import load_dotenv
-import talib
+from .technical_indicators import TechnicalIndicators, calculate_rsi_macd
 import sys
 import pickle
 from typing import Dict, List, Optional, Tuple, Any
@@ -661,32 +661,22 @@ def fetch_top_200_ohlcv():
 
 def calculate_rsi_macd(df):
     """
-    Calculate RSI, MACD, and other features for the given DataFrame using TA-Lib.
-    Adds 'rsi', 'macd', 'macd_signal', 'macd_hist', and other required features to the DataFrame.
+    Calculate RSI, MACD, and other features for the given DataFrame using pandas_ta.
+    Adds technical indicators and additional features required by the model.
     """
     try:
-        # Calculate RSI and MACD
-        df["rsi"] = talib.RSI(df["close"], timeperiod=14)
-        df["macd"], df["macd_signal"], df["macd_hist"] = talib.MACD(
-            df["close"], fastperiod=12, slowperiod=26, signalperiod=9
-        )
+        # Use the new technical indicators module
+        indicators = TechnicalIndicators()
+        df = indicators.calculate_all_indicators(df)
 
-        # Add additional features required by the model
-        df["price_volume_corr"] = df["close"].rolling(window=10).corr(df["volume"])
-        df["open_close_diff"] = df["open"] - df["close"]
-
-        # Add missing features
-        df["volume_change"] = df["volume"].pct_change().fillna(0)  # Percentage change in volume
-        df["volume_zscore"] = (df["volume"] - df["volume"].rolling(window=10).mean()) / df["volume"].rolling(window=10).std()
-        df["volume_zscore"] = df["volume_zscore"].fillna(0)  # Handle NaN values
-
-        # Assign a unique ID for each symbol (if needed)
-        symbol_mapping = {symbol: idx for idx, symbol in enumerate(df["symbol"].unique())}
-        df["symbol_id"] = df["symbol"].map(symbol_mapping)
+        # Add symbol mapping if needed
+        if 'symbol' in df.columns:
+            symbol_mapping = {symbol: idx for idx, symbol in enumerate(df["symbol"].unique())}
+            df["symbol_id"] = df["symbol"].map(symbol_mapping)
 
         return df
     except Exception as e:
-        logger.error(f"Error calculating RSI, MACD, and additional features: {e}")
+        logger.error(f"Error calculating technical indicators and features: {e}")
         return df
 
 
@@ -1142,6 +1132,7 @@ def run_single_trade():
         # Apply volatility and safety filters
         clean_print("Applying safety filters...", "INFO")
         filtered_symbols = []
+        affordable_symbols = []
         
         for symbol in df['symbol'].unique():
             symbol_df = df[df['symbol'] == symbol].copy()
@@ -1161,6 +1152,15 @@ def run_single_trade():
                 logger.debug(f"Cannot trade {symbol}: {symbol_reason}")
                 continue
             
+            # Check if we can afford this symbol (especially important for small balances)
+            current_price = symbol_df['close'].iloc[-1] if not symbol_df.empty else 0
+            if current_price > 0:
+                can_afford, afford_reason, afford_info = safety_mgr.can_afford_symbol(symbol, current_price, balance)
+                if not can_afford:
+                    logger.debug(f"Cannot afford {symbol}: {afford_reason}")
+                    continue
+                affordable_symbols.append(symbol)
+            
             # Add volatility info to dataframe
             df.loc[df['symbol'] == symbol, 'volatility'] = volatility
             filtered_symbols.append(symbol)
@@ -1172,7 +1172,15 @@ def run_single_trade():
             clean_print("No symbols passed safety filters", "WARNING")
             return {"error": "No symbols passed safety filters"}
         
-        clean_print(f"Safety filters passed: {len(filtered_symbols)} symbols", "SUCCESS")
+        # Log affordability filtering results for small balances
+        if balance <= 50:  # Show affordability info for small balances
+            filtered_count = len(filtered_symbols)
+            affordable_count = len(affordable_symbols)
+            if affordable_count < filtered_count:
+                unaffordable_count = filtered_count - affordable_count
+                clean_print(f"Small balance detected (${balance:.2f}): {unaffordable_count} symbols filtered due to high minimum order requirements", "INFO")
+        
+        clean_print(f"Safety filters passed: {len(filtered_symbols)} symbols ({len(affordable_symbols)} affordable)", "SUCCESS")
         
         # Filter trades by confidence threshold
         df = df[df["confidence"] > CONFIDENCE_THRESHOLD]

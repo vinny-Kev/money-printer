@@ -142,10 +142,9 @@ pydrive2==1.20.0
 # Voice support for Discord (optional but recommended)
 PyNaCl==1.5.0
 
-# Technical Analysis Library (TA-Lib)
-# Note: ta-lib requires system-level installation in Docker
-# Added in Dockerfile: apt-get install -y libta-lib-dev
-TA-Lib==0.4.24
+# Technical Analysis Library (pandas_ta)
+# Pure Python implementation - no system dependencies needed
+pandas-ta==0.3.14b0
 
 # Trading and Technical Analysis
 python-binance==1.0.19

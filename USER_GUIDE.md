@@ -61,17 +61,23 @@ View win rate, profit/loss, and optimize strategy.
 |---------|-------------|---------|
 | `/train_model [type]` | Train trading models | `/train_model random_forest` |
 
-### 💰 Trading
+### � Performance & Analytics
+| Command | Description | Example |
+|---------|-------------|---------|
+| `/status` | System status with daily PnL | `/status` |
+| `/performance [period]` | Detailed performance stats | `/performance monthly` |
+| `/trading_stats` | Trading performance overview | `/trading_stats` |
+| `/balance` | Check current USDT balance | `/balance` |
+
+### � Trading
 | Command | Description | Example |
 |---------|-------------|---------|
 | `/start_dry_trade [num]` | Paper trading (1-10 trades) | `/start_dry_trade 5` |
-| `/balance` | Check USDT balance | `/balance` |
-| `/trading_stats` | View performance stats | `/trading_stats` |
+| `/start_testnet_trade [num]` | Testnet trading (1-5 trades) | `/start_testnet_trade 3` |
 
-### 🔧 System
+### ⚙️ System
 | Command | Description | Example |
 |---------|-------------|---------|
-| `/status` | System health check | `/status` |
 | `/ping` | Bot responsiveness | `/ping` |
 | `/help` | Show all commands | `/help` |
 | `/deploy_test` | Test Railway deployment | `/deploy_test` |
@@ -84,11 +90,25 @@ View win rate, profit/loss, and optimize strategy.
 3. **Verify permissions** (only you can execute trading commands)
 
 ### 🔄 Daily Trading Routine
-1. **Start scraper**: `/start_scraper` (morning)
-2. **Train model**: `/train_model random_forest` (after data collection)
-3. **Paper trade**: `/start_dry_trade 3` (test strategy)
-4. **Monitor results**: `/trading_stats` (track performance)
-5. **Stop scraper**: `/stop_scraper` (evening to save resources)
+1. **Check status**: `/status` (view balance and daily PnL)
+2. **Start scraper**: `/start_scraper` (morning)
+3. **Train model**: `/train_model random_forest` (after data collection)
+4. **Paper trade**: `/start_dry_trade 3` (test strategy)
+5. **Testnet trade**: `/start_testnet_trade 2` (real API testing)
+6. **Monitor results**: `/performance daily` (track detailed performance)
+7. **Stop scraper**: `/stop_scraper` (evening to save resources)
+
+### 📊 Performance Tracking
+- **Daily PnL**: Resets every 24 hours, shows today's profit/loss
+- **Daily Win Rate**: Percentage of winning trades today
+- **Total PnL**: All-time cumulative profit/loss
+- **Balance Tracking**: Real-time USDT balance display
+- **Performance Periods**: View stats for daily, weekly, monthly, yearly, or all-time
+
+### 🧪 Testing Progression
+1. **Paper Trading** - Pure simulation, no API calls
+2. **Testnet Trading** - Real Binance API on testnet (test money)
+3. **Live Trading** - Real money (when ready and confident)
 
 ### 📈 Performance Optimization
 - **Monitor win rate** with `/trading_stats`
@@ -106,7 +126,8 @@ View win rate, profit/loss, and optimize strategy.
 
 ### ⚠️ Important Safety Rules
 - 🚨 **Always start with paper trading**
-- 🚨 **Never skip the testing phase**
+- 🚨 **Test with testnet before live trading**
+- 🚨 **Never skip the testing phases**
 - 🚨 **Monitor performance regularly**
 - 🚨 **Start with small amounts for live trading**
 

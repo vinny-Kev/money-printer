@@ -47,6 +47,10 @@ class TradingSafetyManager:
         self.daily_trade_count = 0
         self.hourly_trade_count = 0
         self.total_bot_pnl = 0.0
+        self.daily_pnl = 0.0  # Daily PnL (resets each day)
+        self.daily_winning_trades = 0
+        self.daily_losing_trades = 0
+        self.starting_balance = 1000.0  # Track starting balance for percentage calculations
         self.last_hour_reset = datetime.utcnow().replace(minute=0, second=0, microsecond=0)
         self.last_day_reset = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
         
@@ -67,6 +71,10 @@ class TradingSafetyManager:
                 # Restore counters
                 self.daily_trade_count = data.get('daily_trade_count', 0)
                 self.total_bot_pnl = data.get('total_bot_pnl', 0.0)
+                self.daily_pnl = data.get('daily_pnl', 0.0)
+                self.daily_winning_trades = data.get('daily_winning_trades', 0)
+                self.daily_losing_trades = data.get('daily_losing_trades', 0)
+                self.starting_balance = data.get('starting_balance', 1000.0)
                 
                 # Restore trade states
                 for symbol, state_data in data.get('trade_states', {}).items():
@@ -91,6 +99,10 @@ class TradingSafetyManager:
             state_data = {
                 'daily_trade_count': self.daily_trade_count,
                 'total_bot_pnl': self.total_bot_pnl,
+                'daily_pnl': self.daily_pnl,
+                'daily_winning_trades': self.daily_winning_trades,
+                'daily_losing_trades': self.daily_losing_trades,
+                'starting_balance': self.starting_balance,
                 'last_save': datetime.utcnow().isoformat(),
                 'trade_states': {}
             }
@@ -143,10 +155,13 @@ class TradingSafetyManager:
         # Reset daily counters
         if now >= self.last_day_reset + timedelta(days=1):
             self.daily_trade_count = 0
+            self.daily_pnl = 0.0
+            self.daily_winning_trades = 0
+            self.daily_losing_trades = 0
             for state in self.trade_states.values():
                 state.daily_trade_count = 0
             self.last_day_reset = now.replace(hour=0, minute=0, second=0, microsecond=0)
-            logger.info("🔄 Daily trade counters reset")
+            logger.info("🔄 Daily trade counters and PnL reset")
     
     def _cleanup_locks(self):
         """Remove expired symbol locks"""
@@ -204,7 +219,7 @@ class TradingSafetyManager:
         return round(sl_percent, 4)
     
     def calculate_position_size(self, balance: float, confidence: float, volatility: float) -> float:
-        """Calculate safe position size with volatility adjustment"""
+        """Calculate safe position size with volatility adjustment for all balance levels"""
         # Base position size from config
         base_size_percent = self.config.max_position_size_percent / 100
         
@@ -217,9 +232,95 @@ class TradingSafetyManager:
         # Calculate final position size
         position_size = balance * base_size_percent * confidence_multiplier * volatility_multiplier
         
-        # Ensure minimum position size
-        min_position = 10.0  # $10 minimum
-        return max(min_position, position_size)
+        # Special handling for small balances ($5-50)
+        if balance <= 50:
+            # For small balances, use a more aggressive position sizing to make trades possible
+            min_position = max(3.0, balance * 0.2)  # Use at least 20% of balance, minimum $3
+            # Cap at 80% of balance for very small accounts
+            max_position = balance * 0.8
+            position_size = max(min_position, min(position_size, max_position))
+        else:
+            # Ensure minimum position size for larger balances
+            min_position = 10.0  # $10 minimum for balances > $50
+            position_size = max(min_position, position_size)
+        
+        return position_size
+    
+    def can_afford_symbol(self, symbol: str, symbol_price: float, balance: float) -> Tuple[bool, str, Dict[str, float]]:
+        """Check if user can afford to trade a symbol based on minimum order requirements"""
+        try:
+            # Get symbol information from exchange (this would need to be passed in or fetched)
+            # For now, we'll use common minimum quantities for popular coins
+            common_min_qtys = {
+                # Major coins
+                'BTCUSDT': 0.00001,   # ~$0.50 min
+                'ETHUSDT': 0.0001,    # ~$0.30 min  
+                'BNBUSDT': 0.001,     # ~$0.50 min
+                'SOLUSDT': 0.001,     # ~$0.20 min
+                'XRPUSDT': 1.0,       # ~$0.60 min
+                
+                # Top altcoins  
+                'ADAUSDT': 1.0,       # ~$0.40 min
+                'DOTUSDT': 0.1,       # ~$0.50 min
+                'LINKUSDT': 0.01,     # ~$0.20 min
+                'LTCUSDT': 0.001,     # ~$0.10 min
+                'AVAXUSDT': 0.01,     # ~$0.40 min
+                'ATOMUSDT': 0.01,     # ~$0.10 min
+                'MATICUSDT': 1.0,     # ~$0.50 min
+                'UNIUSDT': 0.01,      # ~$0.10 min
+                'FILUSDT': 0.01,      # ~$0.50 min
+                'VETUSDT': 10.0,      # ~$0.30 min
+                
+                # Popular mid-caps
+                'SHIBUSDT': 400000.0, # ~$8.00 min (realistic high MOQ)
+                'DOGEUSDT': 1.0,      # ~$0.40 min
+                'TRXUSDT': 1.0,       # ~$0.20 min
+                'NEARUSDT': 0.1,      # ~$0.50 min
+                'FTMUSDT': 1.0,       # ~$0.80 min
+                'SANDUSDT': 0.1,      # ~$0.30 min
+                'MANAUSDT': 0.1,      # ~$0.50 min
+                'CHZUSDT': 1.0,       # ~$0.10 min
+                'ENJUSDT': 0.1,       # ~$0.20 min
+                'GALAUSDT': 1.0,      # ~$0.04 min
+                
+                # Lower cap coins (often higher MOQ)
+                'PEPEUSDT': 5000000.0,  # ~$5.00 min (realistic high MOQ meme coin)
+                'FLOKIUSDT': 50000.0,   # ~$10.00 min (realistic high MOQ)
+                'BONKUSDT': 200000.0,   # ~$6.00 min (realistic MOQ)
+            }
+            
+            # Use conservative default minimum for unknown symbols
+            # Default to 0.01 which works for most mid-cap coins
+            min_qty = common_min_qtys.get(symbol, 0.01)
+            min_order_value = min_qty * symbol_price
+            
+            # Add a buffer for fees and slippage (0.2% total)
+            required_balance = min_order_value * 1.002
+            
+            # Calculate what percentage of balance this would use
+            balance_percent = (required_balance / balance) * 100 if balance > 0 else 100
+            
+            # Prepare info for logging
+            affordability_info = {
+                'min_qty': min_qty,
+                'min_order_value': min_order_value,
+                'required_balance': required_balance,
+                'balance_percent': balance_percent,
+                'symbol_price': symbol_price
+            }
+            
+            if required_balance > balance:
+                return False, f"Minimum order (${min_order_value:.2f}) exceeds balance (${balance:.2f})", affordability_info
+            
+            # For very small balances, warn if single trade would use >50% of balance
+            if balance <= 20 and balance_percent > 50:
+                return False, f"Trade would use {balance_percent:.1f}% of small balance", affordability_info
+            
+            return True, f"Affordable - uses {balance_percent:.1f}% of balance", affordability_info
+            
+        except Exception as e:
+            logger.error(f"Error checking affordability for {symbol}: {e}")
+            return False, f"Error checking affordability: {e}", {}
     
     def check_volatility_filter(self, df: pd.DataFrame, symbol: str) -> Tuple[bool, float]:
         """Check if symbol passes volatility filter using ATR"""
@@ -395,6 +496,13 @@ class TradingSafetyManager:
             # Update PnL tracking
             state.total_pnl += pnl
             self.total_bot_pnl += pnl
+            self.daily_pnl += pnl
+            
+            # Update win/loss counters
+            if was_successful:
+                self.daily_winning_trades += 1
+            else:
+                self.daily_losing_trades += 1
             
             # Update consecutive losses
             if was_successful:
@@ -438,10 +546,27 @@ class TradingSafetyManager:
         active_trades = sum(1 for state in self.trade_states.values() if state.is_active)
         locked_symbols = sum(1 for state in self.trade_states.values() if state.locked_until and datetime.utcnow() < state.locked_until)
         
+        # Calculate daily win rate
+        daily_total_trades = self.daily_winning_trades + self.daily_losing_trades
+        daily_win_rate = (self.daily_winning_trades / daily_total_trades * 100) if daily_total_trades > 0 else 0
+        
+        # Calculate daily PnL percentage
+        daily_pnl_percent = (self.daily_pnl / self.starting_balance * 100) if self.starting_balance > 0 else 0
+        
+        # Calculate total PnL percentage
+        total_pnl_percent = (self.total_bot_pnl / self.starting_balance * 100) if self.starting_balance > 0 else 0
+        
         return {
             "bot_status": "ACTIVE" if self.can_trade_now()[0] else "PAUSED",
             "uptime_hours": (datetime.utcnow() - self.bot_start_time).total_seconds() / 3600,
             "total_pnl": self.total_bot_pnl,
+            "total_pnl_percent": total_pnl_percent,
+            "daily_pnl": self.daily_pnl,
+            "daily_pnl_percent": daily_pnl_percent,
+            "daily_win_rate": daily_win_rate,
+            "daily_winning_trades": self.daily_winning_trades,
+            "daily_losing_trades": self.daily_losing_trades,
+            "starting_balance": self.starting_balance,
             "daily_trades": f"{self.daily_trade_count}/{self.config.max_daily_trades}",
             "hourly_trades": f"{self.hourly_trade_count}/{self.config.max_hourly_trades}",
             "active_trades": active_trades,

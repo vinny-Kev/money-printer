@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 import logging
-import talib
-import pandas_ta as ta
+import ta
+from src.trading_bot.technical_indicators import TechnicalIndicators
 
 logger = logging.getLogger("Common")
 
@@ -18,31 +18,23 @@ def preprocess_data(df):
     df = df.sort_values(by=["symbol", "timestamp"])
     df = df.dropna(axis=1, how="all")
 
-    # Add derived technical indicators
-    df["rsi"] = ta.rsi(df["close"], length=14)
-    
-    # Handle multi-column output from ta.stochrsi
-    stoch_rsi = ta.stochrsi(df["close"], length=14)
-    df["stoch_rsi_k"] = stoch_rsi["STOCHRSIk_14_14_3_3"]
-    df["stoch_rsi_d"] = stoch_rsi["STOCHRSId_14_14_3_3"]
-    
-    df["roc"] = ta.roc(df["close"], length=10)
-    df["ema_9"] = ta.ema(df["close"], length=9)
-    df["ema_21"] = ta.ema(df["close"], length=21)
-    df["ema_50"] = ta.ema(df["close"], length=50)
-    df["macd"] = ta.macd(df["close"], fast=12, slow=26, signal=9)["MACD_12_26_9"]
-    df["parabolic_sar"] = ta.psar(df["high"], df["low"], df["close"])["PSARl_0.02_0.2"]
-    
-    # Handle multi-column output from ta.bbands
-    bbands = ta.bbands(df["close"], length=20)
-    df["upper_band"] = bbands["BBU_20_2.0"]
-    df["middle_band"] = bbands["BBM_20_2.0"]
-    df["lower_band"] = bbands["BBL_20_2.0"]
-    
-    df["atr"] = ta.atr(df["high"], df["low"], df["close"], length=14)
-    df["volatility"] = df["close"].pct_change().rolling(window=10).std()
-    df["obv"] = ta.obv(df["close"], df["volume"])
-    df["volume_change"] = df["volume"].pct_change()
+    # Use the new technical indicators module for all calculations
+    try:
+        indicators = TechnicalIndicators()
+        df = indicators.calculate_all_indicators(df)
+        
+        # Additional derived features
+        df["volatility"] = df["close"].pct_change().rolling(window=10).std()
+        df["parabolic_sar"] = ta.trend.PSARIndicator(df["high"], df["low"], df["close"]).psar()
+        
+    except Exception as e:
+        logger.warning(f"Error calculating technical indicators, using fallbacks: {e}")
+        # Fallback calculations if the module fails
+        df["rsi"] = ta.momentum.RSIIndicator(df["close"], window=14).rsi()
+        df["macd"] = ta.trend.MACD(df["close"], window_fast=12, window_slow=26, window_sign=9).macd()
+        df["ema_9"] = ta.trend.EMAIndicator(df["close"], window=9).ema_indicator()
+        df["ema_21"] = ta.trend.EMAIndicator(df["close"], window=21).ema_indicator()
+        df["volatility"] = df["close"].pct_change().rolling(window=10).std()
 
     # Add time-based features
     df["timestamp"] = pd.to_datetime(df["timestamp"], unit="ms")
