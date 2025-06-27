@@ -119,7 +119,7 @@ def check_storage_space():
 
 def save_parquet_file(data, filename, symbol=None):
     """
-    Save parquet data to local storage.
+    Save parquet data to local storage and upload to Google Drive if enabled.
     :param data: DataFrame or bytes data to save
     :param filename: Name of the file to save
     :param symbol: Optional symbol name for organization
@@ -133,7 +133,7 @@ def save_parquet_file(data, filename, symbol=None):
         else:
             filepath = os.path.join(PARQUET_DATA_DIR, filename)
         
-        # Save the data
+        # Save the data locally first
         if isinstance(data, pd.DataFrame):
             data.to_parquet(filepath, index=False, compression="snappy")
         elif isinstance(data, bytes):
@@ -148,10 +148,32 @@ def save_parquet_file(data, filename, symbol=None):
                 raise ValueError(f"Unsupported data type: {type(data)}")
         
         file_size = os.path.getsize(filepath)
-        logger.info(f"✅ Saved parquet file: {filename} ({file_size / (1024 * 1024):.2f} MB)")
+        logger.info(f"✅ Saved parquet file locally: {filename} ({file_size / (1024 * 1024):.2f} MB)")
         
         # Check storage after saving
         check_storage_space()
+        
+        # Upload to Google Drive if enabled
+        try:
+            # Import here to avoid circular imports
+            from src.config import USE_GOOGLE_DRIVE
+            if USE_GOOGLE_DRIVE:
+                logger.info(f"🔄 Uploading {filename} to Google Drive...")
+                from src.drive_manager import DriveManager
+                
+                # Initialize drive manager and upload
+                drive_manager = DriveManager()
+                upload_result = drive_manager.upload_file_sync(filepath, f"{symbol}/{filename}" if symbol else filename)
+                
+                if upload_result:
+                    logger.info(f"☁️ Successfully uploaded {filename} to Google Drive")
+                else:
+                    logger.warning(f"⚠️ Failed to upload {filename} to Google Drive")
+            else:
+                logger.debug("Google Drive integration disabled")
+        except Exception as drive_error:
+            logger.warning(f"⚠️ Google Drive upload failed for {filename}: {drive_error}")
+            # Don't fail the entire operation if Drive upload fails
         
         return filepath
         

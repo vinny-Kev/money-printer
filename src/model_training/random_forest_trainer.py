@@ -227,13 +227,23 @@ def main():
     # Send comprehensive training completion notification
     notification_msg = f"""🎯 **Random Forest Training Complete!**
     
-📊 **Final Results:**
-• Test Accuracy: {test_acc:.4f}
-• Test F1 Score: {test_f1:.4f}  
-• Test AUC-ROC: {test_auc:.4f}
-• Model saved to: {MODEL_OUT_PATH}
+📊 **Comprehensive Training Results:**
+• Test Accuracy: {test_acc:.4f} | Train Accuracy: {train_acc:.4f}
+• Test Precision: {test_precision:.4f} | Train Precision: {train_precision:.4f}
+• Test Recall: {test_recall:.4f} | Train Recall: {train_recall:.4f}
+• Test F1 Score: {test_f1:.4f} | Train F1 Score: {train_f1:.4f}
+• Test AUC-ROC: {test_auc:.4f} | Train AUC-ROC: {train_auc:.4f}
 
-🌲 The Random Forest is ready for battle!"""
+📈 **Model Performance:**
+• Training Time: {training_time:.2f} seconds
+• Dataset Size: {X.shape[0]} samples, {X.shape[1]} features
+• Train/Test Split: {len(train_groups)}/{len(test_groups)} time groups
+
+💾 **Deployment Ready:**
+• Model saved to: {MODEL_OUT_PATH}
+• Expected features saved for trading compatibility
+
+🌲 The Random Forest is ready for battle! Higher test scores = better trading performance."""
     
     send_rf_trainer_notification(notification_msg)
 

@@ -66,7 +66,7 @@ SECRETS_DIR.mkdir(parents=True, exist_ok=True)
 DEFAULT_SYMBOLS = ["BTCUSDT", "ETHUSDT", "SOLUSDT", "ADAUSDT", "BNBUSDT"]
 KLINE_INTERVAL = "1m"
 MAX_BUFFER_SIZE = 1000
-SAVE_INTERVAL_SECONDS = 300
+SAVE_INTERVAL_SECONDS = 60  # Save every 60 seconds for testing (was 300)
 
 # Storage Settings
 MAX_LOCAL_STORAGE_GB = 10

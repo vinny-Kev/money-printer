@@ -358,8 +358,8 @@ def main():
                 send_scraper_notification(f"❌ Failed to start WebSocket for {symbol}")
 
         # Send startup notification
-        send_scraper_notification(f"🚀 **Data Scraper Started**\n📊 Monitoring {len(symbols)} symbols\n⏰ Save interval: 5 minutes")
-        logger.info(f"🚀 Scraper fully started - monitoring {len(symbols)} symbols with 5-minute save intervals")
+        send_scraper_notification(f"🚀 **Data Scraper Started**\n📊 Monitoring {len(symbols)} symbols\n⏰ Save interval: 60 seconds (testing mode)")
+        logger.info(f"🚀 Scraper fully started - monitoring {len(symbols)} symbols with 60-second save intervals")
 
         # 👁️ Watchdog loop with save counter
         save_cycle = 0
@@ -370,7 +370,7 @@ def main():
 
             # Perform periodic tasks
             check_and_pause_if_bucket_full()  # Check if the bucket is full
-            sleep_until_next_interval(interval_sec=300)  # Sleep for 5 minutes
+            sleep_until_next_interval(interval_sec=60)  # Sleep for 60 seconds (testing mode)
             
             save_cycle += 1
             logger.info(f"🔄 Starting save cycle #{save_cycle}")
