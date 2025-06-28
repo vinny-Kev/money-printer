@@ -158,24 +158,30 @@ def save_parquet_file(data, filename, symbol=None):
             # Import here to avoid circular imports
             from src.config import USE_GOOGLE_DRIVE
             if USE_GOOGLE_DRIVE:
-                logger.info(f"🔄 Queuing {filename} for Google Drive upload...")
+                logger.info(f"🔄 Attempting Google Drive upload for {filename}...")
                 from src.drive_manager import EnhancedDriveManager
-                from pathlib import Path
                 
-                # Initialize drive manager and upload
+                # Initialize drive manager
                 drive_manager = EnhancedDriveManager()
-                upload_result = drive_manager.upload_file_async(
-                    local_path=Path(filepath), 
-                    category="scraped_data",
-                    subcategory=symbol.lower() if symbol else None,
-                    priority=1,
-                    date_based=True
+                
+                # Use sync upload since we're in a sync context
+                import asyncio
+                try:
+                    # Create event loop if one doesn't exist
+                    loop = asyncio.get_event_loop()
+                except RuntimeError:
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                
+                # Upload the file
+                upload_result = loop.run_until_complete(
+                    drive_manager.upload_file_async(filepath, filename)
                 )
                 
                 if upload_result:
-                    logger.info(f"☁️ Successfully queued {filename} for Google Drive upload")
+                    logger.info(f"☁️ Successfully uploaded {filename} to Google Drive")
                 else:
-                    logger.warning(f"⚠️ Failed to queue {filename} for Google Drive upload")
+                    logger.warning(f"⚠️ Failed to upload {filename} to Google Drive")
             else:
                 logger.debug("Google Drive integration disabled")
         except Exception as drive_error:

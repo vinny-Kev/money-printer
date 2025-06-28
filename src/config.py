@@ -80,6 +80,7 @@ TRAIN_TEST_SPLIT = 0.7
 RANDOM_STATE = 42
 
 # Trading Settings
+TRADING_ENABLED = os.getenv("TRADING_ENABLED", "False").lower() == "true"  # Master trading switch
 PAPER_TRADING = False  # Set to False for live trading - USING LIVE BINANCE API
 live_trading = not PAPER_TRADING  # For compatibility with trade_runner.py
 DEFAULT_TRADE_AMOUNT = 100  # USDT

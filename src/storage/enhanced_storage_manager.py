@@ -10,8 +10,16 @@ from typing import Optional, Dict, List, Any
 from datetime import datetime
 import pandas as pd
 from pathlib import Path
+import sys
+import os
 
-from ..drive_manager import EnhancedDriveManager as DriveManager
+# Add parent directory to path for absolute imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+from drive_manager import EnhancedDriveManager as DriveManager
 
 logger = logging.getLogger(__name__)
 
@@ -98,8 +106,12 @@ class EnhancedStorageManager:
         # Try Google Drive if available
         if self.drive_available and self.drive_manager:
             try:
-                # Save as parquet for efficiency
-                temp_path = f"/tmp/{filename}"
+                import tempfile
+                
+                # Save as parquet for efficiency using proper temp directory
+                with tempfile.NamedTemporaryFile(suffix='.parquet', delete=False) as temp_file:
+                    temp_path = temp_file.name
+                
                 data.to_parquet(temp_path, index=False)
                 
                 success = self.drive_manager.upload_file(temp_path, filename)

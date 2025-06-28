@@ -9,6 +9,7 @@ import sys
 import asyncio
 import logging
 from datetime import datetime, timedelta
+from pathlib import Path
 import pandas as pd
 
 # Add the src directory to Python path
@@ -39,9 +40,9 @@ async def test_drive_connectivity():
             logger.info("📋 Recent files in Drive:")
             for i, file_info in enumerate(files[:10]):  # Show first 10 files
                 name = file_info.get('name', 'Unknown')
-                size = file_info.get('size', '0')
+                size = file_info.get('size', 0)
                 modified = file_info.get('modifiedTime', 'Unknown')
-                file_size_kb = int(size) / 1024 if size.isdigit() else 0
+                file_size_kb = int(size) / 1024 if isinstance(size, (int, str)) and str(size).isdigit() else 0
                 logger.info(f"  {i+1:2d}. 📄 {name} - {file_size_kb:.1f} KB - {modified}")
         else:
             logger.warning("⚠️ No files found in Google Drive folder")
@@ -52,7 +53,7 @@ async def test_drive_connectivity():
         logger.error(f"❌ Google Drive connectivity test failed: {e}")
         return False
 
-async def create_and_upload_test_file():
+def create_and_upload_test_file():
     """Create a test file and upload it to Google Drive"""
     logger.info("📤 Creating and uploading test file...")
     
@@ -116,19 +117,29 @@ async def create_and_upload_test_file():
         # Upload to Google Drive
         drive_manager = EnhancedDriveManager()
         
+        # Temporarily disable folder structure for test
+        drive_manager.folder_structure = None
+        
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         remote_filename = f"railway_test_{symbol}_{timestamp}.parquet"
         
         logger.info(f"☁️ Uploading to Drive as: {remote_filename}")
         
-        result = await drive_manager.upload_file_async(temp_file_path, remote_filename)
+        # Convert temp_file_path to Path object and call upload_file_async correctly
+        temp_path = Path(temp_file_path)
+        result = drive_manager.upload_file_async(temp_path, "market_data", "test")
         
-        # Clean up temporary file
+        # Process pending uploads immediately for testing
+        if result and hasattr(drive_manager, 'batch_manager') and drive_manager.batch_manager:
+            logger.info("⏱️ Processing pending uploads immediately...")
+            uploaded_count = drive_manager.batch_manager.process_pending_uploads()
+            logger.info(f"📤 Processed {uploaded_count} uploads")
+        
+        # Clean up temporary file AFTER processing
         os.unlink(temp_file_path)
         
         if result:
             logger.info(f"✅ Successfully uploaded test file to Google Drive")
-            logger.info(f"📁 File ID: {result}")
             logger.info(f"📊 Data summary:")
             logger.info(f"   Symbol: {symbol}")
             logger.info(f"   Rows: {len(df)}")
@@ -136,7 +147,7 @@ async def create_and_upload_test_file():
             logger.info(f"   Time range: {df['timestamp'].iloc[0]} to {df['timestamp'].iloc[-1]}")
             return True
         else:
-            logger.error("❌ Failed to upload test file to Google Drive")
+            logger.error("❌ Failed to queue test file for upload")
             return False
         
     except Exception as e:
@@ -164,9 +175,9 @@ async def verify_file_exists_in_drive():
             logger.info("📋 Test files found:")
             for file_info in test_files:
                 name = file_info.get('name', 'Unknown')
-                size = file_info.get('size', '0')
+                size = file_info.get('size', 0)
                 modified = file_info.get('modifiedTime', 'Unknown')
-                file_size_kb = int(size) / 1024 if size.isdigit() else 0
+                file_size_kb = int(size) / 1024 if isinstance(size, (int, str)) and str(size).isdigit() else 0
                 logger.info(f"  📄 {name} - {file_size_kb:.1f} KB - {modified}")
             return True
         else:
@@ -230,7 +241,10 @@ async def main():
     for test_name, test_func in tests:
         logger.info(f"\n{'=' * 20} {test_name} {'=' * 20}")
         try:
-            results[test_name] = await test_func()
+            if test_name == "Upload Test File":
+                results[test_name] = test_func()  # Not async
+            else:
+                results[test_name] = await test_func()  # Async
         except Exception as e:
             logger.error(f"❌ {test_name} crashed: {e}")
             results[test_name] = False

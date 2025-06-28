@@ -164,8 +164,9 @@ class FolderStructure:
 class BatchUploadManager:
     """Manages batch uploads with rate limiting"""
     
-    def __init__(self, drive_service, max_batch_size: int = MAX_BATCH_SIZE):
+    def __init__(self, drive_service, folder_id: str, max_batch_size: int = MAX_BATCH_SIZE):
         self.drive_service = drive_service
+        self.folder_id = folder_id
         self.max_batch_size = max_batch_size
         self.upload_queue = Queue()
         self.is_running = False
@@ -202,6 +203,28 @@ class BatchUploadManager:
         """Add upload task to queue"""
         self.upload_queue.put(task)
         logger.debug(f"📝 Added upload task: {task.drive_path}")
+    
+    def process_pending_uploads(self) -> int:
+        """Process all pending uploads immediately (for testing)"""
+        if self.upload_queue.empty():
+            return 0
+            
+        logger.info("🚀 Processing pending uploads immediately...")
+        
+        # Collect all pending uploads
+        batch = []
+        while not self.upload_queue.empty() and len(batch) < self.max_batch_size:
+            try:
+                task = self.upload_queue.get_nowait()
+                batch.append(task)
+            except:
+                break
+        
+        if batch:
+            success_count = self._process_batch(batch)
+            logger.info(f"✅ Processed {success_count}/{len(batch)} uploads immediately")
+            return success_count
+        return 0
     
     def _batch_worker(self):
         """Worker thread for processing upload batches"""
@@ -457,7 +480,7 @@ class BatchUploadManager:
         """Get parent folder ID for drive path"""
         # This would need to be implemented based on folder structure
         # For now, return root folder ID
-        return GOOGLE_DRIVE_FOLDER_ID
+        return self.folder_id
     
     def get_stats(self) -> Dict:
         """Get upload statistics"""
@@ -539,7 +562,7 @@ class EnhancedDriveManager:
     def _setup_batch_manager(self):
         """Setup batch upload manager"""
         if self.service:
-            self.batch_manager = BatchUploadManager(self.service)
+            self.batch_manager = BatchUploadManager(self.service, self.folder_id)
             self.batch_manager.start()
     
     def _test_connection(self) -> bool:
@@ -560,6 +583,10 @@ class EnhancedDriveManager:
         except Exception as e:
             logger.error(f"Drive connection test failed: {e}")
             return False
+    
+    def test_connection(self) -> bool:
+        """Public method to test Google Drive connection"""
+        return self._test_connection()
     
     def _load_metadata_cache(self):
         """Load metadata cache"""
@@ -622,6 +649,41 @@ class EnhancedDriveManager:
                 
         except Exception as e:
             logger.error(f"Failed to queue upload for {local_path}: {e}")
+            return False
+    
+    def upload_file(self, local_path: str, filename: str) -> bool:
+        """
+        Synchronous file upload method for compatibility with storage manager
+        
+        Args:
+            local_path: Path to the local file
+            filename: Name of the file for Google Drive
+            
+        Returns:
+            True if upload successful, False otherwise
+        """
+        try:
+            from pathlib import Path
+            path_obj = Path(local_path)
+            
+            # Use the async method but process immediately
+            result = self.upload_file_async(
+                path_obj, 
+                "data",  # category
+                "production",  # subcategory
+                priority=1,
+                date_based=True
+            )
+            
+            if result and self.batch_manager:
+                # Process the upload immediately
+                processed = self.batch_manager.process_pending_uploads()
+                return processed > 0
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"❌ Synchronous upload failed for {filename}: {e}")
             return False
     
     def _needs_upload(self, local_path: Path) -> bool:
