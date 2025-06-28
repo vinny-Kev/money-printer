@@ -1,19 +1,10 @@
 {
-  "daily_trade_count": 50,
+  "daily_trade_count": 0,
   "total_bot_pnl": 0.0,
   "daily_pnl": 0.0,
   "daily_winning_trades": 0,
   "daily_losing_trades": 0,
-  "starting_balance": 1000.0,
-  "last_save": "2025-06-27T08:16:03.622179",
-  "trade_states": {
-    "BTCUSDT": {
-      "is_active": true,
-      "last_trade_time": "2025-06-25T14:14:10.422173",
-      "consecutive_losses": 0,
-      "daily_trade_count": 3,
-      "total_pnl": 0.0,
-      "locked_until": null
-    }
-  }
+  "starting_balance": 100.0,
+  "last_save": "2025-06-28T08:00:47.969469",
+  "trade_states": {}
 }

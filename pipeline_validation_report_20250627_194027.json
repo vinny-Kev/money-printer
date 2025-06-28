@@ -1,0 +1,65 @@
+{
+  "validation_summary": {
+    "start_time": "2025-06-27T19:40:25.698378",
+    "end_time": "2025-06-27T19:40:27.703315",
+    "duration_seconds": 2.004937,
+    "total_tests": 7,
+    "passed_tests": 3,
+    "failed_tests": 4
+  },
+  "detailed_results": {
+    "environment": {
+      "status": "PASS",
+      "missing_vars": [],
+      "live_trading_enabled": true,
+      "google_drive_enabled": true,
+      "timestamp": "2025-06-27T19:40:25.722288"
+    },
+    "binance": {
+      "status": "PASS",
+      "connection": true,
+      "usdt_balance": 8.41,
+      "trading_symbols_count": 1465,
+      "account_type": "SPOT",
+      "timestamp": "2025-06-27T19:40:26.989174"
+    },
+    "data_scraping": {
+      "status": "FAIL",
+      "error": "cannot import name 'LocalStorage' from 'data_collector.local_storage' (Z:\\money_printer\\src\\data_collector\\local_storage.py)",
+      "timestamp": "2025-06-27T19:40:27.012818"
+    },
+    "google_drive": {
+      "status": "FAIL",
+      "error": "object list can't be used in 'await' expression",
+      "timestamp": "2025-06-27T19:40:27.135641"
+    },
+    "model_training_data": {
+      "status": "FAIL",
+      "symbols_tested": [
+        "BTCUSDT",
+        "ETHUSDT"
+      ],
+      "symbols_loaded": [],
+      "total_rows": 0,
+      "data_by_symbol": {},
+      "timestamp": "2025-06-27T19:40:27.140663"
+    },
+    "discord": {
+      "status": "PASS",
+      "test_message_sent": true,
+      "timestamp": "2025-06-27T19:40:27.700314"
+    },
+    "trading_readiness": {
+      "status": "FAIL",
+      "live_trading_enabled": true,
+      "failed_checks": [
+        "data_scraping",
+        "model_training_data"
+      ],
+      "usdt_balance": 8.41,
+      "sufficient_balance": true,
+      "ready_for_trading": false,
+      "timestamp": "2025-06-27T19:40:27.701314"
+    }
+  }
+}

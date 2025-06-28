@@ -13,11 +13,13 @@ restartPolicyMaxRetries = 3
 
 [environments.production]
 variables = [
-    "USE_GOOGLE_DRIVE=false",
-    "SYNC_ON_BOOT=false", 
+    "USE_GOOGLE_DRIVE=true",
+    "SYNC_ON_BOOT=true", 
     "ENVIRONMENT=production",
     "DEPLOY_ENV=railway",
     "PYTHONUNBUFFERED=1",
     "FORCE_REAL_MODULES=true",
-    "PYTHONPATH=/app:/app/src"
+    "PYTHONPATH=/app:/app/src",
+    "TRADING_ENABLED=true",
+    "LIVE_TRADING=true"
 ]

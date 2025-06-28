@@ -74,3 +74,2135 @@
 2025-06-26 00:48:56,411 [INFO] ✅ Connected to Drive folder: Money-Printer
 2025-06-26 00:48:56,411 [INFO] 🚀 Batch upload manager started
 2025-06-26 00:48:56,412 [INFO] ✅ Drive manager initialized
+2025-06-28 00:47:31,376 [INFO] ✅ Memory-only storage mode enabled
+2025-06-28 00:47:31,376 [INFO] 📁 Storage modes: Memory
+2025-06-28 00:47:31,604 [INFO] ✅ Binance client connected successfully
+2025-06-28 00:47:31,673 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 00:47:31,673 [INFO] 🚀 Starting timed data collection for 0.05 hours
+2025-06-28 00:47:31,673 [INFO] 📅 Collection will end at: 2025-06-28 00:50:31.673550
+2025-06-28 00:47:31,673 [INFO] 🔄 Cycle interval: 1 minutes
+2025-06-28 00:47:31,673 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT, ADAUSDT, DOTUSDT, LINKUSDT
+2025-06-28 00:47:31,673 [INFO] ⏱️ Intervals: 1m, 5m, 15m, 1h
+2025-06-28 00:47:31,673 [INFO] 📊 Cycle 1 - 0.1h remaining
+2025-06-28 00:47:31,674 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 00:47:31,938 [WARNING] ⚠️ No data returned for BTCUSDT 1m
+2025-06-28 00:47:32,290 [INFO] 📊 Collected 4 rows for BTCUSDT 5m
+2025-06-28 00:47:32,630 [INFO] 📊 Collected 68 rows for BTCUSDT 15m
+2025-06-28 00:47:32,972 [INFO] 📊 Collected 92 rows for BTCUSDT 1h
+2025-06-28 00:47:33,404 [WARNING] ⚠️ No data returned for ETHUSDT 1m
+2025-06-28 00:47:33,839 [INFO] 📊 Collected 4 rows for ETHUSDT 5m
+2025-06-28 00:47:34,182 [INFO] 📊 Collected 68 rows for ETHUSDT 15m
+2025-06-28 00:47:34,429 [INFO] 📊 Collected 92 rows for ETHUSDT 1h
+2025-06-28 00:47:34,861 [WARNING] ⚠️ No data returned for ADAUSDT 1m
+2025-06-28 00:47:35,108 [INFO] 📊 Collected 4 rows for ADAUSDT 5m
+2025-06-28 00:47:35,548 [INFO] 📊 Collected 68 rows for ADAUSDT 15m
+2025-06-28 00:47:35,992 [INFO] 📊 Collected 92 rows for ADAUSDT 1h
+2025-06-28 00:47:36,424 [WARNING] ⚠️ No data returned for DOTUSDT 1m
+2025-06-28 00:47:36,765 [INFO] 📊 Collected 4 rows for DOTUSDT 5m
+2025-06-28 00:47:37,014 [INFO] 📊 Collected 68 rows for DOTUSDT 15m
+2025-06-28 00:47:37,404 [INFO] 📊 Collected 92 rows for DOTUSDT 1h
+2025-06-28 00:47:37,791 [WARNING] ⚠️ No data returned for LINKUSDT 1m
+2025-06-28 00:47:38,275 [INFO] 📊 Collected 4 rows for LINKUSDT 5m
+2025-06-28 00:47:38,666 [INFO] 📊 Collected 68 rows for LINKUSDT 15m
+2025-06-28 00:47:39,059 [INFO] 📊 Collected 92 rows for LINKUSDT 1h
+2025-06-28 00:47:39,161 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_004739.parquet (4 rows)
+2025-06-28 00:47:39,162 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_004739.parquet (68 rows)
+2025-06-28 00:47:39,162 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_004739.parquet (92 rows)
+2025-06-28 00:47:39,163 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_004739.parquet (4 rows)
+2025-06-28 00:47:39,163 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_004739.parquet (68 rows)
+2025-06-28 00:47:39,163 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_004739.parquet (92 rows)
+2025-06-28 00:47:39,164 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_004739.parquet (4 rows)
+2025-06-28 00:47:39,164 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_004739.parquet (68 rows)
+2025-06-28 00:47:39,164 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_004739.parquet (92 rows)
+2025-06-28 00:47:39,165 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_004739.parquet (4 rows)
+2025-06-28 00:47:39,165 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_004739.parquet (68 rows)
+2025-06-28 00:47:39,165 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_004739.parquet (92 rows)
+2025-06-28 00:47:39,166 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_004739.parquet (4 rows)
+2025-06-28 00:47:39,166 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_004739.parquet (68 rows)
+2025-06-28 00:47:39,166 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_004739.parquet (92 rows)
+2025-06-28 00:47:39,167 [INFO] ✅ Collection cycle completed in 7.5s - Files: 15/15, Rows: 820
+2025-06-28 00:47:39,167 [INFO] 📈 Progress Report:
+2025-06-28 00:47:39,167 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 00:47:39,167 [INFO]    📁 Files saved: 15
+2025-06-28 00:47:39,167 [INFO]    📊 Rows collected: 820
+2025-06-28 00:47:39,167 [INFO]    ✅ Successful uploads: 15
+2025-06-28 00:47:39,168 [INFO]    ❌ Failed uploads: 0
+2025-06-28 00:47:39,168 [INFO]    💾 Memory files: 15
+2025-06-28 00:47:39,168 [INFO]    🏠 Local files: 0
+2025-06-28 00:47:39,168 [INFO]    ☁️ Drive files: 0
+2025-06-28 00:48:32,182 [INFO] 📊 Cycle 2 - 0.0h remaining
+2025-06-28 00:48:32,182 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 00:48:32,325 [WARNING] ⚠️ No data returned for BTCUSDT 1m
+2025-06-28 00:48:32,570 [INFO] 📊 Collected 4 rows for BTCUSDT 5m
+2025-06-28 00:48:32,818 [INFO] 📊 Collected 68 rows for BTCUSDT 15m
+2025-06-28 00:48:33,065 [INFO] 📊 Collected 92 rows for BTCUSDT 1h
+2025-06-28 00:48:33,402 [WARNING] ⚠️ No data returned for ETHUSDT 1m
+2025-06-28 00:48:33,742 [INFO] 📊 Collected 4 rows for ETHUSDT 5m
+2025-06-28 00:48:34,085 [INFO] 📊 Collected 68 rows for ETHUSDT 15m
+2025-06-28 00:48:34,521 [INFO] 📊 Collected 92 rows for ETHUSDT 1h
+2025-06-28 00:48:34,763 [WARNING] ⚠️ No data returned for ADAUSDT 1m
+2025-06-28 00:48:35,105 [INFO] 📊 Collected 4 rows for ADAUSDT 5m
+2025-06-28 00:48:35,349 [INFO] 📊 Collected 68 rows for ADAUSDT 15m
+2025-06-28 00:48:35,695 [INFO] 📊 Collected 92 rows for ADAUSDT 1h
+2025-06-28 00:48:36,081 [WARNING] ⚠️ No data returned for DOTUSDT 1m
+2025-06-28 00:48:36,518 [INFO] 📊 Collected 4 rows for DOTUSDT 5m
+2025-06-28 00:48:36,862 [INFO] 📊 Collected 68 rows for DOTUSDT 15m
+2025-06-28 00:48:37,252 [INFO] 📊 Collected 92 rows for DOTUSDT 1h
+2025-06-28 00:48:37,493 [WARNING] ⚠️ No data returned for LINKUSDT 1m
+2025-06-28 00:48:37,834 [INFO] 📊 Collected 4 rows for LINKUSDT 5m
+2025-06-28 00:48:38,271 [INFO] 📊 Collected 68 rows for LINKUSDT 15m
+2025-06-28 00:48:38,662 [INFO] 📊 Collected 92 rows for LINKUSDT 1h
+2025-06-28 00:48:38,763 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_004838.parquet (4 rows)
+2025-06-28 00:48:38,764 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_004838.parquet (68 rows)
+2025-06-28 00:48:38,764 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_004838.parquet (92 rows)
+2025-06-28 00:48:38,764 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_004838.parquet (4 rows)
+2025-06-28 00:48:38,765 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_004838.parquet (68 rows)
+2025-06-28 00:48:38,765 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_004838.parquet (92 rows)
+2025-06-28 00:48:38,766 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_004838.parquet (4 rows)
+2025-06-28 00:48:38,766 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_004838.parquet (68 rows)
+2025-06-28 00:48:38,766 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_004838.parquet (92 rows)
+2025-06-28 00:48:38,767 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_004838.parquet (4 rows)
+2025-06-28 00:48:38,767 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_004838.parquet (68 rows)
+2025-06-28 00:48:38,767 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_004838.parquet (92 rows)
+2025-06-28 00:48:38,768 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_004838.parquet (4 rows)
+2025-06-28 00:48:38,768 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_004838.parquet (68 rows)
+2025-06-28 00:48:38,768 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_004838.parquet (92 rows)
+2025-06-28 00:48:38,768 [INFO] ✅ Collection cycle completed in 6.6s - Files: 15/15, Rows: 820
+2025-06-28 00:48:38,768 [INFO] 📈 Progress Report:
+2025-06-28 00:48:38,768 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 00:48:38,768 [INFO]    📁 Files saved: 30
+2025-06-28 00:48:38,770 [INFO]    📊 Rows collected: 1,640
+2025-06-28 00:48:38,770 [INFO]    ✅ Successful uploads: 30
+2025-06-28 00:48:38,770 [INFO]    ❌ Failed uploads: 0
+2025-06-28 00:48:38,770 [INFO]    💾 Memory files: 30
+2025-06-28 00:48:38,770 [INFO]    🏠 Local files: 0
+2025-06-28 00:48:38,770 [INFO]    ☁️ Drive files: 0
+2025-06-28 00:48:51,340 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 00:48:51,775 [INFO] ============================================================
+2025-06-28 00:48:51,775 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 00:48:51,775 [INFO] ============================================================
+2025-06-28 00:48:51,775 [INFO] ⏱️ Total Runtime: 0.02 hours
+2025-06-28 00:48:51,775 [INFO] 📁 Files Saved: 30
+2025-06-28 00:48:51,775 [INFO] 📊 Total Rows: 1,640
+2025-06-28 00:48:51,775 [INFO] ✅ Successful Uploads: 30
+2025-06-28 00:48:51,775 [INFO] ❌ Failed Uploads: 0
+2025-06-28 00:48:51,775 [INFO] 📈 Average Rows/File: 54.7
+2025-06-28 00:48:51,776 [INFO] 📊 Collection Rate: 1348.3 files/hour, 73,706 rows/hour
+2025-06-28 00:48:51,776 [INFO] 💾 Final Storage: Memory=30, Local=0, Drive=0
+2025-06-28 00:48:51,776 [INFO] ✅ No errors encountered!
+2025-06-28 00:48:51,776 [INFO] ============================================================
+2025-06-28 00:50:21,449 [INFO] 🚀 Starting Full Production Test
+2025-06-28 00:50:21,449 [INFO] ============================================================
+2025-06-28 00:50:21,450 [INFO] 📁 Using temporary directory: C:\Users\MYPC~1\AppData\Local\Temp\tmpkgiwi562
+2025-06-28 00:50:21,450 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 00:50:21,541 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 00:50:21,541 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 00:50:21,541 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 00:50:21,541 [INFO] ✅ Local backup storage initialized: C:\Users\MYPC~1\AppData\Local\Temp\tmpkgiwi562
+2025-06-28 00:50:21,541 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 00:50:21,541 [INFO] ============================================================
+2025-06-28 00:50:21,542 [INFO] 🔄 PHASE 1: DATA COLLECTION
+2025-06-28 00:50:21,542 [INFO] ============================================================
+2025-06-28 00:50:21,542 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 00:50:21,542 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 00:50:21,542 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 00:50:21,543 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 00:50:21,543 [INFO] ✅ Local backup storage initialized: C:\Users\MYPC~1\AppData\Local\Temp\tmpkgiwi562
+2025-06-28 00:50:21,543 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 00:50:21,748 [INFO] ✅ Binance client connected successfully
+2025-06-28 00:50:21,819 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 00:50:21,819 [INFO] 🚀 Starting timed data collection for 0.1 hours
+2025-06-28 00:50:21,819 [INFO] 📅 Collection will end at: 2025-06-28 00:56:21.819432
+2025-06-28 00:50:21,820 [INFO] 🔄 Cycle interval: 2 minutes
+2025-06-28 00:50:21,820 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT
+2025-06-28 00:50:21,820 [INFO] ⏱️ Intervals: 5m, 15m
+2025-06-28 00:50:21,820 [INFO] 📊 Cycle 1 - 0.1h remaining
+2025-06-28 00:50:21,820 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 00:50:21,989 [INFO] 📊 Collected 4 rows for BTCUSDT 5m
+2025-06-28 00:50:22,330 [INFO] 📊 Collected 68 rows for BTCUSDT 15m
+2025-06-28 00:50:22,579 [INFO] 📊 Collected 4 rows for ETHUSDT 5m
+2025-06-28 00:50:22,831 [INFO] 📊 Collected 68 rows for ETHUSDT 15m
+2025-06-28 00:50:22,946 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_005022.parquet to local backup (4 rows)
+2025-06-28 00:50:22,947 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_005022.parquet (4 rows)
+2025-06-28 00:50:22,949 [INFO] 💾 Saved production_BTCUSDT_15m_20250628_005022.parquet to local backup (68 rows)
+2025-06-28 00:50:22,949 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_005022.parquet (68 rows)
+2025-06-28 00:50:22,952 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_005022.parquet to local backup (4 rows)
+2025-06-28 00:50:22,952 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_005022.parquet (4 rows)
+2025-06-28 00:50:22,956 [INFO] 💾 Saved production_ETHUSDT_15m_20250628_005022.parquet to local backup (68 rows)
+2025-06-28 00:50:22,956 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_005022.parquet (68 rows)
+2025-06-28 00:50:22,957 [INFO] ✅ Collection cycle completed in 1.1s - Files: 4/4, Rows: 144
+2025-06-28 00:50:22,957 [INFO] 📈 Progress Report:
+2025-06-28 00:50:22,957 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 00:50:22,957 [INFO]    📁 Files saved: 4
+2025-06-28 00:50:22,957 [INFO]    📊 Rows collected: 144
+2025-06-28 00:50:22,957 [INFO]    ✅ Successful uploads: 4
+2025-06-28 00:50:22,957 [INFO]    ❌ Failed uploads: 0
+2025-06-28 00:50:22,957 [INFO]    💾 Memory files: 4
+2025-06-28 00:50:22,957 [INFO]    🏠 Local files: 4
+2025-06-28 00:50:22,957 [INFO]    ☁️ Drive files: 0
+2025-06-28 00:52:18,028 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 00:52:18,996 [INFO] ============================================================
+2025-06-28 00:52:18,996 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 00:52:18,996 [INFO] ============================================================
+2025-06-28 00:52:18,996 [INFO] ⏱️ Total Runtime: 0.03 hours
+2025-06-28 00:52:18,996 [INFO] 📁 Files Saved: 4
+2025-06-28 00:52:18,997 [INFO] 📊 Total Rows: 144
+2025-06-28 00:52:18,997 [INFO] ✅ Successful Uploads: 4
+2025-06-28 00:52:18,997 [INFO] ❌ Failed Uploads: 0
+2025-06-28 00:52:18,997 [INFO] 📈 Average Rows/File: 36.0
+2025-06-28 00:52:18,997 [INFO] 📊 Collection Rate: 122.9 files/hour, 4,424 rows/hour
+2025-06-28 00:52:18,997 [INFO] 💾 Final Storage: Memory=4, Local=4, Drive=0
+2025-06-28 00:52:18,998 [INFO] ✅ No errors encountered!
+2025-06-28 00:52:18,998 [INFO] ============================================================
+2025-06-28 00:52:18,998 [INFO] ✅ Data collection completed: 4 files, 144 rows
+2025-06-28 00:52:18,998 [INFO] ============================================================
+2025-06-28 00:52:18,998 [INFO] 🤖 PHASE 2: MODEL TRAINING
+2025-06-28 00:52:18,998 [INFO] ============================================================
+2025-06-28 00:52:18,999 [INFO] 🤖 Production trainer initialized
+2025-06-28 00:52:18,999 [INFO]    📊 Min total rows: 50
+2025-06-28 00:52:18,999 [INFO]    📈 Min rows per symbol: 10
+2025-06-28 00:52:18,999 [INFO]    ⏱️ Min time span: 0h
+2025-06-28 00:52:18,999 [INFO]    💾 Model output: C:\Users\MYPC~1\AppData\Local\Temp\tmpkgiwi562\models
+2025-06-28 00:52:18,999 [INFO] 🚀 Starting full production training pipeline...
+2025-06-28 00:52:18,999 [INFO] 📂 Step 1: Loading training data...
+2025-06-28 00:52:18,999 [INFO] 📂 Loading training data from storage...
+2025-06-28 00:52:19,000 [INFO] 📋 Total unique files found: 4
+2025-06-28 00:52:19,000 [INFO] 📋 Found 4 data files
+2025-06-28 00:52:19,034 [INFO] 📖 Loaded production_BTCUSDT_15m_20250628_005022.parquet from local backup (68 rows)
+2025-06-28 00:52:19,044 [INFO] 📖 Loaded production_BTCUSDT_5m_20250628_005022.parquet from local backup (4 rows)
+2025-06-28 00:52:19,053 [INFO] 📖 Loaded production_ETHUSDT_15m_20250628_005022.parquet from local backup (68 rows)
+2025-06-28 00:52:19,061 [INFO] 📖 Loaded production_ETHUSDT_5m_20250628_005022.parquet from local backup (4 rows)
+2025-06-28 00:52:19,067 [INFO] 📊 Combined data: 144 rows from 4 files
+2025-06-28 00:52:19,067 [INFO] ✅ Step 2: Validating data sufficiency...
+2025-06-28 00:52:19,075 [INFO] 📊 Data validation results:
+2025-06-28 00:52:19,075 [INFO]    📈 Total rows: 144
+2025-06-28 00:52:19,075 [INFO]    ⏱️ Time span: 16.8 hours
+2025-06-28 00:52:19,075 [INFO]    ✅ Passed checks: 6
+2025-06-28 00:52:19,075 [INFO]    ❌ Issues: 1
+2025-06-28 00:52:19,075 [INFO]    🏆 Quality score: 100.0/100
+2025-06-28 00:52:19,076 [INFO] ✅ Data validation passed - proceeding with training
+2025-06-28 00:52:19,076 [INFO] ⚙️ Step 3: Creating features...
+2025-06-28 00:52:19,076 [INFO] ⚙️ Creating features from market data...
+2025-06-28 00:52:19,105 [INFO] ⚙️ Created 35 features, 142 training samples
+2025-06-28 00:52:19,105 [INFO] 🤖 Step 4: Training model...
+2025-06-28 00:52:19,105 [INFO] 🤖 Training machine learning model...
+2025-06-28 00:52:19,107 [INFO] 📊 Using 24 features: ['volume', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'interval', 'price_change', 'price_change_pct', 'high_low_spread', 'high_low_spread_pct']...
+2025-06-28 00:52:19,114 [ERROR] ❌ Model training failed: could not convert string to float: '15m'
+2025-06-28 00:52:19,114 [ERROR] ❌ Training pipeline failed: Model training failed: Model training failed: could not convert string to float: '15m'
+2025-06-28 00:52:19,114 [ERROR] ❌ Model training failed
+2025-06-28 00:52:19,114 [ERROR] Error: Training pipeline failed: Model training failed: Model training failed: could not convert string to float: '15m'
+2025-06-28 00:52:19,114 [ERROR] Data validation issues:
+2025-06-28 00:52:19,114 [ERROR]    • Too few symbols with sufficient data: 2 < 3
+2025-06-28 10:39:17,506 [INFO] 🚀 Initializing Production System Test
+2025-06-28 10:39:17,575 [INFO] 🏁 Starting Comprehensive Production System Test
+2025-06-28 10:39:17,576 [INFO] ============================================================
+2025-06-28 10:39:17,576 [INFO] 
+==================== Binance Connection & Balance ====================
+2025-06-28 10:39:17,576 [INFO] 🔗 Testing Binance connection and balance...
+2025-06-28 10:39:17,785 [INFO] ✅ Binance client connected successfully
+2025-06-28 10:39:17,940 [INFO] ✅ Binance connection successful
+2025-06-28 10:39:17,940 [INFO]    📊 Account type: SPOT
+2025-06-28 10:39:17,941 [INFO]    💰 Total assets: 2 (2 with balance)
+2025-06-28 10:39:17,941 [INFO]    🔄 Can trade: True
+2025-06-28 10:39:17,941 [INFO]    💵 Top balances:
+2025-06-28 10:39:17,941 [INFO]       USDT: 8.41000000
+2025-06-28 10:39:17,941 [INFO]       XRP: 0.00000084
+2025-06-28 10:39:17,941 [INFO] ✅ Binance Connection & Balance PASSED
+2025-06-28 10:39:17,941 [INFO] 
+==================== Google Drive Connection ====================
+2025-06-28 10:39:17,941 [INFO] ☁️ Testing Google Drive connection...
+2025-06-28 10:39:17,942 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 10:39:18,089 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 10:39:18,090 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 10:39:18,090 [WARNING] ⚠️ Service account key missing - Drive tests will fail on Railway
+2025-06-28 10:39:18,090 [INFO] 💡 For local testing, this is expected
+2025-06-28 10:39:18,090 [ERROR] ❌ Google Drive Connection FAILED
+2025-06-28 10:39:18,090 [INFO] 
+==================== Data Collection ====================
+2025-06-28 10:39:18,090 [INFO] 📊 Testing data collection for 2.0 minutes...
+2025-06-28 10:39:18,090 [INFO] ✅ Memory-only storage mode enabled
+2025-06-28 10:39:18,091 [INFO] 📁 Storage modes: Memory
+2025-06-28 10:39:18,091 [INFO] ✅ Memory-only storage mode enabled
+2025-06-28 10:39:18,091 [INFO] 📁 Storage modes: Memory
+2025-06-28 10:39:18,091 [ERROR] ❌ Failed to initialize Binance client: cannot import name 'BINANCE_API_SECRET' from 'src.config' (Z:\money_printer\src\config.py)
+2025-06-28 10:39:18,091 [INFO] 🚀 Starting timed data collection for 0.03333333333333333 hours
+2025-06-28 10:39:18,091 [INFO] 📅 Collection will end at: 2025-06-28 10:41:18.091012
+2025-06-28 10:39:18,091 [INFO] 🔄 Cycle interval: 1 minutes
+2025-06-28 10:39:18,091 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT
+2025-06-28 10:39:18,091 [INFO] ⏱️ Intervals: 1m, 5m
+2025-06-28 10:39:18,092 [INFO] 📊 Cycle 1 - 0.0h remaining
+2025-06-28 10:39:18,092 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 10:39:18,092 [ERROR] ❌ Binance client not available
+2025-06-28 10:39:18,192 [ERROR] ❌ Binance client not available
+2025-06-28 10:39:18,293 [ERROR] ❌ Binance client not available
+2025-06-28 10:39:18,393 [ERROR] ❌ Binance client not available
+2025-06-28 10:39:18,494 [INFO] ✅ Collection cycle completed in 0.4s - Files: 0/0, Rows: 0
+2025-06-28 10:39:18,494 [INFO] 📈 Progress Report:
+2025-06-28 10:39:18,494 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 10:39:18,494 [INFO]    📁 Files saved: 0
+2025-06-28 10:39:18,494 [INFO]    📊 Rows collected: 0
+2025-06-28 10:39:18,494 [INFO]    ✅ Successful uploads: 0
+2025-06-28 10:39:18,494 [INFO]    ❌ Failed uploads: 0
+2025-06-28 10:39:18,495 [INFO]    💾 Memory files: 0
+2025-06-28 10:39:18,495 [INFO]    🏠 Local files: 0
+2025-06-28 10:39:18,495 [INFO]    ☁️ Drive files: 0
+2025-06-28 10:39:46,079 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 10:39:46,539 [INFO] ============================================================
+2025-06-28 10:39:46,539 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 10:39:46,539 [INFO] ============================================================
+2025-06-28 10:39:46,539 [INFO] ⏱️ Total Runtime: 0.01 hours
+2025-06-28 10:39:46,539 [INFO] 📁 Files Saved: 0
+2025-06-28 10:39:46,539 [INFO] 📊 Total Rows: 0
+2025-06-28 10:39:46,539 [INFO] ✅ Successful Uploads: 0
+2025-06-28 10:39:46,539 [INFO] ❌ Failed Uploads: 0
+2025-06-28 10:39:46,540 [INFO] 📊 Collection Rate: 0.0 files/hour, 0 rows/hour
+2025-06-28 10:39:46,540 [INFO] 💾 Final Storage: Memory=0, Local=0, Drive=0
+2025-06-28 10:39:46,540 [INFO] ✅ No errors encountered!
+2025-06-28 10:39:46,540 [INFO] ============================================================
+2025-06-28 10:39:46,540 [ERROR] ❌ Data collection test failed: No data was collected
+2025-06-28 10:39:46,540 [ERROR] ❌ Data Collection FAILED
+2025-06-28 10:39:46,540 [INFO] 
+==================== Model Training ====================
+2025-06-28 10:39:46,540 [INFO] 🤖 Testing model training...
+2025-06-28 10:39:46,600 [INFO] ✅ Local backup storage initialized: test_data
+2025-06-28 10:39:46,601 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 10:39:46,601 [INFO] 📊 Collecting training data...
+2025-06-28 10:39:46,602 [INFO] ✅ Local backup storage initialized: test_data
+2025-06-28 10:39:46,602 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 10:39:46,603 [ERROR] ❌ Failed to initialize Binance client: cannot import name 'BINANCE_API_SECRET' from 'src.config' (Z:\money_printer\src\config.py)
+2025-06-28 10:39:46,603 [INFO] 🚀 Starting timed data collection for 0.016666666666666666 hours
+2025-06-28 10:39:46,603 [INFO] 📅 Collection will end at: 2025-06-28 10:40:46.603572
+2025-06-28 10:39:46,603 [INFO] 🔄 Cycle interval: 0.5 minutes
+2025-06-28 10:39:46,603 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT
+2025-06-28 10:39:46,603 [INFO] ⏱️ Intervals: 1m, 5m
+2025-06-28 10:39:46,603 [INFO] 📊 Cycle 1 - 0.0h remaining
+2025-06-28 10:39:46,604 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 10:39:46,604 [ERROR] ❌ Binance client not available
+2025-06-28 10:39:46,705 [ERROR] ❌ Binance client not available
+2025-06-28 10:39:46,805 [ERROR] ❌ Binance client not available
+2025-06-28 10:39:46,906 [ERROR] ❌ Binance client not available
+2025-06-28 10:39:47,006 [INFO] ✅ Collection cycle completed in 0.4s - Files: 0/0, Rows: 0
+2025-06-28 10:39:47,006 [INFO] 📈 Progress Report:
+2025-06-28 10:39:47,006 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 10:39:47,006 [INFO]    📁 Files saved: 0
+2025-06-28 10:39:47,006 [INFO]    📊 Rows collected: 0
+2025-06-28 10:39:47,006 [INFO]    ✅ Successful uploads: 0
+2025-06-28 10:39:47,006 [INFO]    ❌ Failed uploads: 0
+2025-06-28 10:39:47,006 [INFO]    💾 Memory files: 0
+2025-06-28 10:39:47,006 [INFO]    🏠 Local files: 0
+2025-06-28 10:39:47,007 [INFO]    ☁️ Drive files: 0
+2025-06-28 10:40:01,045 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 10:40:02,011 [INFO] ============================================================
+2025-06-28 10:40:02,011 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 10:40:02,011 [INFO] ============================================================
+2025-06-28 10:40:02,011 [INFO] ⏱️ Total Runtime: 0.00 hours
+2025-06-28 10:40:02,011 [INFO] 📁 Files Saved: 0
+2025-06-28 10:40:02,011 [INFO] 📊 Total Rows: 0
+2025-06-28 10:40:02,011 [INFO] ✅ Successful Uploads: 0
+2025-06-28 10:40:02,012 [INFO] ❌ Failed Uploads: 0
+2025-06-28 10:40:02,012 [INFO] 📊 Collection Rate: 0.0 files/hour, 0 rows/hour
+2025-06-28 10:40:02,012 [INFO] 💾 Final Storage: Memory=0, Local=0, Drive=0
+2025-06-28 10:40:02,012 [INFO] ✅ No errors encountered!
+2025-06-28 10:40:02,012 [INFO] ============================================================
+2025-06-28 10:40:02,012 [ERROR] ❌ Model training test failed: No training data collected
+2025-06-28 10:40:02,012 [ERROR] ❌ Model Training FAILED
+2025-06-28 10:40:02,012 [INFO] 
+============================================================
+2025-06-28 10:40:02,013 [INFO] 📊 COMPREHENSIVE TEST RESULTS
+2025-06-28 10:40:02,013 [INFO] ============================================================
+2025-06-28 10:40:02,013 [INFO] ✅ Tests Passed: 1/4
+2025-06-28 10:40:02,013 [INFO] 🔗 Binance: Connected and authenticated
+2025-06-28 10:40:02,013 [INFO] 💰 Balance: 2 assets with non-zero balance
+2025-06-28 10:40:02,013 [WARNING] ⚠️ Google Drive: Not connected (service account missing)
+2025-06-28 10:40:02,013 [WARNING] ⚠️ Model Training: Failed (may need more data)
+2025-06-28 10:40:02,014 [WARNING] ⚠️ OVERALL: Some issues found
+2025-06-28 10:40:02,014 [INFO] 🔧 Review the errors above and fix before deployment
+2025-06-28 10:40:02,014 [WARNING] 
+⚠️ Errors encountered (2):
+2025-06-28 10:40:02,014 [WARNING]    1. Data collection test failed: No data was collected
+2025-06-28 10:40:02,014 [WARNING]    2. Model training test failed: No training data collected
+2025-06-28 10:40:02,014 [INFO] ============================================================
+2025-06-28 10:41:48,738 [INFO] ✅ Memory-only storage mode enabled
+2025-06-28 10:41:48,738 [INFO] 📁 Storage modes: Memory
+2025-06-28 10:41:49,202 [INFO] ✅ Binance client connected successfully
+2025-06-28 10:41:49,271 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 10:41:49,271 [INFO] 🚀 Starting timed data collection for 0.02 hours
+2025-06-28 10:41:49,271 [INFO] 📅 Collection will end at: 2025-06-28 10:43:01.271244
+2025-06-28 10:41:49,271 [INFO] 🔄 Cycle interval: 0.5 minutes
+2025-06-28 10:41:49,272 [INFO] 📊 Symbols: BTCUSDT
+2025-06-28 10:41:49,272 [INFO] ⏱️ Intervals: 1m
+2025-06-28 10:41:49,272 [INFO] 📊 Cycle 1 - 0.0h remaining
+2025-06-28 10:41:49,272 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 10:41:49,578 [WARNING] ⚠️ No data returned for BTCUSDT 1m
+2025-06-28 10:41:49,680 [INFO] ✅ Collection cycle completed in 0.4s - Files: 0/0, Rows: 0
+2025-06-28 10:41:49,680 [INFO] 📈 Progress Report:
+2025-06-28 10:41:49,680 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 10:41:49,680 [INFO]    📁 Files saved: 0
+2025-06-28 10:41:49,680 [INFO]    📊 Rows collected: 0
+2025-06-28 10:41:49,680 [INFO]    ✅ Successful uploads: 0
+2025-06-28 10:41:49,680 [INFO]    ❌ Failed uploads: 0
+2025-06-28 10:41:49,680 [INFO]    💾 Memory files: 0
+2025-06-28 10:41:49,680 [INFO]    🏠 Local files: 0
+2025-06-28 10:41:49,680 [INFO]    ☁️ Drive files: 0
+2025-06-28 10:42:05,915 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 10:42:06,687 [INFO] ============================================================
+2025-06-28 10:42:06,687 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 10:42:06,687 [INFO] ============================================================
+2025-06-28 10:42:06,687 [INFO] ⏱️ Total Runtime: 0.00 hours
+2025-06-28 10:42:06,687 [INFO] 📁 Files Saved: 0
+2025-06-28 10:42:06,687 [INFO] 📊 Total Rows: 0
+2025-06-28 10:42:06,687 [INFO] ✅ Successful Uploads: 0
+2025-06-28 10:42:06,687 [INFO] ❌ Failed Uploads: 0
+2025-06-28 10:42:06,689 [INFO] 📊 Collection Rate: 0.0 files/hour, 0 rows/hour
+2025-06-28 10:42:06,689 [INFO] 💾 Final Storage: Memory=0, Local=0, Drive=0
+2025-06-28 10:42:06,689 [INFO] ✅ No errors encountered!
+2025-06-28 10:42:06,690 [INFO] ============================================================
+2025-06-28 10:47:31,814 [INFO] ✅ Memory-only storage mode enabled
+2025-06-28 10:47:31,814 [INFO] 📁 Storage modes: Memory
+2025-06-28 10:47:31,992 [INFO] ✅ Binance client connected successfully
+2025-06-28 10:47:32,059 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 10:47:32,059 [INFO] 🚀 Starting timed data collection for 0.02 hours
+2025-06-28 10:47:32,060 [INFO] 📅 Collection will end at: 2025-06-28 10:48:44.059764
+2025-06-28 10:47:32,060 [INFO] 🔄 Cycle interval: 0.5 minutes
+2025-06-28 10:47:32,060 [INFO] 📊 Symbols: BTCUSDT
+2025-06-28 10:47:32,060 [INFO] ⏱️ Intervals: 1m
+2025-06-28 10:47:32,060 [INFO] 📊 Cycle 1 - 0.0h remaining
+2025-06-28 10:47:32,060 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 10:47:32,155 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 10:47:32,256 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_104732.parquet (100 rows)
+2025-06-28 10:47:32,256 [INFO] ✅ Collection cycle completed in 0.2s - Files: 1/1, Rows: 100
+2025-06-28 10:47:32,256 [INFO] 📈 Progress Report:
+2025-06-28 10:47:32,256 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 10:47:32,258 [INFO]    📁 Files saved: 1
+2025-06-28 10:47:32,258 [INFO]    📊 Rows collected: 100
+2025-06-28 10:47:32,258 [INFO]    ✅ Successful uploads: 1
+2025-06-28 10:47:32,258 [INFO]    ❌ Failed uploads: 0
+2025-06-28 10:47:32,258 [INFO]    💾 Memory files: 1
+2025-06-28 10:47:32,258 [INFO]    🏠 Local files: 0
+2025-06-28 10:47:32,258 [INFO]    ☁️ Drive files: 0
+2025-06-28 10:48:02,267 [INFO] 📊 Cycle 2 - 0.0h remaining
+2025-06-28 10:48:02,267 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 10:48:02,345 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 10:48:02,446 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_104802.parquet (100 rows)
+2025-06-28 10:48:02,446 [INFO] ✅ Collection cycle completed in 0.2s - Files: 1/1, Rows: 100
+2025-06-28 10:48:02,447 [INFO] 📈 Progress Report:
+2025-06-28 10:48:02,447 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 10:48:02,447 [INFO]    📁 Files saved: 2
+2025-06-28 10:48:02,447 [INFO]    📊 Rows collected: 200
+2025-06-28 10:48:02,447 [INFO]    ✅ Successful uploads: 2
+2025-06-28 10:48:02,448 [INFO]    ❌ Failed uploads: 0
+2025-06-28 10:48:02,448 [INFO]    💾 Memory files: 2
+2025-06-28 10:48:02,448 [INFO]    🏠 Local files: 0
+2025-06-28 10:48:02,448 [INFO]    ☁️ Drive files: 0
+2025-06-28 10:48:32,458 [INFO] 📊 Cycle 3 - 0.0h remaining
+2025-06-28 10:48:32,458 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 10:48:32,537 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 10:48:32,639 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_104832.parquet (100 rows)
+2025-06-28 10:48:32,639 [INFO] ✅ Collection cycle completed in 0.2s - Files: 1/1, Rows: 100
+2025-06-28 10:48:32,639 [INFO] 📈 Progress Report:
+2025-06-28 10:48:32,639 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 10:48:32,639 [INFO]    📁 Files saved: 3
+2025-06-28 10:48:32,639 [INFO]    📊 Rows collected: 300
+2025-06-28 10:48:32,640 [INFO]    ✅ Successful uploads: 3
+2025-06-28 10:48:32,640 [INFO]    ❌ Failed uploads: 0
+2025-06-28 10:48:32,640 [INFO]    💾 Memory files: 3
+2025-06-28 10:48:32,640 [INFO]    🏠 Local files: 0
+2025-06-28 10:48:32,640 [INFO]    ☁️ Drive files: 0
+2025-06-28 10:48:44,644 [INFO] ============================================================
+2025-06-28 10:48:44,644 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 10:48:44,644 [INFO] ============================================================
+2025-06-28 10:48:44,644 [INFO] ⏱️ Total Runtime: 0.02 hours
+2025-06-28 10:48:44,644 [INFO] 📁 Files Saved: 3
+2025-06-28 10:48:44,644 [INFO] 📊 Total Rows: 300
+2025-06-28 10:48:44,644 [INFO] ✅ Successful Uploads: 3
+2025-06-28 10:48:44,644 [INFO] ❌ Failed Uploads: 0
+2025-06-28 10:48:44,644 [INFO] 📈 Average Rows/File: 100.0
+2025-06-28 10:48:44,644 [INFO] 📊 Collection Rate: 148.8 files/hour, 14,879 rows/hour
+2025-06-28 10:48:44,645 [INFO] 💾 Final Storage: Memory=3, Local=0, Drive=0
+2025-06-28 10:48:44,645 [INFO] ✅ No errors encountered!
+2025-06-28 10:48:44,645 [INFO] ============================================================
+2025-06-28 10:49:19,554 [INFO] 🚀 Initializing Production System Test
+2025-06-28 10:49:19,554 [INFO] 🏁 Starting Comprehensive Production System Test
+2025-06-28 10:49:19,554 [INFO] ============================================================
+2025-06-28 10:49:19,554 [INFO] 
+==================== Binance Connection & Balance ====================
+2025-06-28 10:49:19,554 [INFO] 🔗 Testing Binance connection and balance...
+2025-06-28 10:49:19,986 [INFO] ✅ Binance client connected successfully
+2025-06-28 10:49:20,125 [INFO] ✅ Binance connection successful
+2025-06-28 10:49:20,125 [INFO]    📊 Account type: SPOT
+2025-06-28 10:49:20,125 [INFO]    💰 Total assets: 2 (2 with balance)
+2025-06-28 10:49:20,125 [INFO]    🔄 Can trade: True
+2025-06-28 10:49:20,125 [INFO]    💵 Top balances:
+2025-06-28 10:49:20,125 [INFO]       USDT: 8.41000000
+2025-06-28 10:49:20,126 [INFO]       XRP: 0.00000084
+2025-06-28 10:49:20,126 [INFO] ✅ Binance Connection & Balance PASSED
+2025-06-28 10:49:20,126 [INFO] 
+==================== Google Drive Connection ====================
+2025-06-28 10:49:20,126 [INFO] ☁️ Testing Google Drive connection...
+2025-06-28 10:49:20,349 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 10:49:20,478 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 10:49:20,478 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 10:49:24,933 [WARNING] ⚠️ Service account key missing - Drive tests will fail on Railway
+2025-06-28 10:49:24,933 [INFO] 💡 For local testing, this is expected
+2025-06-28 10:49:24,933 [ERROR] ❌ Google Drive Connection FAILED
+2025-06-28 10:49:24,933 [INFO] 
+==================== Data Collection ====================
+2025-06-28 10:49:24,933 [INFO] 📊 Testing data collection for 2.0 minutes...
+2025-06-28 10:49:24,933 [INFO] ✅ Memory-only storage mode enabled
+2025-06-28 10:49:24,934 [INFO] 📁 Storage modes: Memory
+2025-06-28 10:49:24,934 [INFO] ✅ Memory-only storage mode enabled
+2025-06-28 10:49:24,934 [INFO] 📁 Storage modes: Memory
+2025-06-28 10:49:25,109 [INFO] ✅ Binance client connected successfully
+2025-06-28 10:49:25,178 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 10:49:25,178 [INFO] 🚀 Starting timed data collection for 0.03333333333333333 hours
+2025-06-28 10:49:25,178 [INFO] 📅 Collection will end at: 2025-06-28 10:51:25.178580
+2025-06-28 10:49:25,178 [INFO] 🔄 Cycle interval: 1 minutes
+2025-06-28 10:49:25,178 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT
+2025-06-28 10:49:25,180 [INFO] ⏱️ Intervals: 1m, 5m
+2025-06-28 10:49:25,180 [INFO] 📊 Cycle 1 - 0.0h remaining
+2025-06-28 10:49:25,180 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 10:49:25,255 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 10:49:25,431 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 10:49:25,606 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 10:49:25,781 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 10:49:25,882 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_104925.parquet (100 rows)
+2025-06-28 10:49:25,883 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_104925.parquet (100 rows)
+2025-06-28 10:49:25,883 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_104925.parquet (100 rows)
+2025-06-28 10:49:25,884 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_104925.parquet (100 rows)
+2025-06-28 10:49:25,884 [INFO] ✅ Collection cycle completed in 0.7s - Files: 4/4, Rows: 400
+2025-06-28 10:49:25,884 [INFO] 📈 Progress Report:
+2025-06-28 10:49:25,884 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 10:49:25,884 [INFO]    📁 Files saved: 4
+2025-06-28 10:49:25,884 [INFO]    📊 Rows collected: 400
+2025-06-28 10:49:25,884 [INFO]    ✅ Successful uploads: 4
+2025-06-28 10:49:25,885 [INFO]    ❌ Failed uploads: 0
+2025-06-28 10:49:25,885 [INFO]    💾 Memory files: 4
+2025-06-28 10:49:25,885 [INFO]    🏠 Local files: 0
+2025-06-28 10:49:25,885 [INFO]    ☁️ Drive files: 0
+2025-06-28 10:50:25,904 [INFO] 📊 Cycle 2 - 0.0h remaining
+2025-06-28 10:50:25,904 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 10:50:25,977 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 10:50:26,151 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 10:50:26,330 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 10:50:26,504 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 10:50:26,605 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_105026.parquet (100 rows)
+2025-06-28 10:50:26,605 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_105026.parquet (100 rows)
+2025-06-28 10:50:26,607 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_105026.parquet (100 rows)
+2025-06-28 10:50:26,607 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_105026.parquet (100 rows)
+2025-06-28 10:50:26,607 [INFO] ✅ Collection cycle completed in 0.7s - Files: 4/4, Rows: 400
+2025-06-28 10:50:26,607 [INFO] 📈 Progress Report:
+2025-06-28 10:50:26,608 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 10:50:26,608 [INFO]    📁 Files saved: 8
+2025-06-28 10:50:26,608 [INFO]    📊 Rows collected: 800
+2025-06-28 10:50:26,608 [INFO]    ✅ Successful uploads: 8
+2025-06-28 10:50:26,608 [INFO]    ❌ Failed uploads: 0
+2025-06-28 10:50:26,608 [INFO]    💾 Memory files: 8
+2025-06-28 10:50:26,608 [INFO]    🏠 Local files: 0
+2025-06-28 10:50:26,608 [INFO]    ☁️ Drive files: 0
+2025-06-28 10:51:25,628 [INFO] ============================================================
+2025-06-28 10:51:25,628 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 10:51:25,628 [INFO] ============================================================
+2025-06-28 10:51:25,628 [INFO] ⏱️ Total Runtime: 0.03 hours
+2025-06-28 10:51:25,628 [INFO] 📁 Files Saved: 8
+2025-06-28 10:51:25,628 [INFO] 📊 Total Rows: 800
+2025-06-28 10:51:25,629 [INFO] ✅ Successful Uploads: 8
+2025-06-28 10:51:25,629 [INFO] ❌ Failed Uploads: 0
+2025-06-28 10:51:25,629 [INFO] 📈 Average Rows/File: 100.0
+2025-06-28 10:51:25,629 [INFO] 📊 Collection Rate: 239.1 files/hour, 23,910 rows/hour
+2025-06-28 10:51:25,629 [INFO] 💾 Final Storage: Memory=8, Local=0, Drive=0
+2025-06-28 10:51:25,629 [INFO] ✅ No errors encountered!
+2025-06-28 10:51:25,629 [INFO] ============================================================
+2025-06-28 10:51:25,629 [INFO] ✅ Data collection successful
+2025-06-28 10:51:25,629 [INFO]    📁 Files collected: 8
+2025-06-28 10:51:25,629 [INFO]    📊 Rows collected: 800
+2025-06-28 10:51:25,630 [INFO]    ⏱️ Runtime: 0.03 hours
+2025-06-28 10:51:25,630 [INFO] ✅ Data Collection PASSED
+2025-06-28 10:51:25,630 [INFO] 
+==================== Model Training ====================
+2025-06-28 10:51:25,630 [INFO] 🤖 Testing model training...
+2025-06-28 10:51:25,630 [INFO] ✅ Local backup storage initialized: test_data
+2025-06-28 10:51:25,630 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 10:51:25,630 [INFO] 📊 Collecting training data...
+2025-06-28 10:51:25,631 [INFO] ✅ Local backup storage initialized: test_data
+2025-06-28 10:51:25,631 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 10:51:25,848 [INFO] ✅ Binance client connected successfully
+2025-06-28 10:51:25,918 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 10:51:25,918 [INFO] 🚀 Starting timed data collection for 0.016666666666666666 hours
+2025-06-28 10:51:25,918 [INFO] 📅 Collection will end at: 2025-06-28 10:52:25.918290
+2025-06-28 10:51:25,919 [INFO] 🔄 Cycle interval: 0.5 minutes
+2025-06-28 10:51:25,919 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT
+2025-06-28 10:51:25,919 [INFO] ⏱️ Intervals: 1m, 5m
+2025-06-28 10:51:25,919 [INFO] 📊 Cycle 1 - 0.0h remaining
+2025-06-28 10:51:25,919 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 10:51:25,993 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 10:51:26,168 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 10:51:26,343 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 10:51:26,518 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 10:51:26,782 [INFO] 💾 Saved production_BTCUSDT_1m_20250628_105126.parquet to local backup (100 rows)
+2025-06-28 10:51:26,782 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_105126.parquet (100 rows)
+2025-06-28 10:51:26,809 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_105126.parquet to local backup (100 rows)
+2025-06-28 10:51:26,810 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_105126.parquet (100 rows)
+2025-06-28 10:51:26,813 [INFO] 💾 Saved production_ETHUSDT_1m_20250628_105126.parquet to local backup (100 rows)
+2025-06-28 10:51:26,813 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_105126.parquet (100 rows)
+2025-06-28 10:51:26,824 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_105126.parquet to local backup (100 rows)
+2025-06-28 10:51:26,824 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_105126.parquet (100 rows)
+2025-06-28 10:51:26,824 [INFO] ✅ Collection cycle completed in 0.9s - Files: 4/4, Rows: 400
+2025-06-28 10:51:26,825 [INFO] 📈 Progress Report:
+2025-06-28 10:51:26,825 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 10:51:26,825 [INFO]    📁 Files saved: 4
+2025-06-28 10:51:26,825 [INFO]    📊 Rows collected: 400
+2025-06-28 10:51:26,825 [INFO]    ✅ Successful uploads: 4
+2025-06-28 10:51:26,825 [INFO]    ❌ Failed uploads: 0
+2025-06-28 10:51:26,825 [INFO]    💾 Memory files: 4
+2025-06-28 10:51:26,825 [INFO]    🏠 Local files: 4
+2025-06-28 10:51:26,826 [INFO]    ☁️ Drive files: 0
+2025-06-28 10:51:47,644 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 10:51:47,831 [INFO] ============================================================
+2025-06-28 10:51:47,831 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 10:51:47,831 [INFO] ============================================================
+2025-06-28 10:51:47,831 [INFO] ⏱️ Total Runtime: 0.01 hours
+2025-06-28 10:51:47,831 [INFO] 📁 Files Saved: 4
+2025-06-28 10:51:47,831 [INFO] 📊 Total Rows: 400
+2025-06-28 10:51:47,831 [INFO] ✅ Successful Uploads: 4
+2025-06-28 10:51:47,831 [INFO] ❌ Failed Uploads: 0
+2025-06-28 10:51:47,831 [INFO] 📈 Average Rows/File: 100.0
+2025-06-28 10:51:47,831 [INFO] 📊 Collection Rate: 657.1 files/hour, 65,713 rows/hour
+2025-06-28 10:51:47,833 [INFO] 💾 Final Storage: Memory=4, Local=4, Drive=0
+2025-06-28 10:51:47,833 [INFO] ✅ No errors encountered!
+2025-06-28 10:51:47,833 [INFO] ============================================================
+2025-06-28 10:51:47,833 [INFO] 📊 Collected 4 files for training
+2025-06-28 10:51:47,846 [INFO] 🤖 Production trainer initialized
+2025-06-28 10:51:47,846 [INFO]    📊 Min total rows: 50
+2025-06-28 10:51:47,846 [INFO]    📈 Min rows per symbol: 10
+2025-06-28 10:51:47,846 [INFO]    ⏱️ Min time span: 0.1h
+2025-06-28 10:51:47,847 [INFO]    💾 Model output: test_models
+2025-06-28 10:51:47,847 [INFO] 🚀 Starting full production training pipeline...
+2025-06-28 10:51:47,847 [INFO] 📂 Step 1: Loading training data...
+2025-06-28 10:51:47,847 [INFO] 📂 Loading training data from storage...
+2025-06-28 10:51:47,847 [INFO] 📋 Total unique files found: 4
+2025-06-28 10:51:47,847 [INFO] 📋 Found 4 data files
+2025-06-28 10:51:48,207 [INFO] 📖 Loaded production_BTCUSDT_1m_20250628_105126.parquet from local backup (100 rows)
+2025-06-28 10:51:48,216 [INFO] 📖 Loaded production_BTCUSDT_5m_20250628_105126.parquet from local backup (100 rows)
+2025-06-28 10:51:48,225 [INFO] 📖 Loaded production_ETHUSDT_1m_20250628_105126.parquet from local backup (100 rows)
+2025-06-28 10:51:48,235 [INFO] 📖 Loaded production_ETHUSDT_5m_20250628_105126.parquet from local backup (100 rows)
+2025-06-28 10:51:48,241 [INFO] 📊 Combined data: 400 rows from 4 files
+2025-06-28 10:51:48,241 [INFO] ✅ Step 2: Validating data sufficiency...
+2025-06-28 10:51:48,248 [INFO] 📊 Data validation results:
+2025-06-28 10:51:48,248 [INFO]    📈 Total rows: 400
+2025-06-28 10:51:48,248 [INFO]    ⏱️ Time span: 8.3 hours
+2025-06-28 10:51:48,248 [INFO]    ✅ Passed checks: 6
+2025-06-28 10:51:48,248 [INFO]    ❌ Issues: 1
+2025-06-28 10:51:48,248 [INFO]    🏆 Quality score: 100.0/100
+2025-06-28 10:51:48,248 [INFO] ✅ Data validation passed - proceeding with training
+2025-06-28 10:51:48,248 [INFO] ⚙️ Step 3: Creating features...
+2025-06-28 10:51:48,249 [INFO] ⚙️ Creating features from market data...
+2025-06-28 10:51:48,269 [INFO] ⚙️ Created 36 features, 398 training samples
+2025-06-28 10:51:48,269 [INFO] 🤖 Step 4: Training model...
+2025-06-28 10:51:48,270 [INFO] 🤖 Training machine learning model...
+2025-06-28 10:51:48,272 [INFO] 📊 Using 26 features: ['volume', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'interval_minutes', 'price_change', 'price_change_pct', 'high_low_spread', 'high_low_spread_pct']...
+2025-06-28 10:51:48,279 [INFO] 🌲 Training Random Forest model...
+2025-06-28 10:51:49,021 [INFO] ✅ Model training completed successfully!
+2025-06-28 10:51:49,021 [INFO]    📊 Training samples: 318
+2025-06-28 10:51:49,021 [INFO]    🧪 Test samples: 80
+2025-06-28 10:51:49,021 [INFO]    ⚙️ Features: 26
+2025-06-28 10:51:49,021 [INFO]    📈 Test R²: -0.1110
+2025-06-28 10:51:49,021 [INFO]    📉 Test MAE: 0.0409
+2025-06-28 10:51:49,022 [INFO]    🔀 CV R²: -0.0939 ± 0.1498
+2025-06-28 10:51:49,022 [INFO]    💾 Model saved: test_models\production_model_20250628_105148.joblib
+2025-06-28 10:51:49,022 [INFO] 🎉 Production training pipeline completed successfully!
+2025-06-28 10:51:49,022 [INFO] ✅ Model training successful
+2025-06-28 10:51:49,022 [INFO]    📊 Training samples: 318
+2025-06-28 10:51:49,022 [INFO]    🧪 Test samples: 80
+2025-06-28 10:51:49,022 [INFO]    ⚙️ Features: 26
+2025-06-28 10:51:49,023 [INFO]    📈 Test R²: -0.1110
+2025-06-28 10:51:49,023 [INFO]    💾 Model saved: test_models\production_model_20250628_105148.joblib
+2025-06-28 10:51:49,023 [INFO] ✅ Model Training PASSED
+2025-06-28 10:51:49,023 [INFO] 
+============================================================
+2025-06-28 10:51:49,023 [INFO] 📊 COMPREHENSIVE TEST RESULTS
+2025-06-28 10:51:49,023 [INFO] ============================================================
+2025-06-28 10:51:49,024 [INFO] ✅ Tests Passed: 3/4
+2025-06-28 10:51:49,024 [INFO] 🔗 Binance: Connected and authenticated
+2025-06-28 10:51:49,024 [INFO] 💰 Balance: 2 assets with non-zero balance
+2025-06-28 10:51:49,024 [WARNING] ⚠️ Google Drive: Not connected (service account missing)
+2025-06-28 10:51:49,024 [INFO] 📊 Data Collection: Working properly
+2025-06-28 10:51:49,024 [INFO] 🤖 Model Training: Working properly
+2025-06-28 10:51:49,024 [INFO] 🎉 OVERALL: Production system is ready!
+2025-06-28 10:51:49,024 [INFO] 💡 Core components are working - you can deploy to Railway
+2025-06-28 10:51:49,025 [INFO] ============================================================
+2025-06-28 10:53:41,190 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 10:53:41,190 [INFO] 📅 Started at: 2025-06-28 10:53:41.190552
+2025-06-28 10:53:41,191 [INFO] 📊 Money Printer System Status
+2025-06-28 10:53:41,191 [INFO] ==================================================
+2025-06-28 10:53:41,191 [INFO] 🔗 Testing Binance connection...
+2025-06-28 10:53:41,642 [INFO] ✅ Binance client connected successfully
+2025-06-28 10:53:41,710 [INFO] ✅ Binance: Connected
+2025-06-28 10:53:41,780 [INFO] 💰 Account Type: SPOT
+2025-06-28 10:53:41,781 [INFO] 🔄 Can Trade: True
+2025-06-28 10:53:41,781 [INFO] 💵 Assets with Balance: 2
+2025-06-28 10:53:41,781 [INFO] 💰 Current Balances:
+2025-06-28 10:53:41,781 [INFO]    USDT: 8.41000000 (Free: 8.41000000, Locked: 0.00000000)
+2025-06-28 10:53:41,781 [INFO]    XRP: 0.00000084 (Free: 0.00000084, Locked: 0.00000000)
+2025-06-28 10:53:41,781 [INFO] 💵 USDT Available for Trading: $8.41
+2025-06-28 10:53:41,781 [INFO] 
+☁️ Testing Google Drive connection...
+2025-06-28 10:53:41,782 [WARNING] ⚠️ Google Drive: Service account key missing
+2025-06-28 10:53:41,782 [INFO] 💡 Add secrets/service_account.json for Drive integration
+2025-06-28 10:53:41,782 [INFO] 
+📁 Checking local storage...
+2025-06-28 10:53:41,782 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 10:53:41,870 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 10:53:41,870 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 10:53:41,870 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 10:53:41,871 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 10:53:41,871 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 10:53:41,871 [INFO] 💾 Local files: 0
+2025-06-28 10:53:41,871 [INFO] ☁️ Drive files: 0
+2025-06-28 10:53:41,871 [INFO] 🧠 Memory files: 0
+2025-06-28 10:53:41,872 [INFO] 
+🤖 Checking trained models...
+2025-06-28 10:53:41,872 [WARNING] ⚠️ Models directory not found
+2025-06-28 10:53:41,872 [INFO] 
+==================================================
+2025-06-28 14:11:32,302 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 14:11:32,311 [INFO] 📅 Started at: 2025-06-28 14:11:32.311446
+2025-06-28 14:11:32,311 [INFO] 📊 Money Printer System Status
+2025-06-28 14:11:32,311 [INFO] ==================================================
+2025-06-28 14:11:32,311 [INFO] 🔗 Testing Binance connection...
+2025-06-28 14:11:32,749 [INFO] ✅ Binance client connected successfully
+2025-06-28 14:11:32,818 [INFO] ✅ Binance: Connected
+2025-06-28 14:11:32,984 [INFO] 💰 Account Type: SPOT
+2025-06-28 14:11:32,984 [INFO] 🔄 Can Trade: True
+2025-06-28 14:11:32,984 [INFO] 💵 Assets with Balance: 2
+2025-06-28 14:11:32,984 [INFO] 💰 Current Balances:
+2025-06-28 14:11:32,984 [INFO]    USDT: 8.41000000 (Free: 8.41000000, Locked: 0.00000000)
+2025-06-28 14:11:32,984 [INFO]    XRP: 0.00000084 (Free: 0.00000084, Locked: 0.00000000)
+2025-06-28 14:11:32,985 [INFO] 💵 USDT Available for Trading: $8.41
+2025-06-28 14:11:32,985 [INFO] 
+☁️ Testing Google Drive connection...
+2025-06-28 14:11:32,985 [WARNING] ⚠️ Google Drive: Service account key missing
+2025-06-28 14:11:32,985 [INFO] 💡 Add secrets/service_account.json for Drive integration
+2025-06-28 14:11:32,985 [INFO] 
+📁 Checking local storage...
+2025-06-28 14:11:32,985 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:11:33,079 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 14:11:33,079 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 14:11:33,079 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:11:33,079 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:11:33,080 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:11:33,080 [INFO] 💾 Local files: 0
+2025-06-28 14:11:33,080 [INFO] ☁️ Drive files: 0
+2025-06-28 14:11:33,080 [INFO] 🧠 Memory files: 0
+2025-06-28 14:11:33,080 [INFO] 
+🤖 Checking trained models...
+2025-06-28 14:11:33,080 [WARNING] ⚠️ Models directory not found
+2025-06-28 14:11:33,080 [INFO] 
+==================================================
+2025-06-28 14:11:54,971 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 14:11:54,971 [INFO] 📅 Started at: 2025-06-28 14:11:54.971206
+2025-06-28 14:11:54,971 [INFO] 🚀 Starting Production Data Collection
+2025-06-28 14:11:54,971 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:11:55,066 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 14:11:55,066 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 14:11:55,066 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:11:55,067 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:11:55,067 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:11:55,067 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:11:55,067 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 14:11:55,067 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 14:11:55,068 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:11:55,068 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:11:55,068 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:11:55,246 [INFO] ✅ Binance client connected successfully
+2025-06-28 14:11:55,314 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 14:11:55,314 [INFO] 📅 Collecting data for 0.1 hours...
+2025-06-28 14:11:55,314 [INFO] 🚀 Starting timed data collection for 0.1 hours
+2025-06-28 14:11:55,315 [INFO] 📅 Collection will end at: 2025-06-28 14:17:55.314294
+2025-06-28 14:11:55,315 [INFO] 🔄 Cycle interval: 5 minutes
+2025-06-28 14:11:55,315 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT, ADAUSDT, DOTUSDT, LINKUSDT
+2025-06-28 14:11:55,315 [INFO] ⏱️ Intervals: 1m, 5m, 15m, 1h
+2025-06-28 14:11:55,315 [INFO] 📊 Cycle 1 - 0.1h remaining
+2025-06-28 14:11:55,315 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 14:11:55,401 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 14:11:55,601 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 14:11:55,778 [INFO] 📊 Collected 100 rows for BTCUSDT 15m
+2025-06-28 14:11:56,048 [INFO] 📊 Collected 100 rows for BTCUSDT 1h
+2025-06-28 14:11:56,222 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 14:11:56,398 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 14:11:56,574 [INFO] 📊 Collected 100 rows for ETHUSDT 15m
+2025-06-28 14:11:56,749 [INFO] 📊 Collected 100 rows for ETHUSDT 1h
+2025-06-28 14:11:57,017 [INFO] 📊 Collected 100 rows for ADAUSDT 1m
+2025-06-28 14:11:57,193 [INFO] 📊 Collected 100 rows for ADAUSDT 5m
+2025-06-28 14:11:57,463 [INFO] 📊 Collected 100 rows for ADAUSDT 15m
+2025-06-28 14:11:57,637 [INFO] 📊 Collected 100 rows for ADAUSDT 1h
+2025-06-28 14:11:57,811 [INFO] 📊 Collected 100 rows for DOTUSDT 1m
+2025-06-28 14:11:58,081 [INFO] 📊 Collected 100 rows for DOTUSDT 5m
+2025-06-28 14:11:58,256 [INFO] 📊 Collected 100 rows for DOTUSDT 15m
+2025-06-28 14:11:58,430 [INFO] 📊 Collected 100 rows for DOTUSDT 1h
+2025-06-28 14:11:58,700 [INFO] 📊 Collected 100 rows for LINKUSDT 1m
+2025-06-28 14:11:58,969 [INFO] 📊 Collected 100 rows for LINKUSDT 5m
+2025-06-28 14:11:59,239 [INFO] 📊 Collected 100 rows for LINKUSDT 15m
+2025-06-28 14:11:59,514 [INFO] 📊 Collected 100 rows for LINKUSDT 1h
+2025-06-28 14:11:59,652 [INFO] 💾 Saved production_BTCUSDT_1m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,652 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,659 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,659 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,663 [INFO] 💾 Saved production_BTCUSDT_15m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,663 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,668 [INFO] 💾 Saved production_BTCUSDT_1h_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,668 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,724 [INFO] 💾 Saved production_ETHUSDT_1m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,725 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,728 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,728 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,732 [INFO] 💾 Saved production_ETHUSDT_15m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,732 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,734 [INFO] 💾 Saved production_ETHUSDT_1h_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,736 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,739 [INFO] 💾 Saved production_ADAUSDT_1m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,739 [INFO] ✅ Saved production_ADAUSDT_1m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,742 [INFO] 💾 Saved production_ADAUSDT_5m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,742 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,745 [INFO] 💾 Saved production_ADAUSDT_15m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,745 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,748 [INFO] 💾 Saved production_ADAUSDT_1h_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,749 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,752 [INFO] 💾 Saved production_DOTUSDT_1m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,752 [INFO] ✅ Saved production_DOTUSDT_1m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,755 [INFO] 💾 Saved production_DOTUSDT_5m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,755 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,758 [INFO] 💾 Saved production_DOTUSDT_15m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,758 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,762 [INFO] 💾 Saved production_DOTUSDT_1h_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,762 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,766 [INFO] 💾 Saved production_LINKUSDT_1m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,766 [INFO] ✅ Saved production_LINKUSDT_1m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,769 [INFO] 💾 Saved production_LINKUSDT_5m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,769 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,772 [INFO] 💾 Saved production_LINKUSDT_15m_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,773 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,775 [INFO] 💾 Saved production_LINKUSDT_1h_20250628_141159.parquet to local backup (100 rows)
+2025-06-28 14:11:59,776 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_141159.parquet (100 rows)
+2025-06-28 14:11:59,776 [INFO] ✅ Collection cycle completed in 4.5s - Files: 20/20, Rows: 2000
+2025-06-28 14:11:59,776 [INFO] 📈 Progress Report:
+2025-06-28 14:11:59,776 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 14:11:59,777 [INFO]    📁 Files saved: 20
+2025-06-28 14:11:59,777 [INFO]    📊 Rows collected: 2,000
+2025-06-28 14:11:59,777 [INFO]    ✅ Successful uploads: 20
+2025-06-28 14:11:59,777 [INFO]    ❌ Failed uploads: 0
+2025-06-28 14:11:59,777 [INFO]    💾 Memory files: 20
+2025-06-28 14:11:59,777 [INFO]    🏠 Local files: 20
+2025-06-28 14:11:59,777 [INFO]    ☁️ Drive files: 0
+2025-06-28 14:12:26,105 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 14:12:26,785 [INFO] ============================================================
+2025-06-28 14:12:26,785 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 14:12:26,785 [INFO] ============================================================
+2025-06-28 14:12:26,785 [INFO] ⏱️ Total Runtime: 0.01 hours
+2025-06-28 14:12:26,785 [INFO] 📁 Files Saved: 20
+2025-06-28 14:12:26,785 [INFO] 📊 Total Rows: 2,000
+2025-06-28 14:12:26,785 [INFO] ✅ Successful Uploads: 20
+2025-06-28 14:12:26,785 [INFO] ❌ Failed Uploads: 0
+2025-06-28 14:12:26,785 [INFO] 📈 Average Rows/File: 100.0
+2025-06-28 14:12:26,786 [INFO] 📊 Collection Rate: 2287.8 files/hour, 228,779 rows/hour
+2025-06-28 14:12:26,786 [INFO] 💾 Final Storage: Memory=20, Local=20, Drive=0
+2025-06-28 14:12:26,786 [INFO] ✅ No errors encountered!
+2025-06-28 14:12:26,786 [INFO] ============================================================
+2025-06-28 14:12:26,786 [INFO] 📊 Collection Summary:
+2025-06-28 14:12:26,786 [INFO]    📁 Files saved: 20
+2025-06-28 14:12:26,786 [INFO]    📊 Rows collected: 2,000
+2025-06-28 14:12:26,787 [INFO]    ✅ Success rate: 20/20
+2025-06-28 14:12:43,269 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 14:12:43,270 [INFO] 📅 Started at: 2025-06-28 14:12:43.270960
+2025-06-28 14:12:43,270 [INFO] 🤖 Starting Production Model Training
+2025-06-28 14:12:43,270 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:12:43,372 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 14:12:43,373 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 14:12:43,373 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:12:43,373 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:12:43,373 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:12:43,392 [INFO] 🤖 Production trainer initialized
+2025-06-28 14:12:43,392 [INFO]    📊 Min total rows: 500
+2025-06-28 14:12:43,392 [INFO]    📈 Min rows per symbol: 50
+2025-06-28 14:12:43,392 [INFO]    ⏱️ Min time span: 6h
+2025-06-28 14:12:43,392 [INFO]    💾 Model output: models
+2025-06-28 14:12:43,393 [INFO] 🚀 Starting full production training pipeline...
+2025-06-28 14:12:43,393 [INFO] 📂 Step 1: Loading training data...
+2025-06-28 14:12:43,393 [INFO] 📂 Loading training data from storage...
+2025-06-28 14:12:43,393 [INFO] 📋 Total unique files found: 20
+2025-06-28 14:12:43,393 [INFO] 📋 Found 20 data files
+2025-06-28 14:12:43,531 [INFO] 📖 Loaded production_ADAUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,533 [INFO] 📖 Loaded production_ADAUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,535 [INFO] 📖 Loaded production_ADAUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,537 [INFO] 📖 Loaded production_ADAUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,539 [INFO] 📖 Loaded production_BTCUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,541 [INFO] 📖 Loaded production_BTCUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,543 [INFO] 📖 Loaded production_BTCUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,545 [INFO] 📖 Loaded production_BTCUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,547 [INFO] 📖 Loaded production_DOTUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,549 [INFO] 📖 Loaded production_DOTUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,551 [INFO] 📖 Loaded production_DOTUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,553 [INFO] 📖 Loaded production_DOTUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,555 [INFO] 📖 Loaded production_ETHUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,556 [INFO] 📖 Loaded production_ETHUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,558 [INFO] 📖 Loaded production_ETHUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,560 [INFO] 📖 Loaded production_ETHUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,562 [INFO] 📖 Loaded production_LINKUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,564 [INFO] 📖 Loaded production_LINKUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,566 [INFO] 📖 Loaded production_LINKUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,567 [INFO] 📖 Loaded production_LINKUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:12:43,582 [INFO] 📊 Combined data: 2,000 rows from 20 files
+2025-06-28 14:12:43,582 [INFO] ✅ Step 2: Validating data sufficiency...
+2025-06-28 14:12:43,594 [INFO] 📊 Data validation results:
+2025-06-28 14:12:43,594 [INFO]    📈 Total rows: 2,000
+2025-06-28 14:12:43,594 [INFO]    ⏱️ Time span: 99.2 hours
+2025-06-28 14:12:43,594 [INFO]    ✅ Passed checks: 7
+2025-06-28 14:12:43,594 [INFO]    ❌ Issues: 0
+2025-06-28 14:12:43,595 [INFO]    🏆 Quality score: 100.0/100
+2025-06-28 14:12:43,595 [INFO] ✅ Data validation passed - proceeding with training
+2025-06-28 14:12:43,595 [INFO] ⚙️ Step 3: Creating features...
+2025-06-28 14:12:43,595 [INFO] ⚙️ Creating features from market data...
+2025-06-28 14:12:43,631 [INFO] ⚙️ Created 36 features, 1,995 training samples
+2025-06-28 14:12:43,631 [INFO] 🤖 Step 4: Training model...
+2025-06-28 14:12:43,631 [INFO] 🤖 Training machine learning model...
+2025-06-28 14:12:43,633 [INFO] 📊 Using 26 features: ['volume', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'interval_minutes', 'price_change', 'price_change_pct', 'high_low_spread', 'high_low_spread_pct']...
+2025-06-28 14:12:43,643 [INFO] 🌲 Training Random Forest model...
+2025-06-28 14:12:45,458 [INFO] ✅ Model training completed successfully!
+2025-06-28 14:12:45,459 [INFO]    📊 Training samples: 1,596
+2025-06-28 14:12:45,459 [INFO]    🧪 Test samples: 399
+2025-06-28 14:12:45,459 [INFO]    ⚙️ Features: 26
+2025-06-28 14:12:45,459 [INFO]    📈 Test R²: 0.1993
+2025-06-28 14:12:45,459 [INFO]    📉 Test MAE: 0.1631
+2025-06-28 14:12:45,459 [INFO]    🔀 CV R²: 0.0786 ± 0.0568
+2025-06-28 14:12:45,459 [INFO]    💾 Model saved: models\production_model_20250628_141245.joblib
+2025-06-28 14:12:45,460 [INFO] 🎉 Production training pipeline completed successfully!
+2025-06-28 14:12:45,460 [INFO] ✅ Training completed successfully!
+2025-06-28 14:12:45,460 [INFO]    📊 Training samples: 1,596
+2025-06-28 14:12:45,460 [INFO]    🧪 Test samples: 399
+2025-06-28 14:12:45,460 [INFO]    ⚙️ Features: 26
+2025-06-28 14:12:45,460 [INFO]    📈 Test R²: 0.1993
+2025-06-28 14:12:45,460 [INFO]    💾 Model saved: models\production_model_20250628_141245.joblib
+2025-06-28 14:13:00,252 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 14:13:00,252 [INFO] 📅 Started at: 2025-06-28 14:13:00.252467
+2025-06-28 14:13:00,252 [INFO] 📊 Money Printer System Status
+2025-06-28 14:13:00,253 [INFO] ==================================================
+2025-06-28 14:13:00,253 [INFO] 🔗 Testing Binance connection...
+2025-06-28 14:13:00,497 [INFO] ✅ Binance client connected successfully
+2025-06-28 14:13:00,567 [INFO] ✅ Binance: Connected
+2025-06-28 14:13:00,637 [INFO] 💰 Account Type: SPOT
+2025-06-28 14:13:00,638 [INFO] 🔄 Can Trade: True
+2025-06-28 14:13:00,638 [INFO] 💵 Assets with Balance: 2
+2025-06-28 14:13:00,638 [INFO] 💰 Current Balances:
+2025-06-28 14:13:00,638 [INFO]    USDT: 8.41000000 (Free: 8.41000000, Locked: 0.00000000)
+2025-06-28 14:13:00,638 [INFO]    XRP: 0.00000084 (Free: 0.00000084, Locked: 0.00000000)
+2025-06-28 14:13:00,638 [INFO] 💵 USDT Available for Trading: $8.41
+2025-06-28 14:13:00,638 [INFO] 
+☁️ Testing Google Drive connection...
+2025-06-28 14:13:00,639 [WARNING] ⚠️ Google Drive: Service account key missing
+2025-06-28 14:13:00,639 [INFO] 💡 Add secrets/service_account.json for Drive integration
+2025-06-28 14:13:00,639 [INFO] 
+📁 Checking local storage...
+2025-06-28 14:13:00,639 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:13:00,756 [ERROR] Service account key not found: Z:\money_printer\secrets\service_account.json
+2025-06-28 14:13:00,756 [ERROR] Please place your service account JSON key file at the specified location
+2025-06-28 14:13:00,756 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:13:00,757 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:13:00,757 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:13:00,757 [INFO] 💾 Local files: 20
+2025-06-28 14:13:00,757 [INFO] ☁️ Drive files: 0
+2025-06-28 14:13:00,757 [INFO] 🧠 Memory files: 0
+2025-06-28 14:13:00,757 [INFO] 
+🤖 Checking trained models...
+2025-06-28 14:13:00,758 [INFO] 🎯 Available models: 1
+2025-06-28 14:13:00,758 [INFO] 📅 Latest model: production_model_20250628_141245.joblib
+2025-06-28 14:13:00,759 [INFO] ⏰ Model age: 0:00:15.301005
+2025-06-28 14:13:00,759 [INFO] 
+==================================================
+2025-06-28 14:22:29,767 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:22:29,948 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:22:29,951 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:22:31,063 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:22:31,063 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:24:47,053 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:24:47,192 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:24:47,194 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:24:48,223 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:24:48,224 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:25:05,643 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 14:25:05,643 [INFO] 📅 Started at: 2025-06-28 14:25:05.643060
+2025-06-28 14:25:05,644 [INFO] 🚀 Starting Production Data Collection
+2025-06-28 14:25:05,644 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:25:05,756 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:25:05,758 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:25:06,794 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:25:06,795 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:25:06,795 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:25:06,795 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:25:06,796 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:25:06,796 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:25:06,802 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:25:06,803 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:25:07,811 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:25:07,811 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:25:07,811 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:25:07,811 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:25:07,813 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:25:08,086 [INFO] ✅ Binance client connected successfully
+2025-06-28 14:25:08,154 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 14:25:08,154 [INFO] 📅 Collecting data for 0.05 hours...
+2025-06-28 14:25:08,155 [INFO] 🚀 Starting timed data collection for 0.05 hours
+2025-06-28 14:25:08,155 [INFO] 📅 Collection will end at: 2025-06-28 14:28:08.155302
+2025-06-28 14:25:08,155 [INFO] 🔄 Cycle interval: 5 minutes
+2025-06-28 14:25:08,155 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT, ADAUSDT, DOTUSDT, LINKUSDT
+2025-06-28 14:25:08,155 [INFO] ⏱️ Intervals: 1m, 5m, 15m, 1h
+2025-06-28 14:25:08,155 [INFO] 📊 Cycle 1 - 0.1h remaining
+2025-06-28 14:25:08,155 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 14:25:08,233 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 14:25:08,409 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 14:25:08,585 [INFO] 📊 Collected 100 rows for BTCUSDT 15m
+2025-06-28 14:25:08,760 [INFO] 📊 Collected 100 rows for BTCUSDT 1h
+2025-06-28 14:25:08,935 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 14:25:09,113 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 14:25:09,288 [INFO] 📊 Collected 100 rows for ETHUSDT 15m
+2025-06-28 14:25:09,463 [INFO] 📊 Collected 100 rows for ETHUSDT 1h
+2025-06-28 14:25:09,732 [INFO] 📊 Collected 100 rows for ADAUSDT 1m
+2025-06-28 14:25:09,910 [INFO] 📊 Collected 100 rows for ADAUSDT 5m
+2025-06-28 14:25:10,085 [INFO] 📊 Collected 100 rows for ADAUSDT 15m
+2025-06-28 14:25:10,363 [INFO] 📊 Collected 100 rows for ADAUSDT 1h
+2025-06-28 14:25:10,536 [INFO] 📊 Collected 100 rows for DOTUSDT 1m
+2025-06-28 14:25:10,713 [INFO] 📊 Collected 100 rows for DOTUSDT 5m
+2025-06-28 14:25:10,886 [INFO] 📊 Collected 100 rows for DOTUSDT 15m
+2025-06-28 14:25:11,163 [INFO] 📊 Collected 100 rows for DOTUSDT 1h
+2025-06-28 14:25:11,434 [INFO] 📊 Collected 100 rows for LINKUSDT 1m
+2025-06-28 14:25:11,704 [INFO] 📊 Collected 100 rows for LINKUSDT 5m
+2025-06-28 14:25:11,975 [INFO] 📊 Collected 100 rows for LINKUSDT 15m
+2025-06-28 14:25:12,149 [INFO] 📊 Collected 100 rows for LINKUSDT 1h
+2025-06-28 14:25:12,273 [INFO] 💾 Saved production_BTCUSDT_1m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,273 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,277 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,278 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,301 [INFO] 💾 Saved production_BTCUSDT_15m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,301 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,311 [INFO] 💾 Saved production_BTCUSDT_1h_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,311 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,315 [INFO] 💾 Saved production_ETHUSDT_1m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,315 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,319 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,319 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,324 [INFO] 💾 Saved production_ETHUSDT_15m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,324 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,335 [INFO] 💾 Saved production_ETHUSDT_1h_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,335 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,341 [INFO] 💾 Saved production_ADAUSDT_1m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,341 [INFO] ✅ Saved production_ADAUSDT_1m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,345 [INFO] 💾 Saved production_ADAUSDT_5m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,345 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,348 [INFO] 💾 Saved production_ADAUSDT_15m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,348 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,351 [INFO] 💾 Saved production_ADAUSDT_1h_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,351 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,355 [INFO] 💾 Saved production_DOTUSDT_1m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,356 [INFO] ✅ Saved production_DOTUSDT_1m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,359 [INFO] 💾 Saved production_DOTUSDT_5m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,359 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,363 [INFO] 💾 Saved production_DOTUSDT_15m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,363 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,368 [INFO] 💾 Saved production_DOTUSDT_1h_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,368 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,373 [INFO] 💾 Saved production_LINKUSDT_1m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,373 [INFO] ✅ Saved production_LINKUSDT_1m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,376 [INFO] 💾 Saved production_LINKUSDT_5m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,377 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,380 [INFO] 💾 Saved production_LINKUSDT_15m_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,381 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,386 [INFO] 💾 Saved production_LINKUSDT_1h_20250628_142512.parquet to local backup (100 rows)
+2025-06-28 14:25:12,386 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_142512.parquet (100 rows)
+2025-06-28 14:25:12,386 [INFO] ✅ Collection cycle completed in 4.2s - Files: 20/20, Rows: 2000
+2025-06-28 14:25:12,387 [INFO] 📈 Progress Report:
+2025-06-28 14:25:12,387 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 14:25:12,387 [INFO]    📁 Files saved: 20
+2025-06-28 14:25:12,387 [INFO]    📊 Rows collected: 2,000
+2025-06-28 14:25:12,388 [INFO]    ✅ Successful uploads: 20
+2025-06-28 14:25:12,388 [INFO]    ❌ Failed uploads: 0
+2025-06-28 14:25:12,388 [INFO]    💾 Memory files: 20
+2025-06-28 14:25:12,388 [INFO]    🏠 Local files: 40
+2025-06-28 14:25:12,388 [INFO]    ☁️ Drive files: 0
+2025-06-28 14:30:33,050 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 14:30:33,050 [INFO] 📅 Started at: 2025-06-28 14:30:33.050261
+2025-06-28 14:30:33,050 [INFO] 📊 Money Printer System Status
+2025-06-28 14:30:33,051 [INFO] ==================================================
+2025-06-28 14:30:33,051 [INFO] 🔗 Testing Binance connection...
+2025-06-28 14:30:33,276 [INFO] ✅ Binance client connected successfully
+2025-06-28 14:30:33,349 [INFO] ✅ Binance: Connected
+2025-06-28 14:30:33,421 [INFO] 💰 Account Type: SPOT
+2025-06-28 14:30:33,421 [INFO] 🔄 Can Trade: True
+2025-06-28 14:30:33,421 [INFO] 💵 Assets with Balance: 2
+2025-06-28 14:30:33,421 [INFO] 💰 Current Balances:
+2025-06-28 14:30:33,421 [INFO]    USDT: 8.41000000 (Free: 8.41000000, Locked: 0.00000000)
+2025-06-28 14:30:33,421 [INFO]    XRP: 0.00000084 (Free: 0.00000084, Locked: 0.00000000)
+2025-06-28 14:30:33,422 [INFO] 💵 USDT Available for Trading: $8.41
+2025-06-28 14:30:33,422 [INFO] 
+☁️ Testing Google Drive connection...
+2025-06-28 14:30:33,422 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:30:33,519 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:30:33,521 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:30:34,584 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:30:34,584 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:30:34,926 [INFO] ✅ Google Drive: Connected (4 files)
+2025-06-28 14:30:34,927 [INFO] 
+📁 Checking local storage...
+2025-06-28 14:30:34,927 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:30:34,931 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:30:34,933 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:30:36,025 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:30:36,026 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:30:36,026 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:30:36,026 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:30:36,027 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:30:36,027 [INFO] 💾 Local files: 40
+2025-06-28 14:30:36,027 [INFO] ☁️ Drive files: 0
+2025-06-28 14:30:36,027 [INFO] 🧠 Memory files: 0
+2025-06-28 14:30:36,027 [INFO] 
+🤖 Checking trained models...
+2025-06-28 14:30:36,028 [INFO] 🎯 Available models: 1
+2025-06-28 14:30:36,028 [INFO] 📅 Latest model: production_model_20250628_141245.joblib
+2025-06-28 14:30:36,028 [INFO] ⏰ Model age: 0:17:50.571040
+2025-06-28 14:30:36,028 [INFO] 
+==================================================
+2025-06-28 14:31:35,843 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 14:31:35,843 [INFO] 📅 Started at: 2025-06-28 14:31:35.843597
+2025-06-28 14:31:35,844 [INFO] 🚀 Starting Production Data Collection
+2025-06-28 14:31:35,844 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:31:35,948 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:31:35,950 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:31:36,975 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:31:36,975 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:31:36,976 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:31:36,976 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:31:36,976 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:31:36,976 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:31:36,979 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:31:36,980 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:31:38,016 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:31:38,017 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:31:38,017 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:31:38,017 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:31:38,017 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:31:38,210 [INFO] ✅ Binance client connected successfully
+2025-06-28 14:31:38,282 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 14:31:38,283 [INFO] 📅 Collecting data for 0.05 hours...
+2025-06-28 14:31:38,283 [INFO] 🚀 Starting timed data collection for 0.05 hours
+2025-06-28 14:31:38,283 [INFO] 📅 Collection will end at: 2025-06-28 14:34:38.283415
+2025-06-28 14:31:38,283 [INFO] 🔄 Cycle interval: 5 minutes
+2025-06-28 14:31:38,283 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT, ADAUSDT, DOTUSDT, LINKUSDT
+2025-06-28 14:31:38,283 [INFO] ⏱️ Intervals: 1m, 5m, 15m, 1h
+2025-06-28 14:31:38,283 [INFO] 📊 Cycle 1 - 0.1h remaining
+2025-06-28 14:31:38,283 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 14:31:38,358 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 14:31:38,536 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 14:31:38,710 [INFO] 📊 Collected 100 rows for BTCUSDT 15m
+2025-06-28 14:31:38,885 [INFO] 📊 Collected 100 rows for BTCUSDT 1h
+2025-06-28 14:31:39,059 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 14:31:39,329 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 14:31:39,504 [INFO] 📊 Collected 100 rows for ETHUSDT 15m
+2025-06-28 14:31:39,679 [INFO] 📊 Collected 100 rows for ETHUSDT 1h
+2025-06-28 14:31:39,853 [INFO] 📊 Collected 100 rows for ADAUSDT 1m
+2025-06-28 14:31:40,123 [INFO] 📊 Collected 100 rows for ADAUSDT 5m
+2025-06-28 14:31:40,298 [INFO] 📊 Collected 100 rows for ADAUSDT 15m
+2025-06-28 14:31:40,577 [INFO] 📊 Collected 100 rows for ADAUSDT 1h
+2025-06-28 14:31:40,845 [INFO] 📊 Collected 100 rows for DOTUSDT 1m
+2025-06-28 14:31:41,020 [INFO] 📊 Collected 100 rows for DOTUSDT 5m
+2025-06-28 14:31:41,197 [INFO] 📊 Collected 100 rows for DOTUSDT 15m
+2025-06-28 14:31:41,372 [INFO] 📊 Collected 100 rows for DOTUSDT 1h
+2025-06-28 14:31:41,642 [INFO] 📊 Collected 100 rows for LINKUSDT 1m
+2025-06-28 14:31:41,817 [INFO] 📊 Collected 100 rows for LINKUSDT 5m
+2025-06-28 14:31:41,991 [INFO] 📊 Collected 100 rows for LINKUSDT 15m
+2025-06-28 14:31:42,167 [INFO] 📊 Collected 100 rows for LINKUSDT 1h
+2025-06-28 14:31:42,283 [INFO] 💾 Saved production_BTCUSDT_1m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,283 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,287 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,287 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,289 [INFO] 💾 Saved production_BTCUSDT_15m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,290 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,323 [INFO] 💾 Saved production_BTCUSDT_1h_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,323 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,326 [INFO] 💾 Saved production_ETHUSDT_1m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,327 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,331 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,331 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,336 [INFO] 💾 Saved production_ETHUSDT_15m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,336 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,339 [INFO] 💾 Saved production_ETHUSDT_1h_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,339 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,343 [INFO] 💾 Saved production_ADAUSDT_1m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,344 [INFO] ✅ Saved production_ADAUSDT_1m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,348 [INFO] 💾 Saved production_ADAUSDT_5m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,349 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,355 [INFO] 💾 Saved production_ADAUSDT_15m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,355 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,378 [INFO] 💾 Saved production_ADAUSDT_1h_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,378 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,383 [INFO] 💾 Saved production_DOTUSDT_1m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,383 [INFO] ✅ Saved production_DOTUSDT_1m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,386 [INFO] 💾 Saved production_DOTUSDT_5m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,386 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,397 [INFO] 💾 Saved production_DOTUSDT_15m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,397 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,401 [INFO] 💾 Saved production_DOTUSDT_1h_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,401 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,412 [INFO] 💾 Saved production_LINKUSDT_1m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,412 [INFO] ✅ Saved production_LINKUSDT_1m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,416 [INFO] 💾 Saved production_LINKUSDT_5m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,416 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,420 [INFO] 💾 Saved production_LINKUSDT_15m_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,420 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,428 [INFO] 💾 Saved production_LINKUSDT_1h_20250628_143142.parquet to local backup (100 rows)
+2025-06-28 14:31:42,428 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_143142.parquet (100 rows)
+2025-06-28 14:31:42,428 [INFO] ✅ Collection cycle completed in 4.1s - Files: 20/20, Rows: 2000
+2025-06-28 14:31:42,429 [INFO] 📈 Progress Report:
+2025-06-28 14:31:42,429 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 14:31:42,429 [INFO]    📁 Files saved: 20
+2025-06-28 14:31:42,430 [INFO]    📊 Rows collected: 2,000
+2025-06-28 14:31:42,430 [INFO]    ✅ Successful uploads: 20
+2025-06-28 14:31:42,430 [INFO]    ❌ Failed uploads: 0
+2025-06-28 14:31:42,430 [INFO]    💾 Memory files: 20
+2025-06-28 14:31:42,430 [INFO]    🏠 Local files: 60
+2025-06-28 14:31:42,430 [INFO]    ☁️ Drive files: 0
+2025-06-28 14:32:12,453 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 14:32:13,439 [INFO] ============================================================
+2025-06-28 14:32:13,439 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 14:32:13,439 [INFO] ============================================================
+2025-06-28 14:32:13,439 [INFO] ⏱️ Total Runtime: 0.01 hours
+2025-06-28 14:32:13,439 [INFO] 📁 Files Saved: 20
+2025-06-28 14:32:13,439 [INFO] 📊 Total Rows: 2,000
+2025-06-28 14:32:13,439 [INFO] ✅ Successful Uploads: 20
+2025-06-28 14:32:13,439 [INFO] ❌ Failed Uploads: 0
+2025-06-28 14:32:13,440 [INFO] 📈 Average Rows/File: 100.0
+2025-06-28 14:32:13,440 [INFO] 📊 Collection Rate: 2048.0 files/hour, 204,799 rows/hour
+2025-06-28 14:32:13,440 [INFO] 💾 Final Storage: Memory=20, Local=60, Drive=0
+2025-06-28 14:32:13,440 [INFO] ✅ No errors encountered!
+2025-06-28 14:32:13,440 [INFO] ============================================================
+2025-06-28 14:32:13,440 [INFO] 📊 Collection Summary:
+2025-06-28 14:32:13,440 [INFO]    📁 Files saved: 20
+2025-06-28 14:32:13,441 [INFO]    📊 Rows collected: 2,000
+2025-06-28 14:32:13,441 [INFO]    ✅ Success rate: 20/20
+2025-06-28 14:32:55,098 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 14:32:55,098 [INFO] 📅 Started at: 2025-06-28 14:32:55.098559
+2025-06-28 14:32:55,098 [INFO] 🤖 Starting Production Model Training
+2025-06-28 14:32:55,098 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:32:55,193 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:32:55,194 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:32:56,198 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:32:56,198 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:32:56,199 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:32:56,199 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:32:56,199 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:32:56,199 [INFO] 🤖 Production trainer initialized
+2025-06-28 14:32:56,199 [INFO]    📊 Min total rows: 500
+2025-06-28 14:32:56,199 [INFO]    📈 Min rows per symbol: 50
+2025-06-28 14:32:56,200 [INFO]    ⏱️ Min time span: 6h
+2025-06-28 14:32:56,200 [INFO]    💾 Model output: models
+2025-06-28 14:32:56,200 [INFO] 🚀 Starting full production training pipeline...
+2025-06-28 14:32:56,200 [INFO] 📂 Step 1: Loading training data...
+2025-06-28 14:32:56,200 [INFO] 📂 Loading training data from storage...
+2025-06-28 14:32:56,200 [INFO] 📋 Total unique files found: 60
+2025-06-28 14:32:56,200 [INFO] 📋 Found 60 data files
+2025-06-28 14:32:56,377 [INFO] 📖 Loaded production_ADAUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,379 [INFO] 📖 Loaded production_ADAUSDT_15m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,381 [INFO] 📖 Loaded production_ADAUSDT_15m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,383 [INFO] 📖 Loaded production_ADAUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,385 [INFO] 📖 Loaded production_ADAUSDT_1h_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,386 [INFO] 📖 Loaded production_ADAUSDT_1h_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,422 [INFO] 📖 Loaded production_ADAUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,424 [INFO] 📖 Loaded production_ADAUSDT_1m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,426 [INFO] 📖 Loaded production_ADAUSDT_1m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,445 [INFO] 📖 Loaded production_ADAUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,447 [INFO] 📖 Loaded production_ADAUSDT_5m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,449 [INFO] 📖 Loaded production_ADAUSDT_5m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,486 [INFO] 📖 Loaded production_BTCUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,487 [INFO] 📖 Loaded production_BTCUSDT_15m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,489 [INFO] 📖 Loaded production_BTCUSDT_15m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,521 [INFO] 📖 Loaded production_BTCUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,523 [INFO] 📖 Loaded production_BTCUSDT_1h_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,525 [INFO] 📖 Loaded production_BTCUSDT_1h_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,555 [INFO] 📖 Loaded production_BTCUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,557 [INFO] 📖 Loaded production_BTCUSDT_1m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,558 [INFO] 📖 Loaded production_BTCUSDT_1m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,602 [INFO] 📖 Loaded production_BTCUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,604 [INFO] 📖 Loaded production_BTCUSDT_5m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,605 [INFO] 📖 Loaded production_BTCUSDT_5m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,624 [INFO] 📖 Loaded production_DOTUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,626 [INFO] 📖 Loaded production_DOTUSDT_15m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,627 [INFO] 📖 Loaded production_DOTUSDT_15m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,668 [INFO] 📖 Loaded production_DOTUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,670 [INFO] 📖 Loaded production_DOTUSDT_1h_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,672 [INFO] 📖 Loaded production_DOTUSDT_1h_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,697 [INFO] 📖 Loaded production_DOTUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,699 [INFO] 📖 Loaded production_DOTUSDT_1m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,700 [INFO] 📖 Loaded production_DOTUSDT_1m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,725 [INFO] 📖 Loaded production_DOTUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,727 [INFO] 📖 Loaded production_DOTUSDT_5m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,729 [INFO] 📖 Loaded production_DOTUSDT_5m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,767 [INFO] 📖 Loaded production_ETHUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,769 [INFO] 📖 Loaded production_ETHUSDT_15m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,771 [INFO] 📖 Loaded production_ETHUSDT_15m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,799 [INFO] 📖 Loaded production_ETHUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,801 [INFO] 📖 Loaded production_ETHUSDT_1h_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,803 [INFO] 📖 Loaded production_ETHUSDT_1h_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,840 [INFO] 📖 Loaded production_ETHUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,842 [INFO] 📖 Loaded production_ETHUSDT_1m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,844 [INFO] 📖 Loaded production_ETHUSDT_1m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,879 [INFO] 📖 Loaded production_ETHUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,881 [INFO] 📖 Loaded production_ETHUSDT_5m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,883 [INFO] 📖 Loaded production_ETHUSDT_5m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,906 [INFO] 📖 Loaded production_LINKUSDT_15m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,908 [INFO] 📖 Loaded production_LINKUSDT_15m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,911 [INFO] 📖 Loaded production_LINKUSDT_15m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,932 [INFO] 📖 Loaded production_LINKUSDT_1h_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,935 [INFO] 📖 Loaded production_LINKUSDT_1h_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,937 [INFO] 📖 Loaded production_LINKUSDT_1h_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,962 [INFO] 📖 Loaded production_LINKUSDT_1m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,964 [INFO] 📖 Loaded production_LINKUSDT_1m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,966 [INFO] 📖 Loaded production_LINKUSDT_1m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,985 [INFO] 📖 Loaded production_LINKUSDT_5m_20250628_141159.parquet from local backup (100 rows)
+2025-06-28 14:32:56,987 [INFO] 📖 Loaded production_LINKUSDT_5m_20250628_142512.parquet from local backup (100 rows)
+2025-06-28 14:32:56,989 [INFO] 📖 Loaded production_LINKUSDT_5m_20250628_143142.parquet from local backup (100 rows)
+2025-06-28 14:32:56,998 [INFO] 📊 Combined data: 6,000 rows from 60 files
+2025-06-28 14:32:56,999 [INFO] ✅ Step 2: Validating data sufficiency...
+2025-06-28 14:32:57,009 [INFO] 📊 Data validation results:
+2025-06-28 14:32:57,010 [INFO]    📈 Total rows: 6,000
+2025-06-28 14:32:57,010 [INFO]    ⏱️ Time span: 99.5 hours
+2025-06-28 14:32:57,010 [INFO]    ✅ Passed checks: 7
+2025-06-28 14:32:57,010 [INFO]    ❌ Issues: 0
+2025-06-28 14:32:57,010 [INFO]    🏆 Quality score: 100.0/100
+2025-06-28 14:32:57,010 [INFO] ✅ Data validation passed - proceeding with training
+2025-06-28 14:32:57,011 [INFO] ⚙️ Step 3: Creating features...
+2025-06-28 14:32:57,011 [INFO] ⚙️ Creating features from market data...
+2025-06-28 14:32:57,045 [INFO] ⚙️ Created 36 features, 5,995 training samples
+2025-06-28 14:32:57,046 [INFO] 🤖 Step 4: Training model...
+2025-06-28 14:32:57,046 [INFO] 🤖 Training machine learning model...
+2025-06-28 14:32:57,048 [INFO] 📊 Using 26 features: ['volume', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'interval_minutes', 'price_change', 'price_change_pct', 'high_low_spread', 'high_low_spread_pct']...
+2025-06-28 14:32:57,058 [INFO] 🌲 Training Random Forest model...
+2025-06-28 14:33:01,236 [INFO] ✅ Model training completed successfully!
+2025-06-28 14:33:01,236 [INFO]    📊 Training samples: 4,796
+2025-06-28 14:33:01,236 [INFO]    🧪 Test samples: 1,199
+2025-06-28 14:33:01,236 [INFO]    ⚙️ Features: 26
+2025-06-28 14:33:01,237 [INFO]    📈 Test R²: 0.0845
+2025-06-28 14:33:01,237 [INFO]    📉 Test MAE: 0.0904
+2025-06-28 14:33:01,237 [INFO]    🔀 CV R²: 0.0757 ± 0.0455
+2025-06-28 14:33:01,237 [INFO]    💾 Model saved: models\production_model_20250628_143301.joblib
+2025-06-28 14:33:01,238 [INFO] 🎉 Production training pipeline completed successfully!
+2025-06-28 14:33:01,238 [INFO] ✅ Training completed successfully!
+2025-06-28 14:33:01,238 [INFO]    📊 Training samples: 4,796
+2025-06-28 14:33:01,238 [INFO]    🧪 Test samples: 1,199
+2025-06-28 14:33:01,238 [INFO]    ⚙️ Features: 26
+2025-06-28 14:33:01,238 [INFO]    📈 Test R²: 0.0845
+2025-06-28 14:33:01,238 [INFO]    💾 Model saved: models\production_model_20250628_143301.joblib
+2025-06-28 14:40:47,462 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:40:47,611 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:40:47,613 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:40:48,733 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:40:48,734 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:40:51,133 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:40:51,135 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:40:51,137 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:40:52,154 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:40:52,155 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:40:52,162 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 14:41:47,058 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:41:47,189 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:41:47,191 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:41:48,205 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:41:48,206 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:42:09,300 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:42:09,442 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:42:09,443 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:42:10,454 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:42:10,454 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:43:05,394 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:43:05,514 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:43:05,516 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:43:06,504 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:43:06,505 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:51:32,722 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 14:51:32,722 [INFO] 📅 Started at: 2025-06-28 14:51:32.722982
+2025-06-28 14:51:32,722 [INFO] 🚀 Starting Production Data Collection
+2025-06-28 14:51:32,723 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:51:32,820 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:51:32,822 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:51:34,373 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:51:34,373 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:51:34,373 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:51:34,373 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:51:34,373 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:51:34,375 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 14:51:34,377 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 14:51:34,378 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 14:51:35,509 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 14:51:35,510 [INFO] 🚀 Batch upload manager started
+2025-06-28 14:51:35,510 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 14:51:35,510 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 14:51:35,510 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 14:51:35,704 [INFO] ✅ Binance client connected successfully
+2025-06-28 14:51:35,773 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 14:51:35,773 [INFO] 📅 Collecting data for 0.1 hours...
+2025-06-28 14:51:35,774 [INFO] 🚀 Starting timed data collection for 0.1 hours
+2025-06-28 14:51:35,774 [INFO] 📅 Collection will end at: 2025-06-28 14:57:35.774089
+2025-06-28 14:51:35,774 [INFO] 🔄 Cycle interval: 5 minutes
+2025-06-28 14:51:35,774 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT, ADAUSDT, DOTUSDT, LINKUSDT
+2025-06-28 14:51:35,774 [INFO] ⏱️ Intervals: 1m, 5m, 15m, 1h
+2025-06-28 14:51:35,774 [INFO] 📊 Cycle 1 - 0.1h remaining
+2025-06-28 14:51:35,774 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 14:51:35,850 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 14:51:36,027 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 14:51:36,201 [INFO] 📊 Collected 100 rows for BTCUSDT 15m
+2025-06-28 14:51:36,377 [INFO] 📊 Collected 100 rows for BTCUSDT 1h
+2025-06-28 14:51:36,553 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 14:51:36,825 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 14:51:36,998 [INFO] 📊 Collected 100 rows for ETHUSDT 15m
+2025-06-28 14:51:37,269 [INFO] 📊 Collected 100 rows for ETHUSDT 1h
+2025-06-28 14:51:37,443 [INFO] 📊 Collected 100 rows for ADAUSDT 1m
+2025-06-28 14:51:37,616 [INFO] 📊 Collected 100 rows for ADAUSDT 5m
+2025-06-28 14:51:37,793 [INFO] 📊 Collected 100 rows for ADAUSDT 15m
+2025-06-28 14:51:37,966 [INFO] 📊 Collected 100 rows for ADAUSDT 1h
+2025-06-28 14:51:38,242 [INFO] 📊 Collected 100 rows for DOTUSDT 1m
+2025-06-28 14:51:38,513 [INFO] 📊 Collected 100 rows for DOTUSDT 5m
+2025-06-28 14:51:38,785 [INFO] 📊 Collected 100 rows for DOTUSDT 15m
+2025-06-28 14:51:38,960 [INFO] 📊 Collected 100 rows for DOTUSDT 1h
+2025-06-28 14:51:39,230 [INFO] 📊 Collected 100 rows for LINKUSDT 1m
+2025-06-28 14:51:39,404 [INFO] 📊 Collected 100 rows for LINKUSDT 5m
+2025-06-28 14:51:39,580 [INFO] 📊 Collected 100 rows for LINKUSDT 15m
+2025-06-28 14:51:39,761 [INFO] 📊 Collected 100 rows for LINKUSDT 1h
+2025-06-28 14:51:39,876 [INFO] 💾 Saved production_BTCUSDT_1m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,877 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,880 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,881 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,898 [INFO] 💾 Saved production_BTCUSDT_15m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,899 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,902 [INFO] 💾 Saved production_BTCUSDT_1h_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,902 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,905 [INFO] 💾 Saved production_ETHUSDT_1m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,906 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,910 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,910 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,914 [INFO] 💾 Saved production_ETHUSDT_15m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,914 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,920 [INFO] 💾 Saved production_ETHUSDT_1h_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,920 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,925 [INFO] 💾 Saved production_ADAUSDT_1m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,925 [INFO] ✅ Saved production_ADAUSDT_1m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,931 [INFO] 💾 Saved production_ADAUSDT_5m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,931 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,934 [INFO] 💾 Saved production_ADAUSDT_15m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,935 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,939 [INFO] 💾 Saved production_ADAUSDT_1h_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,939 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,942 [INFO] 💾 Saved production_DOTUSDT_1m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,943 [INFO] ✅ Saved production_DOTUSDT_1m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,946 [INFO] 💾 Saved production_DOTUSDT_5m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,946 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,956 [INFO] 💾 Saved production_DOTUSDT_15m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,956 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,959 [INFO] 💾 Saved production_DOTUSDT_1h_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,960 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,963 [INFO] 💾 Saved production_LINKUSDT_1m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,963 [INFO] ✅ Saved production_LINKUSDT_1m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,967 [INFO] 💾 Saved production_LINKUSDT_5m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,967 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,969 [INFO] 💾 Saved production_LINKUSDT_15m_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,970 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,973 [INFO] 💾 Saved production_LINKUSDT_1h_20250628_145139.parquet to local backup (100 rows)
+2025-06-28 14:51:39,974 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_145139.parquet (100 rows)
+2025-06-28 14:51:39,974 [INFO] ✅ Collection cycle completed in 4.2s - Files: 20/20, Rows: 2000
+2025-06-28 14:51:39,975 [INFO] 📈 Progress Report:
+2025-06-28 14:51:39,975 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 14:51:39,975 [INFO]    📁 Files saved: 20
+2025-06-28 14:51:39,975 [INFO]    📊 Rows collected: 2,000
+2025-06-28 14:51:39,975 [INFO]    ✅ Successful uploads: 20
+2025-06-28 14:51:39,975 [INFO]    ❌ Failed uploads: 0
+2025-06-28 14:51:39,975 [INFO]    💾 Memory files: 20
+2025-06-28 14:51:39,975 [INFO]    🏠 Local files: 80
+2025-06-28 14:51:39,976 [INFO]    ☁️ Drive files: 0
+2025-06-28 15:01:53,330 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 15:01:53,330 [INFO] 📅 Started at: 2025-06-28 15:01:53.330462
+2025-06-28 15:01:53,330 [INFO] 🚀 Starting Production Data Collection
+2025-06-28 15:01:53,330 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:01:53,429 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:01:53,430 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:01:54,677 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:01:54,678 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:01:54,678 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 15:01:54,678 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:01:54,678 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 15:01:54,679 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:01:54,681 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:01:54,683 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:01:55,671 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:01:55,671 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:01:55,671 [WARNING] ⚠️ Google Drive initialization failed: 'EnhancedDriveManager' object has no attribute 'test_connection'
+2025-06-28 15:01:55,672 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:01:55,672 [INFO] 📁 Storage modes: Local Backup
+2025-06-28 15:01:55,868 [INFO] ✅ Binance client connected successfully
+2025-06-28 15:01:55,937 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 15:01:55,937 [INFO] 📅 Collecting data for 0.1 hours...
+2025-06-28 15:01:55,937 [INFO] 🚀 Starting timed data collection for 0.1 hours
+2025-06-28 15:01:55,938 [INFO] 📅 Collection will end at: 2025-06-28 15:07:55.937889
+2025-06-28 15:01:55,938 [INFO] 🔄 Cycle interval: 5 minutes
+2025-06-28 15:01:55,938 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT, ADAUSDT, DOTUSDT, LINKUSDT
+2025-06-28 15:01:55,938 [INFO] ⏱️ Intervals: 1m, 5m, 15m, 1h
+2025-06-28 15:01:55,938 [INFO] 📊 Cycle 1 - 0.1h remaining
+2025-06-28 15:01:55,938 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 15:01:56,014 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 15:01:56,189 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 15:01:56,365 [INFO] 📊 Collected 100 rows for BTCUSDT 15m
+2025-06-28 15:01:56,539 [INFO] 📊 Collected 100 rows for BTCUSDT 1h
+2025-06-28 15:01:56,809 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 15:01:56,983 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 15:01:57,158 [INFO] 📊 Collected 100 rows for ETHUSDT 15m
+2025-06-28 15:01:57,429 [INFO] 📊 Collected 100 rows for ETHUSDT 1h
+2025-06-28 15:01:57,603 [INFO] 📊 Collected 100 rows for ADAUSDT 1m
+2025-06-28 15:01:57,779 [INFO] 📊 Collected 100 rows for ADAUSDT 5m
+2025-06-28 15:01:58,050 [INFO] 📊 Collected 100 rows for ADAUSDT 15m
+2025-06-28 15:01:58,239 [INFO] 📊 Collected 100 rows for ADAUSDT 1h
+2025-06-28 15:01:58,414 [INFO] 📊 Collected 100 rows for DOTUSDT 1m
+2025-06-28 15:01:58,588 [INFO] 📊 Collected 100 rows for DOTUSDT 5m
+2025-06-28 15:01:58,761 [INFO] 📊 Collected 100 rows for DOTUSDT 15m
+2025-06-28 15:01:59,033 [INFO] 📊 Collected 100 rows for DOTUSDT 1h
+2025-06-28 15:01:59,302 [INFO] 📊 Collected 100 rows for LINKUSDT 1m
+2025-06-28 15:01:59,572 [INFO] 📊 Collected 100 rows for LINKUSDT 5m
+2025-06-28 15:01:59,745 [INFO] 📊 Collected 100 rows for LINKUSDT 15m
+2025-06-28 15:01:59,921 [INFO] 📊 Collected 100 rows for LINKUSDT 1h
+2025-06-28 15:02:00,038 [INFO] 💾 Saved production_BTCUSDT_1m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,038 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,049 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,049 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,054 [INFO] 💾 Saved production_BTCUSDT_15m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,054 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,059 [INFO] 💾 Saved production_BTCUSDT_1h_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,059 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,063 [INFO] 💾 Saved production_ETHUSDT_1m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,063 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,072 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,072 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,078 [INFO] 💾 Saved production_ETHUSDT_15m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,079 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,086 [INFO] 💾 Saved production_ETHUSDT_1h_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,087 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,091 [INFO] 💾 Saved production_ADAUSDT_1m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,092 [INFO] ✅ Saved production_ADAUSDT_1m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,095 [INFO] 💾 Saved production_ADAUSDT_5m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,095 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,099 [INFO] 💾 Saved production_ADAUSDT_15m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,099 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,103 [INFO] 💾 Saved production_ADAUSDT_1h_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,103 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,106 [INFO] 💾 Saved production_DOTUSDT_1m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,106 [INFO] ✅ Saved production_DOTUSDT_1m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,109 [INFO] 💾 Saved production_DOTUSDT_5m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,109 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,113 [INFO] 💾 Saved production_DOTUSDT_15m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,113 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,116 [INFO] 💾 Saved production_DOTUSDT_1h_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,116 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,119 [INFO] 💾 Saved production_LINKUSDT_1m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,119 [INFO] ✅ Saved production_LINKUSDT_1m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,122 [INFO] 💾 Saved production_LINKUSDT_5m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,123 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,126 [INFO] 💾 Saved production_LINKUSDT_15m_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,126 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,129 [INFO] 💾 Saved production_LINKUSDT_1h_20250628_150200.parquet to local backup (100 rows)
+2025-06-28 15:02:00,129 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_150200.parquet (100 rows)
+2025-06-28 15:02:00,129 [INFO] ✅ Collection cycle completed in 4.2s - Files: 20/20, Rows: 2000
+2025-06-28 15:02:00,130 [INFO] 📈 Progress Report:
+2025-06-28 15:02:00,130 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 15:02:00,130 [INFO]    📁 Files saved: 20
+2025-06-28 15:02:00,130 [INFO]    📊 Rows collected: 2,000
+2025-06-28 15:02:00,131 [INFO]    ✅ Successful uploads: 20
+2025-06-28 15:02:00,131 [INFO]    ❌ Failed uploads: 0
+2025-06-28 15:02:00,131 [INFO]    💾 Memory files: 20
+2025-06-28 15:02:00,131 [INFO]    🏠 Local files: 100
+2025-06-28 15:02:00,131 [INFO]    ☁️ Drive files: 0
+2025-06-28 15:02:03,086 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 15:02:03,133 [INFO] ============================================================
+2025-06-28 15:02:03,133 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 15:02:03,133 [INFO] ============================================================
+2025-06-28 15:02:03,133 [INFO] ⏱️ Total Runtime: 0.00 hours
+2025-06-28 15:02:03,133 [INFO] 📁 Files Saved: 20
+2025-06-28 15:02:03,133 [INFO] 📊 Total Rows: 2,000
+2025-06-28 15:02:03,133 [INFO] ✅ Successful Uploads: 20
+2025-06-28 15:02:03,133 [INFO] ❌ Failed Uploads: 0
+2025-06-28 15:02:03,133 [INFO] 📈 Average Rows/File: 100.0
+2025-06-28 15:02:03,133 [INFO] 📊 Collection Rate: 10005.8 files/hour, 1,000,581 rows/hour
+2025-06-28 15:02:03,135 [INFO] 💾 Final Storage: Memory=20, Local=100, Drive=0
+2025-06-28 15:02:03,135 [INFO] ✅ No errors encountered!
+2025-06-28 15:02:03,135 [INFO] ============================================================
+2025-06-28 15:02:03,135 [INFO] 📊 Collection Summary:
+2025-06-28 15:02:03,135 [INFO]    📁 Files saved: 20
+2025-06-28 15:02:03,135 [INFO]    📊 Rows collected: 2,000
+2025-06-28 15:02:03,135 [INFO]    ✅ Success rate: 20/20
+2025-06-28 15:04:05,506 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 15:04:05,507 [INFO] 📅 Started at: 2025-06-28 15:04:05.507176
+2025-06-28 15:04:05,507 [INFO] 🚀 Starting Production Data Collection
+2025-06-28 15:04:05,507 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:04:05,606 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:04:05,608 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:04:06,694 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:04:06,694 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:04:07,146 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:04:07,147 [INFO] ✅ Google Drive storage initialized
+2025-06-28 15:04:07,147 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:04:07,147 [INFO] 📁 Storage modes: Google Drive, Local Backup
+2025-06-28 15:04:07,147 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:04:07,150 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:04:07,152 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:04:08,144 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:04:08,144 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:04:08,454 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:04:08,454 [INFO] ✅ Google Drive storage initialized
+2025-06-28 15:04:08,456 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:04:08,456 [INFO] 📁 Storage modes: Google Drive, Local Backup
+2025-06-28 15:04:08,648 [INFO] ✅ Binance client connected successfully
+2025-06-28 15:04:08,717 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 15:04:08,717 [INFO] 📅 Collecting data for 0.05 hours...
+2025-06-28 15:04:08,717 [INFO] 🚀 Starting timed data collection for 0.05 hours
+2025-06-28 15:04:08,717 [INFO] 📅 Collection will end at: 2025-06-28 15:07:08.717185
+2025-06-28 15:04:08,717 [INFO] 🔄 Cycle interval: 5 minutes
+2025-06-28 15:04:08,717 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT, ADAUSDT, DOTUSDT, LINKUSDT
+2025-06-28 15:04:08,717 [INFO] ⏱️ Intervals: 1m, 5m, 15m, 1h
+2025-06-28 15:04:08,718 [INFO] 📊 Cycle 1 - 0.0h remaining
+2025-06-28 15:04:08,718 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 15:04:08,795 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 15:04:08,970 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 15:04:09,148 [INFO] 📊 Collected 100 rows for BTCUSDT 15m
+2025-06-28 15:04:09,322 [INFO] 📊 Collected 100 rows for BTCUSDT 1h
+2025-06-28 15:04:09,495 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 15:04:09,669 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 15:04:09,847 [INFO] 📊 Collected 100 rows for ETHUSDT 15m
+2025-06-28 15:04:10,023 [INFO] 📊 Collected 100 rows for ETHUSDT 1h
+2025-06-28 15:04:10,197 [INFO] 📊 Collected 100 rows for ADAUSDT 1m
+2025-06-28 15:04:10,373 [INFO] 📊 Collected 100 rows for ADAUSDT 5m
+2025-06-28 15:04:10,554 [INFO] 📊 Collected 100 rows for ADAUSDT 15m
+2025-06-28 15:04:10,732 [INFO] 📊 Collected 100 rows for ADAUSDT 1h
+2025-06-28 15:04:11,002 [INFO] 📊 Collected 100 rows for DOTUSDT 1m
+2025-06-28 15:04:11,177 [INFO] 📊 Collected 100 rows for DOTUSDT 5m
+2025-06-28 15:04:11,448 [INFO] 📊 Collected 100 rows for DOTUSDT 15m
+2025-06-28 15:04:11,717 [INFO] 📊 Collected 100 rows for DOTUSDT 1h
+2025-06-28 15:04:11,893 [INFO] 📊 Collected 100 rows for LINKUSDT 1m
+2025-06-28 15:04:12,161 [INFO] 📊 Collected 100 rows for LINKUSDT 5m
+2025-06-28 15:04:12,335 [INFO] 📊 Collected 100 rows for LINKUSDT 15m
+2025-06-28 15:04:12,606 [INFO] 📊 Collected 100 rows for LINKUSDT 1h
+2025-06-28 15:04:12,719 [ERROR] ❌ Google Drive save failed for production_BTCUSDT_1m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,722 [INFO] 💾 Saved production_BTCUSDT_1m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,722 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,723 [ERROR] ❌ Google Drive save failed for production_BTCUSDT_5m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,742 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,742 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,744 [ERROR] ❌ Google Drive save failed for production_BTCUSDT_15m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,747 [INFO] 💾 Saved production_BTCUSDT_15m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,747 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,748 [ERROR] ❌ Google Drive save failed for production_BTCUSDT_1h_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,751 [INFO] 💾 Saved production_BTCUSDT_1h_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,751 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,753 [ERROR] ❌ Google Drive save failed for production_ETHUSDT_1m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,767 [INFO] 💾 Saved production_ETHUSDT_1m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,767 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,769 [ERROR] ❌ Google Drive save failed for production_ETHUSDT_5m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,772 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,772 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,774 [ERROR] ❌ Google Drive save failed for production_ETHUSDT_15m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,778 [INFO] 💾 Saved production_ETHUSDT_15m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,778 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,779 [ERROR] ❌ Google Drive save failed for production_ETHUSDT_1h_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,782 [INFO] 💾 Saved production_ETHUSDT_1h_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,782 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,783 [ERROR] ❌ Google Drive save failed for production_ADAUSDT_1m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,786 [INFO] 💾 Saved production_ADAUSDT_1m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,786 [INFO] ✅ Saved production_ADAUSDT_1m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,788 [ERROR] ❌ Google Drive save failed for production_ADAUSDT_5m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,792 [INFO] 💾 Saved production_ADAUSDT_5m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,792 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,794 [ERROR] ❌ Google Drive save failed for production_ADAUSDT_15m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,797 [INFO] 💾 Saved production_ADAUSDT_15m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,797 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,800 [ERROR] ❌ Google Drive save failed for production_ADAUSDT_1h_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,812 [INFO] 💾 Saved production_ADAUSDT_1h_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,812 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,814 [ERROR] ❌ Google Drive save failed for production_DOTUSDT_1m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,817 [INFO] 💾 Saved production_DOTUSDT_1m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,817 [INFO] ✅ Saved production_DOTUSDT_1m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,819 [ERROR] ❌ Google Drive save failed for production_DOTUSDT_5m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,821 [INFO] 💾 Saved production_DOTUSDT_5m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,821 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,823 [ERROR] ❌ Google Drive save failed for production_DOTUSDT_15m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,826 [INFO] 💾 Saved production_DOTUSDT_15m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,827 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,828 [ERROR] ❌ Google Drive save failed for production_DOTUSDT_1h_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,831 [INFO] 💾 Saved production_DOTUSDT_1h_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,831 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,832 [ERROR] ❌ Google Drive save failed for production_LINKUSDT_1m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,835 [INFO] 💾 Saved production_LINKUSDT_1m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,835 [INFO] ✅ Saved production_LINKUSDT_1m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,836 [ERROR] ❌ Google Drive save failed for production_LINKUSDT_5m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,840 [INFO] 💾 Saved production_LINKUSDT_5m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,841 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,842 [ERROR] ❌ Google Drive save failed for production_LINKUSDT_15m_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,845 [INFO] 💾 Saved production_LINKUSDT_15m_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,845 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,847 [ERROR] ❌ Google Drive save failed for production_LINKUSDT_1h_20250628_150412.parquet: Cannot save file into a non-existent directory: '\tmp'
+2025-06-28 15:04:12,849 [INFO] 💾 Saved production_LINKUSDT_1h_20250628_150412.parquet to local backup (100 rows)
+2025-06-28 15:04:12,849 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_150412.parquet (100 rows)
+2025-06-28 15:04:12,850 [INFO] ✅ Collection cycle completed in 4.1s - Files: 20/20, Rows: 2000
+2025-06-28 15:04:12,850 [INFO] 📈 Progress Report:
+2025-06-28 15:04:12,850 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 15:04:12,850 [INFO]    📁 Files saved: 20
+2025-06-28 15:04:12,851 [INFO]    📊 Rows collected: 2,000
+2025-06-28 15:04:12,851 [INFO]    ✅ Successful uploads: 20
+2025-06-28 15:04:12,851 [INFO]    ❌ Failed uploads: 0
+2025-06-28 15:04:12,851 [INFO]    💾 Memory files: 20
+2025-06-28 15:04:12,851 [INFO]    🏠 Local files: 120
+2025-06-28 15:04:12,851 [INFO]    ☁️ Drive files: 0
+2025-06-28 15:04:17,913 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 15:04:18,853 [INFO] ============================================================
+2025-06-28 15:04:18,853 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 15:04:18,853 [INFO] ============================================================
+2025-06-28 15:04:18,853 [INFO] ⏱️ Total Runtime: 0.00 hours
+2025-06-28 15:04:18,853 [INFO] 📁 Files Saved: 20
+2025-06-28 15:04:18,853 [INFO] 📊 Total Rows: 2,000
+2025-06-28 15:04:18,853 [INFO] ✅ Successful Uploads: 20
+2025-06-28 15:04:18,853 [INFO] ❌ Failed Uploads: 0
+2025-06-28 15:04:18,854 [INFO] 📈 Average Rows/File: 100.0
+2025-06-28 15:04:18,854 [INFO] 📊 Collection Rate: 7103.1 files/hour, 710,311 rows/hour
+2025-06-28 15:04:18,854 [INFO] 💾 Final Storage: Memory=20, Local=120, Drive=0
+2025-06-28 15:04:18,854 [INFO] ✅ No errors encountered!
+2025-06-28 15:04:18,854 [INFO] ============================================================
+2025-06-28 15:04:18,854 [INFO] 📊 Collection Summary:
+2025-06-28 15:04:18,854 [INFO]    📁 Files saved: 20
+2025-06-28 15:04:18,854 [INFO]    📊 Rows collected: 2,000
+2025-06-28 15:04:18,854 [INFO]    ✅ Success rate: 20/20
+2025-06-28 15:04:40,083 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 15:04:40,084 [INFO] 📅 Started at: 2025-06-28 15:04:40.084741
+2025-06-28 15:04:40,084 [INFO] 🚀 Starting Production Data Collection
+2025-06-28 15:04:40,084 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:04:40,182 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:04:40,183 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:04:41,244 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:04:41,245 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:04:41,559 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:04:41,559 [INFO] ✅ Google Drive storage initialized
+2025-06-28 15:04:41,560 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:04:41,560 [INFO] 📁 Storage modes: Google Drive, Local Backup
+2025-06-28 15:04:41,560 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:04:41,563 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:04:41,564 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:04:42,575 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:04:42,576 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:04:42,895 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:04:42,895 [INFO] ✅ Google Drive storage initialized
+2025-06-28 15:04:42,896 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:04:42,896 [INFO] 📁 Storage modes: Google Drive, Local Backup
+2025-06-28 15:04:43,105 [INFO] ✅ Binance client connected successfully
+2025-06-28 15:04:43,175 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 15:04:43,175 [INFO] 📅 Collecting data for 0.02 hours...
+2025-06-28 15:04:43,175 [INFO] 🚀 Starting timed data collection for 0.02 hours
+2025-06-28 15:04:43,175 [INFO] 📅 Collection will end at: 2025-06-28 15:05:55.175647
+2025-06-28 15:04:43,175 [INFO] 🔄 Cycle interval: 5 minutes
+2025-06-28 15:04:43,175 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT, ADAUSDT, DOTUSDT, LINKUSDT
+2025-06-28 15:04:43,176 [INFO] ⏱️ Intervals: 1m, 5m, 15m, 1h
+2025-06-28 15:04:43,176 [INFO] 📊 Cycle 1 - 0.0h remaining
+2025-06-28 15:04:43,176 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 15:04:43,253 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 15:04:43,429 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 15:04:43,604 [INFO] 📊 Collected 100 rows for BTCUSDT 15m
+2025-06-28 15:04:43,779 [INFO] 📊 Collected 100 rows for BTCUSDT 1h
+2025-06-28 15:04:43,954 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 15:04:44,130 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 15:04:44,312 [INFO] 📊 Collected 100 rows for ETHUSDT 15m
+2025-06-28 15:04:44,487 [INFO] 📊 Collected 100 rows for ETHUSDT 1h
+2025-06-28 15:04:44,664 [INFO] 📊 Collected 100 rows for ADAUSDT 1m
+2025-06-28 15:04:44,838 [INFO] 📊 Collected 100 rows for ADAUSDT 5m
+2025-06-28 15:04:45,014 [INFO] 📊 Collected 100 rows for ADAUSDT 15m
+2025-06-28 15:04:45,188 [INFO] 📊 Collected 100 rows for ADAUSDT 1h
+2025-06-28 15:04:45,364 [INFO] 📊 Collected 100 rows for DOTUSDT 1m
+2025-06-28 15:04:45,537 [INFO] 📊 Collected 100 rows for DOTUSDT 5m
+2025-06-28 15:04:45,711 [INFO] 📊 Collected 100 rows for DOTUSDT 15m
+2025-06-28 15:04:45,886 [INFO] 📊 Collected 100 rows for DOTUSDT 1h
+2025-06-28 15:04:46,061 [INFO] 📊 Collected 100 rows for LINKUSDT 1m
+2025-06-28 15:04:46,331 [INFO] 📊 Collected 100 rows for LINKUSDT 5m
+2025-06-28 15:04:46,506 [INFO] 📊 Collected 100 rows for LINKUSDT 15m
+2025-06-28 15:04:46,681 [INFO] 📊 Collected 100 rows for LINKUSDT 1h
+2025-06-28 15:04:46,796 [ERROR] ❌ Google Drive save failed for production_BTCUSDT_1m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,799 [INFO] 💾 Saved production_BTCUSDT_1m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,799 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,802 [ERROR] ❌ Google Drive save failed for production_BTCUSDT_5m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,804 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,805 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,807 [ERROR] ❌ Google Drive save failed for production_BTCUSDT_15m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,810 [INFO] 💾 Saved production_BTCUSDT_15m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,810 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,814 [ERROR] ❌ Google Drive save failed for production_BTCUSDT_1h_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,816 [INFO] 💾 Saved production_BTCUSDT_1h_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,816 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,820 [ERROR] ❌ Google Drive save failed for production_ETHUSDT_1m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,822 [INFO] 💾 Saved production_ETHUSDT_1m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,822 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,826 [ERROR] ❌ Google Drive save failed for production_ETHUSDT_5m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,829 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,829 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,834 [ERROR] ❌ Google Drive save failed for production_ETHUSDT_15m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,836 [INFO] 💾 Saved production_ETHUSDT_15m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,836 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,840 [ERROR] ❌ Google Drive save failed for production_ETHUSDT_1h_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,866 [INFO] 💾 Saved production_ETHUSDT_1h_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,866 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,870 [ERROR] ❌ Google Drive save failed for production_ADAUSDT_1m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,872 [INFO] 💾 Saved production_ADAUSDT_1m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,873 [INFO] ✅ Saved production_ADAUSDT_1m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,877 [ERROR] ❌ Google Drive save failed for production_ADAUSDT_5m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,879 [INFO] 💾 Saved production_ADAUSDT_5m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,880 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,883 [ERROR] ❌ Google Drive save failed for production_ADAUSDT_15m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,894 [INFO] 💾 Saved production_ADAUSDT_15m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,894 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,898 [ERROR] ❌ Google Drive save failed for production_ADAUSDT_1h_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,901 [INFO] 💾 Saved production_ADAUSDT_1h_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,901 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,904 [ERROR] ❌ Google Drive save failed for production_DOTUSDT_1m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,907 [INFO] 💾 Saved production_DOTUSDT_1m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,907 [INFO] ✅ Saved production_DOTUSDT_1m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,911 [ERROR] ❌ Google Drive save failed for production_DOTUSDT_5m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,913 [INFO] 💾 Saved production_DOTUSDT_5m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,913 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,917 [ERROR] ❌ Google Drive save failed for production_DOTUSDT_15m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,929 [INFO] 💾 Saved production_DOTUSDT_15m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,929 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,933 [ERROR] ❌ Google Drive save failed for production_DOTUSDT_1h_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,937 [INFO] 💾 Saved production_DOTUSDT_1h_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,937 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,940 [ERROR] ❌ Google Drive save failed for production_LINKUSDT_1m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,943 [INFO] 💾 Saved production_LINKUSDT_1m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,943 [INFO] ✅ Saved production_LINKUSDT_1m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,946 [ERROR] ❌ Google Drive save failed for production_LINKUSDT_5m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,949 [INFO] 💾 Saved production_LINKUSDT_5m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,949 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,953 [ERROR] ❌ Google Drive save failed for production_LINKUSDT_15m_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,955 [INFO] 💾 Saved production_LINKUSDT_15m_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,955 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,958 [ERROR] ❌ Google Drive save failed for production_LINKUSDT_1h_20250628_150446.parquet: 'EnhancedDriveManager' object has no attribute 'upload_file'
+2025-06-28 15:04:46,961 [INFO] 💾 Saved production_LINKUSDT_1h_20250628_150446.parquet to local backup (100 rows)
+2025-06-28 15:04:46,961 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_150446.parquet (100 rows)
+2025-06-28 15:04:46,961 [INFO] ✅ Collection cycle completed in 3.8s - Files: 20/20, Rows: 2000
+2025-06-28 15:04:46,962 [INFO] 📈 Progress Report:
+2025-06-28 15:04:46,962 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 15:04:46,962 [INFO]    📁 Files saved: 20
+2025-06-28 15:04:46,962 [INFO]    📊 Rows collected: 2,000
+2025-06-28 15:04:46,962 [INFO]    ✅ Successful uploads: 20
+2025-06-28 15:04:46,962 [INFO]    ❌ Failed uploads: 0
+2025-06-28 15:04:46,963 [INFO]    💾 Memory files: 20
+2025-06-28 15:04:46,963 [INFO]    🏠 Local files: 140
+2025-06-28 15:04:46,963 [INFO]    ☁️ Drive files: 0
+2025-06-28 15:05:24,384 [INFO] 🛑 Received signal 2, initiating graceful shutdown...
+2025-06-28 15:05:24,972 [INFO] ============================================================
+2025-06-28 15:05:24,972 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 15:05:24,972 [INFO] ============================================================
+2025-06-28 15:05:24,972 [INFO] ⏱️ Total Runtime: 0.01 hours
+2025-06-28 15:05:24,972 [INFO] 📁 Files Saved: 20
+2025-06-28 15:05:24,972 [INFO] 📊 Total Rows: 2,000
+2025-06-28 15:05:24,973 [INFO] ✅ Successful Uploads: 20
+2025-06-28 15:05:24,973 [INFO] ❌ Failed Uploads: 0
+2025-06-28 15:05:24,973 [INFO] 📈 Average Rows/File: 100.0
+2025-06-28 15:05:24,973 [INFO] 📊 Collection Rate: 1722.6 files/hour, 172,261 rows/hour
+2025-06-28 15:05:24,973 [INFO] 💾 Final Storage: Memory=20, Local=140, Drive=0
+2025-06-28 15:05:24,973 [INFO] ✅ No errors encountered!
+2025-06-28 15:05:24,973 [INFO] ============================================================
+2025-06-28 15:05:24,973 [INFO] 📊 Collection Summary:
+2025-06-28 15:05:24,973 [INFO]    📁 Files saved: 20
+2025-06-28 15:05:24,973 [INFO]    📊 Rows collected: 2,000
+2025-06-28 15:05:24,975 [INFO]    ✅ Success rate: 20/20
+2025-06-28 15:06:25,775 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 15:06:25,775 [INFO] 📅 Started at: 2025-06-28 15:06:25.775241
+2025-06-28 15:06:25,776 [INFO] 🚀 Starting Production Data Collection
+2025-06-28 15:06:25,776 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:06:25,871 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:06:25,873 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:06:26,868 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:06:26,868 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:06:27,248 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:06:27,248 [INFO] ✅ Google Drive storage initialized
+2025-06-28 15:06:27,248 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:06:27,249 [INFO] 📁 Storage modes: Google Drive, Local Backup
+2025-06-28 15:06:27,249 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:06:27,251 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:06:27,252 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:06:28,232 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:06:28,232 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:06:28,551 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:06:28,551 [INFO] ✅ Google Drive storage initialized
+2025-06-28 15:06:28,551 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:06:28,551 [INFO] 📁 Storage modes: Google Drive, Local Backup
+2025-06-28 15:06:28,748 [INFO] ✅ Binance client connected successfully
+2025-06-28 15:06:28,815 [INFO] ✅ Enhanced Binance client initialized successfully
+2025-06-28 15:06:28,815 [INFO] 📅 Collecting data for 0.01 hours...
+2025-06-28 15:06:28,815 [INFO] 🚀 Starting timed data collection for 0.01 hours
+2025-06-28 15:06:28,817 [INFO] 📅 Collection will end at: 2025-06-28 15:07:04.815969
+2025-06-28 15:06:28,817 [INFO] 🔄 Cycle interval: 5 minutes
+2025-06-28 15:06:28,817 [INFO] 📊 Symbols: BTCUSDT, ETHUSDT, ADAUSDT, DOTUSDT, LINKUSDT
+2025-06-28 15:06:28,817 [INFO] ⏱️ Intervals: 1m, 5m, 15m, 1h
+2025-06-28 15:06:28,817 [INFO] 📊 Cycle 1 - 0.0h remaining
+2025-06-28 15:06:28,817 [INFO] 🔄 Starting data collection cycle...
+2025-06-28 15:06:28,892 [INFO] 📊 Collected 100 rows for BTCUSDT 1m
+2025-06-28 15:06:29,071 [INFO] 📊 Collected 100 rows for BTCUSDT 5m
+2025-06-28 15:06:29,249 [INFO] 📊 Collected 100 rows for BTCUSDT 15m
+2025-06-28 15:06:29,424 [INFO] 📊 Collected 100 rows for BTCUSDT 1h
+2025-06-28 15:06:29,598 [INFO] 📊 Collected 100 rows for ETHUSDT 1m
+2025-06-28 15:06:29,773 [INFO] 📊 Collected 100 rows for ETHUSDT 5m
+2025-06-28 15:06:30,045 [INFO] 📊 Collected 100 rows for ETHUSDT 15m
+2025-06-28 15:06:30,315 [INFO] 📊 Collected 100 rows for ETHUSDT 1h
+2025-06-28 15:06:30,489 [INFO] 📊 Collected 100 rows for ADAUSDT 1m
+2025-06-28 15:06:30,662 [INFO] 📊 Collected 100 rows for ADAUSDT 5m
+2025-06-28 15:06:30,837 [INFO] 📊 Collected 100 rows for ADAUSDT 15m
+2025-06-28 15:06:31,110 [INFO] 📊 Collected 100 rows for ADAUSDT 1h
+2025-06-28 15:06:31,379 [INFO] 📊 Collected 100 rows for DOTUSDT 1m
+2025-06-28 15:06:31,649 [INFO] 📊 Collected 100 rows for DOTUSDT 5m
+2025-06-28 15:06:31,824 [INFO] 📊 Collected 100 rows for DOTUSDT 15m
+2025-06-28 15:06:31,999 [INFO] 📊 Collected 100 rows for DOTUSDT 1h
+2025-06-28 15:06:32,172 [INFO] 📊 Collected 100 rows for LINKUSDT 1m
+2025-06-28 15:06:32,347 [INFO] 📊 Collected 100 rows for LINKUSDT 5m
+2025-06-28 15:06:32,617 [INFO] 📊 Collected 100 rows for LINKUSDT 15m
+2025-06-28 15:06:32,888 [INFO] 📊 Collected 100 rows for LINKUSDT 1h
+2025-06-28 15:06:33,012 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:34,627 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmpvzubu2h8.parquet (16,179 bytes)
+2025-06-28 15:06:34,627 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:34,627 [INFO] ☁️ Uploaded production_BTCUSDT_1m_20250628_150632.parquet to Google Drive (100 rows)
+2025-06-28 15:06:34,630 [INFO] 💾 Saved production_BTCUSDT_1m_20250628_150632.parquet to local backup (100 rows)
+2025-06-28 15:06:34,631 [INFO] ✅ Saved production_BTCUSDT_1m_20250628_150632.parquet (100 rows)
+2025-06-28 15:06:34,641 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:36,202 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmp_u5gfie7.parquet (17,158 bytes)
+2025-06-28 15:06:36,202 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:36,202 [INFO] ☁️ Uploaded production_BTCUSDT_5m_20250628_150634.parquet to Google Drive (100 rows)
+2025-06-28 15:06:36,220 [INFO] 💾 Saved production_BTCUSDT_5m_20250628_150634.parquet to local backup (100 rows)
+2025-06-28 15:06:36,220 [INFO] ✅ Saved production_BTCUSDT_5m_20250628_150634.parquet (100 rows)
+2025-06-28 15:06:36,230 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:36,233 [INFO] 💾 Saved production_BTCUSDT_15m_20250628_150636.parquet to local backup (100 rows)
+2025-06-28 15:06:36,233 [INFO] ✅ Saved production_BTCUSDT_15m_20250628_150636.parquet (100 rows)
+2025-06-28 15:06:36,243 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:36,246 [INFO] 💾 Saved production_BTCUSDT_1h_20250628_150636.parquet to local backup (100 rows)
+2025-06-28 15:06:36,246 [INFO] ✅ Saved production_BTCUSDT_1h_20250628_150636.parquet (100 rows)
+2025-06-28 15:06:36,255 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:36,255 [ERROR] ❌ Batch worker error: [WinError 2] The system cannot find the file specified: 'C:\\Users\\MYPC~1\\AppData\\Local\\Temp\\tmp0z1cqg9l.parquet'
+2025-06-28 15:06:36,258 [INFO] 💾 Saved production_ETHUSDT_1m_20250628_150636.parquet to local backup (100 rows)
+2025-06-28 15:06:36,258 [INFO] ✅ Saved production_ETHUSDT_1m_20250628_150636.parquet (100 rows)
+2025-06-28 15:06:36,266 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:37,911 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmp2r7tpk3p.parquet (17,027 bytes)
+2025-06-28 15:06:37,911 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:37,911 [INFO] ☁️ Uploaded production_ETHUSDT_5m_20250628_150636.parquet to Google Drive (100 rows)
+2025-06-28 15:06:37,914 [INFO] 💾 Saved production_ETHUSDT_5m_20250628_150636.parquet to local backup (100 rows)
+2025-06-28 15:06:37,915 [INFO] ✅ Saved production_ETHUSDT_5m_20250628_150636.parquet (100 rows)
+2025-06-28 15:06:37,925 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:39,484 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmp3bn5hdzo.parquet (17,325 bytes)
+2025-06-28 15:06:39,484 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:39,484 [INFO] ☁️ Uploaded production_ETHUSDT_15m_20250628_150637.parquet to Google Drive (100 rows)
+2025-06-28 15:06:39,487 [INFO] 💾 Saved production_ETHUSDT_15m_20250628_150637.parquet to local backup (100 rows)
+2025-06-28 15:06:39,487 [INFO] ✅ Saved production_ETHUSDT_15m_20250628_150637.parquet (100 rows)
+2025-06-28 15:06:39,497 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:41,180 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmpjur7uk6h.parquet (17,417 bytes)
+2025-06-28 15:06:41,180 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:41,180 [INFO] ☁️ Uploaded production_ETHUSDT_1h_20250628_150639.parquet to Google Drive (100 rows)
+2025-06-28 15:06:41,182 [INFO] 💾 Saved production_ETHUSDT_1h_20250628_150639.parquet to local backup (100 rows)
+2025-06-28 15:06:41,182 [INFO] ✅ Saved production_ETHUSDT_1h_20250628_150639.parquet (100 rows)
+2025-06-28 15:06:41,192 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:43,024 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmptwkdcmt4.parquet (15,312 bytes)
+2025-06-28 15:06:43,025 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:43,025 [INFO] ☁️ Uploaded production_ADAUSDT_1m_20250628_150641.parquet to Google Drive (100 rows)
+2025-06-28 15:06:43,028 [INFO] 💾 Saved production_ADAUSDT_1m_20250628_150641.parquet to local backup (100 rows)
+2025-06-28 15:06:43,028 [INFO] ✅ Saved production_ADAUSDT_1m_20250628_150641.parquet (100 rows)
+2025-06-28 15:06:43,038 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:44,642 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmp7ea5qxti.parquet (15,901 bytes)
+2025-06-28 15:06:44,642 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:44,642 [INFO] ☁️ Uploaded production_ADAUSDT_5m_20250628_150643.parquet to Google Drive (100 rows)
+2025-06-28 15:06:44,646 [INFO] 💾 Saved production_ADAUSDT_5m_20250628_150643.parquet to local backup (100 rows)
+2025-06-28 15:06:44,646 [INFO] ✅ Saved production_ADAUSDT_5m_20250628_150643.parquet (100 rows)
+2025-06-28 15:06:44,682 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:46,362 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmpzxequx44.parquet (17,034 bytes)
+2025-06-28 15:06:46,362 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:46,362 [INFO] ☁️ Uploaded production_ADAUSDT_15m_20250628_150644.parquet to Google Drive (100 rows)
+2025-06-28 15:06:46,366 [INFO] 💾 Saved production_ADAUSDT_15m_20250628_150644.parquet to local backup (100 rows)
+2025-06-28 15:06:46,366 [INFO] ✅ Saved production_ADAUSDT_15m_20250628_150644.parquet (100 rows)
+2025-06-28 15:06:46,375 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:46,379 [INFO] 💾 Saved production_ADAUSDT_1h_20250628_150646.parquet to local backup (100 rows)
+2025-06-28 15:06:46,379 [INFO] ✅ Saved production_ADAUSDT_1h_20250628_150646.parquet (100 rows)
+2025-06-28 15:06:46,387 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:46,391 [INFO] 💾 Saved production_DOTUSDT_1m_20250628_150646.parquet to local backup (100 rows)
+2025-06-28 15:06:46,391 [INFO] ✅ Saved production_DOTUSDT_1m_20250628_150646.parquet (100 rows)
+2025-06-28 15:06:46,399 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:46,400 [ERROR] ❌ Batch worker error: [WinError 2] The system cannot find the file specified: 'C:\\Users\\MYPC~1\\AppData\\Local\\Temp\\tmpyna96453.parquet'
+2025-06-28 15:06:46,403 [INFO] 💾 Saved production_DOTUSDT_5m_20250628_150646.parquet to local backup (100 rows)
+2025-06-28 15:06:46,403 [INFO] ✅ Saved production_DOTUSDT_5m_20250628_150646.parquet (100 rows)
+2025-06-28 15:06:46,411 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:48,097 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmp2neqa5rr.parquet (16,528 bytes)
+2025-06-28 15:06:48,097 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:48,097 [INFO] ☁️ Uploaded production_DOTUSDT_15m_20250628_150646.parquet to Google Drive (100 rows)
+2025-06-28 15:06:48,101 [INFO] 💾 Saved production_DOTUSDT_15m_20250628_150646.parquet to local backup (100 rows)
+2025-06-28 15:06:48,101 [INFO] ✅ Saved production_DOTUSDT_15m_20250628_150646.parquet (100 rows)
+2025-06-28 15:06:48,111 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:49,852 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmptylscopf.parquet (16,976 bytes)
+2025-06-28 15:06:49,852 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:49,852 [INFO] ☁️ Uploaded production_DOTUSDT_1h_20250628_150648.parquet to Google Drive (100 rows)
+2025-06-28 15:06:49,856 [INFO] 💾 Saved production_DOTUSDT_1h_20250628_150648.parquet to local backup (100 rows)
+2025-06-28 15:06:49,856 [INFO] ✅ Saved production_DOTUSDT_1h_20250628_150648.parquet (100 rows)
+2025-06-28 15:06:49,866 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:51,835 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmp6n_jvv3n.parquet (14,038 bytes)
+2025-06-28 15:06:51,835 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:51,835 [INFO] ☁️ Uploaded production_LINKUSDT_1m_20250628_150649.parquet to Google Drive (100 rows)
+2025-06-28 15:06:51,849 [INFO] 💾 Saved production_LINKUSDT_1m_20250628_150649.parquet to local backup (100 rows)
+2025-06-28 15:06:51,849 [INFO] ✅ Saved production_LINKUSDT_1m_20250628_150649.parquet (100 rows)
+2025-06-28 15:06:51,862 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:53,428 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmp_jk4z9of.parquet (14,885 bytes)
+2025-06-28 15:06:53,428 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:53,428 [INFO] ☁️ Uploaded production_LINKUSDT_5m_20250628_150651.parquet to Google Drive (100 rows)
+2025-06-28 15:06:53,431 [INFO] 💾 Saved production_LINKUSDT_5m_20250628_150651.parquet to local backup (100 rows)
+2025-06-28 15:06:53,431 [INFO] ✅ Saved production_LINKUSDT_5m_20250628_150651.parquet (100 rows)
+2025-06-28 15:06:53,443 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:55,101 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmpdkk2gfo_.parquet (15,627 bytes)
+2025-06-28 15:06:55,101 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:55,101 [INFO] ☁️ Uploaded production_LINKUSDT_15m_20250628_150653.parquet to Google Drive (100 rows)
+2025-06-28 15:06:55,103 [INFO] 💾 Saved production_LINKUSDT_15m_20250628_150653.parquet to local backup (100 rows)
+2025-06-28 15:06:55,103 [INFO] ✅ Saved production_LINKUSDT_15m_20250628_150653.parquet (100 rows)
+2025-06-28 15:06:55,113 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:06:56,679 [INFO] ✅ Uploaded: trading_data/data/2025/06/28/tmp8a0z7uqk.parquet (16,002 bytes)
+2025-06-28 15:06:56,679 [INFO] ✅ Processed 1/1 uploads immediately
+2025-06-28 15:06:56,679 [INFO] ☁️ Uploaded production_LINKUSDT_1h_20250628_150655.parquet to Google Drive (100 rows)
+2025-06-28 15:06:56,682 [INFO] 💾 Saved production_LINKUSDT_1h_20250628_150655.parquet to local backup (100 rows)
+2025-06-28 15:06:56,682 [INFO] ✅ Saved production_LINKUSDT_1h_20250628_150655.parquet (100 rows)
+2025-06-28 15:06:56,682 [INFO] ✅ Collection cycle completed in 27.9s - Files: 20/20, Rows: 2000
+2025-06-28 15:06:56,683 [INFO] 📈 Progress Report:
+2025-06-28 15:06:56,683 [INFO]    ⏱️ Runtime: 0.0 hours
+2025-06-28 15:06:56,683 [INFO]    📁 Files saved: 20
+2025-06-28 15:06:56,683 [INFO]    📊 Rows collected: 2,000
+2025-06-28 15:06:56,684 [INFO]    ✅ Successful uploads: 20
+2025-06-28 15:06:56,684 [INFO]    ❌ Failed uploads: 0
+2025-06-28 15:06:56,684 [INFO]    💾 Memory files: 20
+2025-06-28 15:06:56,684 [INFO]    🏠 Local files: 160
+2025-06-28 15:06:56,684 [INFO]    ☁️ Drive files: 0
+2025-06-28 15:07:05,688 [INFO] ============================================================
+2025-06-28 15:07:05,688 [INFO] 📊 FINAL COLLECTION SUMMARY
+2025-06-28 15:07:05,688 [INFO] ============================================================
+2025-06-28 15:07:05,688 [INFO] ⏱️ Total Runtime: 0.01 hours
+2025-06-28 15:07:05,688 [INFO] 📁 Files Saved: 20
+2025-06-28 15:07:05,688 [INFO] 📊 Total Rows: 2,000
+2025-06-28 15:07:05,689 [INFO] ✅ Successful Uploads: 20
+2025-06-28 15:07:05,689 [INFO] ❌ Failed Uploads: 0
+2025-06-28 15:07:05,689 [INFO] 📈 Average Rows/File: 100.0
+2025-06-28 15:07:05,689 [INFO] 📊 Collection Rate: 1952.7 files/hour, 195,267 rows/hour
+2025-06-28 15:07:05,689 [INFO] 💾 Final Storage: Memory=20, Local=160, Drive=0
+2025-06-28 15:07:05,689 [INFO] ✅ No errors encountered!
+2025-06-28 15:07:05,689 [INFO] ============================================================
+2025-06-28 15:07:05,690 [INFO] 📊 Collection Summary:
+2025-06-28 15:07:05,690 [INFO]    📁 Files saved: 20
+2025-06-28 15:07:05,690 [INFO]    📊 Rows collected: 2,000
+2025-06-28 15:07:05,690 [INFO]    ✅ Success rate: 20/20
+2025-06-28 15:08:15,695 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:08:15,833 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:08:15,834 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:08:17,058 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:08:17,059 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:26:28,773 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:26:28,903 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:26:28,904 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:26:30,025 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:26:30,026 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:26:32,615 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:26:32,618 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:26:32,619 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:26:33,637 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:26:33,637 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:26:33,645 [INFO] 🚀 Processing pending uploads immediately...
+2025-06-28 15:27:18,807 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:27:18,929 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:27:18,930 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:27:19,942 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:27:19,943 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:35:58,283 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 15:35:58,283 [INFO] 📅 Started at: 2025-06-28 15:35:58.283116
+2025-06-28 15:35:58,283 [INFO] 📊 Money Printer System Status
+2025-06-28 15:35:58,283 [INFO] ==================================================
+2025-06-28 15:35:58,283 [INFO] 🔗 Testing Binance connection...
+2025-06-28 15:35:58,482 [INFO] ✅ Binance client connected successfully
+2025-06-28 15:35:58,551 [INFO] ✅ Binance: Connected
+2025-06-28 15:35:58,622 [INFO] 💰 Account Type: SPOT
+2025-06-28 15:35:58,622 [INFO] 🔄 Can Trade: True
+2025-06-28 15:35:58,622 [INFO] 💵 Assets with Balance: 2
+2025-06-28 15:35:58,622 [INFO] 💰 Current Balances:
+2025-06-28 15:35:58,622 [INFO]    USDT: 8.41000000 (Free: 8.41000000, Locked: 0.00000000)
+2025-06-28 15:35:58,622 [INFO]    XRP: 0.00000084 (Free: 0.00000084, Locked: 0.00000000)
+2025-06-28 15:35:58,622 [INFO] 💵 USDT Available for Trading: $8.41
+2025-06-28 15:35:58,622 [INFO] 
+☁️ Testing Google Drive connection...
+2025-06-28 15:35:58,624 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:35:58,726 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:35:58,727 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:35:59,869 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:35:59,869 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:36:00,221 [INFO] ✅ Google Drive: Connected (22 files)
+2025-06-28 15:36:00,221 [INFO] 
+📁 Checking local storage...
+2025-06-28 15:36:00,222 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:36:00,225 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:36:00,226 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:36:01,236 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:36:01,237 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:36:01,531 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:36:01,531 [INFO] ✅ Google Drive storage initialized
+2025-06-28 15:36:01,532 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:36:01,532 [INFO] 📁 Storage modes: Google Drive, Local Backup
+2025-06-28 15:36:01,532 [INFO] 💾 Local files: 160
+2025-06-28 15:36:01,532 [INFO] ☁️ Drive files: 0
+2025-06-28 15:36:01,532 [INFO] 🧠 Memory files: 0
+2025-06-28 15:36:01,532 [INFO] 
+🤖 Checking trained models...
+2025-06-28 15:36:01,533 [INFO] 🎯 Available models: 2
+2025-06-28 15:36:01,533 [INFO] 📅 Latest model: production_model_20250628_143301.joblib
+2025-06-28 15:36:01,533 [INFO] ⏰ Model age: 1:03:00.298571
+2025-06-28 15:36:01,533 [INFO] 
+==================================================
+2025-06-28 15:56:30,057 [INFO] 🚀 Money Printer v2.0 - Production Ready
+2025-06-28 15:56:30,057 [INFO] 📅 Started at: 2025-06-28 15:56:30.057502
+2025-06-28 15:56:30,057 [INFO] 📊 Money Printer System Status
+2025-06-28 15:56:30,057 [INFO] ==================================================
+2025-06-28 15:56:30,058 [INFO] 🔗 Testing Binance connection...
+2025-06-28 15:56:30,284 [INFO] ✅ Binance client connected successfully
+2025-06-28 15:56:30,356 [INFO] ✅ Binance: Connected
+2025-06-28 15:56:30,425 [INFO] 💰 Account Type: SPOT
+2025-06-28 15:56:30,425 [INFO] 🔄 Can Trade: True
+2025-06-28 15:56:30,426 [INFO] 💵 Assets with Balance: 2
+2025-06-28 15:56:30,426 [INFO] 💰 Current Balances:
+2025-06-28 15:56:30,426 [INFO]    USDT: 8.41000000 (Free: 8.41000000, Locked: 0.00000000)
+2025-06-28 15:56:30,426 [INFO]    XRP: 0.00000084 (Free: 0.00000084, Locked: 0.00000000)
+2025-06-28 15:56:30,426 [INFO] 💵 USDT Available for Trading: $8.41
+2025-06-28 15:56:30,426 [INFO] 
+☁️ Testing Google Drive connection...
+2025-06-28 15:56:30,429 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:56:30,531 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:56:30,533 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:56:31,691 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:56:31,691 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:56:32,031 [INFO] ✅ Google Drive: Connected (22 files)
+2025-06-28 15:56:32,031 [INFO] 
+📁 Checking local storage...
+2025-06-28 15:56:32,032 [INFO] 📋 Loaded metadata cache with 0 files
+2025-06-28 15:56:32,035 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-06-28 15:56:32,036 [INFO] ✅ Google Drive service initialized with service account
+2025-06-28 15:56:33,032 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:56:33,032 [INFO] 🚀 Batch upload manager started
+2025-06-28 15:56:33,334 [INFO] ✅ Connected to Drive folder: Money-Printer
+2025-06-28 15:56:33,334 [INFO] ✅ Google Drive storage initialized
+2025-06-28 15:56:33,334 [INFO] ✅ Local backup storage initialized: data/production
+2025-06-28 15:56:33,334 [INFO] 📁 Storage modes: Google Drive, Local Backup
+2025-06-28 15:56:33,335 [INFO] 💾 Local files: 160
+2025-06-28 15:56:33,335 [INFO] ☁️ Drive files: 0
+2025-06-28 15:56:33,335 [INFO] 🧠 Memory files: 0
+2025-06-28 15:56:33,335 [INFO] 
+🤖 Checking trained models...
+2025-06-28 15:56:33,335 [INFO] 🎯 Available models: 2
+2025-06-28 15:56:33,336 [INFO] 📅 Latest model: production_model_20250628_143301.joblib
+2025-06-28 15:56:33,336 [INFO] ⏰ Model age: 1:23:32.101855
+2025-06-28 15:56:33,336 [INFO] 
+==================================================

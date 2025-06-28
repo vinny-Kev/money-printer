@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-06-28T10:49:19.554842",
+  "binance_connection": true,
+  "binance_balance": {
+    "account_type": "SPOT",
+    "can_trade": true,
+    "can_withdraw": true,
+    "can_deposit": true,
+    "update_time": 1751024127525,
+    "balances": [
+      {
+        "asset": "USDT",
+        "free": 8.41,
+        "locked": 0.0,
+        "total": 8.41
+      },
+      {
+        "asset": "XRP",
+        "free": 8.4e-07,
+        "locked": 0.0,
+        "total": 8.4e-07
+      }
+    ]
+  },
+  "drive_connection": false,
+  "data_collection": true,
+  "model_training": true,
+  "overall_success": true,
+  "errors": [],
+  "passed_tests": 3,
+  "total_tests": 4
+}
