@@ -51,6 +51,20 @@ class TrainingMetrics:
     feature_importance: Dict[str, float]
     confidence_distribution: Dict[str, int]
 
+@dataclass
+class ModelPerformanceMetrics:
+    """Detailed performance metrics for a trading model"""
+    timestamp: datetime
+    accuracy: float
+    precision: float
+    recall: float
+    f1_score: float
+    win_rate: float
+    avg_profit: float
+    total_trades: int
+    confidence_correlation: float
+    model_version: str
+
 class TradingStatsManager:
     """Comprehensive trading statistics and performance tracking"""
     
