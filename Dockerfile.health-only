@@ -1,0 +1,22 @@
+# Ultra-Minimal Dockerfile - Health Check Only
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copy only the health server
+COPY ultra_simple_health.py .
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV PORT=8000
+
+# Create non-root user
+RUN useradd -m -u 1001 bot && \
+    chown -R bot:bot /app
+
+USER bot
+
+EXPOSE 8000
+
+# Start only the health server
+CMD ["python", "ultra_simple_health.py"]

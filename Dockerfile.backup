@@ -12,8 +12,11 @@ RUN apt-get update && apt-get install -y \
 COPY requirements-ultra-minimal.txt .
 RUN pip install --no-cache-dir -r requirements-ultra-minimal.txt
 
-# Copy ALL source code
-COPY . .
+# Copy essential files
+COPY ultra_simple_health.py .
+COPY production_server.py .
+COPY src/ ./src/
+COPY data/ ./data/ 2>/dev/null || mkdir -p data
 
 # Set environment variables
 ENV PYTHONPATH=/app:/app/src
@@ -24,10 +27,12 @@ ENV PORT=8000
 RUN mkdir -p data logs cache
 
 # Create non-root user
-RUN useradd -m bot && chown -R bot:bot /app
+RUN useradd -m -u 1001 bot && \
+    chown -R bot:bot /app && \
+    chmod +x /app/ultra_simple_health.py
 USER bot
 
 EXPOSE 8000
 
-# Start the production server (handles health checks and Discord bot gracefully)
-CMD ["python", "production_server.py"]
+# Start the ultra-simple health server (guaranteed to work)
+CMD ["python", "ultra_simple_health.py"]
