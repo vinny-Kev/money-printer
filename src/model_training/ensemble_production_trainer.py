@@ -40,7 +40,17 @@ except ImportError:
 
 # Add src to path for imports
 import sys
-sys.path.append(str(Path(__file__).parent.parent))
+from pathlib import Path
+
+# Ensure we can import from src regardless of how this script is run
+current_dir = Path(__file__).resolve().parent
+project_root = current_dir.parent.parent
+src_dir = project_root / "src"
+
+# Add paths to sys.path if not already present
+for path_to_add in [str(project_root), str(src_dir)]:
+    if path_to_add not in sys.path:
+        sys.path.insert(0, path_to_add)
 
 from src.storage.minimal_storage_manager import MinimalStorageManager as StorageManager
 from src.config import MODELS_DIR, RANDOM_STATE

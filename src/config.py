@@ -50,14 +50,10 @@ DISCORD_WEBHOOK_TRADERS = os.getenv("DISCORD_WEBHOOK_TRADERS")
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 DISCORD_CHANNEL_ID = os.getenv("DISCORD_CHANNEL_ID")
 
-# Railway Configuration
-RAILWAY_API_TOKEN = os.getenv("RAILWAY_API_TOKEN")
-RAILWAY_PROJECT_ID = os.getenv("RAILWAY_PROJECT_ID")
-RAILWAY_MAX_USAGE_HOURS = float(os.getenv("RAILWAY_MAX_USAGE_HOURS", "450"))  # Monthly limit
-RAILWAY_WARNING_HOURS = float(os.getenv("RAILWAY_WARNING_HOURS", "400"))     # Warning threshold
-RAILWAY_CHECK_INTERVAL = int(os.getenv("RAILWAY_CHECK_INTERVAL", "5"))       # Check every 5 minutes
+# Local-Only Configuration - Railway removed
+LOCAL_ONLY_MODE = True  # Force local-only operation
 
-# Google Drive Configuration
+# Google Drive Configuration (Optional)
 USE_GOOGLE_DRIVE = os.getenv("USE_GOOGLE_DRIVE", "False").lower() == "true"
 GOOGLE_DRIVE_FOLDER_ID = os.getenv("GOOGLE_DRIVE_FOLDER_ID")  # Target folder for sync
 SECRETS_DIR = PROJECT_ROOT / "secrets"
