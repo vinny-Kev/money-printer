@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y \
     gcc \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy and install minimal requirements first
-COPY requirements-minimal.txt .
-RUN pip install --no-cache-dir -r requirements-minimal.txt
+# Copy and install ultra-minimal requirements first
+COPY requirements-ultra-minimal.txt .
+RUN pip install --no-cache-dir -r requirements-ultra-minimal.txt
 
 # Copy ALL source code
 COPY . .
@@ -29,5 +29,5 @@ USER bot
 
 EXPOSE 8000
 
-# Start the bot (no debug script, direct start)
-CMD ["python", "src/lightweight_discord_bot.py"]
+# Start the production server (handles health checks and Discord bot gracefully)
+CMD ["python", "production_server.py"]

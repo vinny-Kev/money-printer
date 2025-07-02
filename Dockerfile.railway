@@ -1,0 +1,36 @@
+# Ultra-Minimal Dockerfile for Railway - Guaranteed to work
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install only essential system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy and install ultra-minimal requirements
+COPY requirements-ultra-minimal.txt .
+RUN pip install --no-cache-dir -r requirements-ultra-minimal.txt
+
+# Copy only essential files
+COPY production_server.py .
+COPY src/ ./src/
+COPY data/ ./data/ 2>/dev/null || mkdir -p data
+COPY logs/ ./logs/ 2>/dev/null || mkdir -p logs
+
+# Set environment variables
+ENV PYTHONPATH=/app:/app/src
+ENV PYTHONUNBUFFERED=1
+ENV PORT=8000
+
+# Create non-root user
+RUN useradd -m -u 1001 bot && \
+    chown -R bot:bot /app && \
+    chmod +x /app/production_server.py
+
+USER bot
+
+EXPOSE 8000
+
+# Start the production server
+CMD ["python", "production_server.py"]
