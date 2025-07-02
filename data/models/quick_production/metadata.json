@@ -1,0 +1,20 @@
+{
+  "model_type": "RandomForest",
+  "features": [
+    "price_change_pct",
+    "volume_zscore",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume"
+  ],
+  "training_samples": 520,
+  "test_samples": 130,
+  "accuracy": 0.9384615384615385,
+  "precision": 0.9384615384615385,
+  "recall": 0.9384615384615385,
+  "f1_score": 0.9384615384615385,
+  "trained_at": "2025-07-02T21:32:38.950129",
+  "feature_count": 7
+}

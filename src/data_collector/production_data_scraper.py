@@ -131,6 +131,20 @@ class ProductionDataScraper:
                 # Save data
                 save_result = self.storage.save_data(df, filename)
                 
+                # PRODUCTION FIX: Comprehensive audit logging with absolute paths
+                logger.info(f"📁 SAVE AUDIT: {filename}")
+                logger.info(f"   📊 Rows: {len(df)}")
+                logger.info(f"   💾 Memory: {'✅' if save_result['memory_success'] else '❌'}")
+                logger.info(f"   🏠 Local: {'✅' if save_result['local_success'] else '❌'}")
+                logger.info(f"   ☁️ Drive: {'✅' if save_result['drive_success'] else '❌'}")
+                
+                if save_result.get('errors'):
+                    logger.error(f"   ❌ Errors: {save_result['errors']}")
+                
+                # Log all file paths for complete audit trail
+                storage_status = self.storage.get_storage_status()
+                logger.info(f"   📈 Total files in storage: Memory={storage_status['memory_files']}, Local={storage_status['local_files']}, Drive={storage_status['drive_files']}")
+                
                 batch_results['files_processed'] += 1
                 batch_results['total_rows'] += len(df)
                 

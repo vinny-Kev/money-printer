@@ -2206,3 +2206,10 @@
 2025-06-28 15:56:33,336 [INFO] ⏰ Model age: 1:23:32.101855
 2025-06-28 15:56:33,336 [INFO] 
 ==================================================
+2025-07-02 21:15:00,428 [INFO] ✅ Local backup storage initialized: C:\Users\LENOVO\Desktop\money-printer\money-printer\data\scraped_data\parquet_files
+2025-07-02 21:15:00,474 [INFO] 📁 Storage modes: Local Backup
+2025-07-02 21:15:00,476 [INFO] 🎯 PRODUCTION ENSEMBLE TRAINER INITIALIZED
+2025-07-02 21:15:00,476 [INFO]    📊 Min total rows: 500
+2025-07-02 21:15:00,477 [INFO]    📈 Min rows per symbol: 100
+2025-07-02 21:15:00,477 [INFO]    ⏱️ Min time span: 1h
+2025-07-02 21:15:00,480 [INFO]    💾 Model output: C:\Users\LENOVO\Desktop\money-printer\money-printer\data\models

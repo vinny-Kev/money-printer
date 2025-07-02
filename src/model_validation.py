@@ -1,53 +1,333 @@
 #!/usr/bin/env python3
 """
-Model Validation and Drift Detection System
-
-Monitors model performance in real-time and detects when retraining is needed.
-Implements safety checks to prevent trading with degraded models.
+Production Model Validator - Strict validation for trading models
+Ensures only real, production-ready models are used for trading
 """
-
 import os
-import json
 import logging
-import pandas as pd
+import joblib
+import json
 import numpy as np
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Tuple, Any
-from dataclasses import dataclass
-import pickle
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from pathlib import Path
+from datetime import datetime
+from typing import Dict, List, Optional, Tuple, Any, Union
 
 logger = logging.getLogger(__name__)
 
-@dataclass
-class ModelPerformanceMetrics:
-    """Model performance tracking"""
-    timestamp: datetime
-    accuracy: float
-    precision: float
-    recall: float
-    f1_score: float
-    win_rate: float
-    avg_profit: float
-    total_trades: int
-    confidence_correlation: float
-    model_version: str
-
-class ModelDriftDetector:
-    """Detects model performance drift and triggers retraining"""
+class ProductionModelValidator:
+    """Validates models are production-ready before trading"""
     
-    def __init__(self, model_name: str = "random_forest_v1"):
-        self.model_name = model_name
-        self.performance_history: List[ModelPerformanceMetrics] = []
-        self.current_model = None
-        self.model_version = None
-        self.model_load_time = None
-        self.validation_threshold = 0.50  # Minimum acceptable win rate
-        self.drift_detection_window = 50  # Number of trades to analyze
-        self.is_model_valid = False
+    def __init__(self, models_dir: str = None):
+        from src.config import MODELS_DIR
+        self.models_dir = Path(models_dir or MODELS_DIR)
         
-        # Load model and performance history
-        self._load_model()
+        # Track validated models
+        self.validated_models = {}
+        self.model_cache = {}
+        
+        logger.info(f"🔍 Production Model Validator initialized")
+        logger.info(f"   📁 Models directory: {self.models_dir}")
+    
+    def find_latest_production_model(self) -> Optional[Dict[str, Path]]:
+        """Find the latest production ensemble model files"""
+        try:
+            # Look for production ensemble files
+            ensemble_files = list(self.models_dir.glob("production_ensemble_*.joblib"))
+            scaler_files = list(self.models_dir.glob("production_scaler_*.joblib"))
+            feature_files = list(self.models_dir.glob("production_features_*.json"))
+            
+            if not (ensemble_files and scaler_files and feature_files):
+                logger.warning(f"⚠️ No complete production model set found in {self.models_dir}")
+                return None
+            
+            # Get the most recent files (by modification time)
+            latest_ensemble = max(ensemble_files, key=lambda x: x.stat().st_mtime)
+            latest_scaler = max(scaler_files, key=lambda x: x.stat().st_mtime)
+            latest_features = max(feature_files, key=lambda x: x.stat().st_mtime)
+            
+            model_files = {
+                'ensemble': latest_ensemble,
+                'scaler': latest_scaler,
+                'features': latest_features
+            }
+            
+            logger.info(f"📊 Found latest production model:")
+            logger.info(f"   🤖 Ensemble: {latest_ensemble.name}")
+            logger.info(f"   🔧 Scaler: {latest_scaler.name}")
+            logger.info(f"   📋 Features: {latest_features.name}")
+            
+            return model_files
+            
+        except Exception as e:
+            logger.error(f"❌ Error finding production model: {e}")
+            return None
+    
+    def validate_model_integrity(self, model_files: Dict[str, Path]) -> Dict[str, Any]:
+        """Comprehensive model integrity validation"""
+        validation = {
+            'timestamp': datetime.now().isoformat(),
+            'is_valid': False,
+            'model_info': {},
+            'validation_errors': [],
+            'warnings': [],
+            'tests_passed': 0,
+            'tests_failed': 0
+        }
+        
+        logger.info("🔍 VALIDATING MODEL INTEGRITY")
+        
+        try:
+            # Test 1: Load ensemble model
+            ensemble_path = model_files['ensemble']
+            try:
+                ensemble_model = joblib.load(ensemble_path)
+                validation['model_info']['ensemble_type'] = type(ensemble_model).__name__
+                validation['model_info']['ensemble_size'] = len(ensemble_model.estimators_) if hasattr(ensemble_model, 'estimators_') else 1
+                validation['tests_passed'] += 1
+                logger.info(f"✅ Ensemble model loaded: {type(ensemble_model).__name__}")
+            except Exception as e:
+                validation['validation_errors'].append(f"Failed to load ensemble: {e}")
+                validation['tests_failed'] += 1
+                logger.error(f"❌ Ensemble load failed: {e}")
+                return validation
+            
+            # Test 2: Load scaler
+            scaler_path = model_files['scaler']
+            try:
+                scaler = joblib.load(scaler_path)
+                validation['model_info']['scaler_type'] = type(scaler).__name__
+                validation['model_info']['scaler_features'] = len(scaler.feature_names_in_) if hasattr(scaler, 'feature_names_in_') else getattr(scaler, 'n_features_in_', 'unknown')
+                validation['tests_passed'] += 1
+                logger.info(f"✅ Scaler loaded: {type(scaler).__name__}")
+            except Exception as e:
+                validation['validation_errors'].append(f"Failed to load scaler: {e}")
+                validation['tests_failed'] += 1
+                logger.error(f"❌ Scaler load failed: {e}")
+                return validation
+            
+            # Test 3: Load features
+            features_path = model_files['features']
+            try:
+                with open(features_path, 'r') as f:
+                    features = json.load(f)
+                
+                if not isinstance(features, list) or len(features) == 0:
+                    raise ValueError("Features file is empty or invalid format")
+                
+                validation['model_info']['feature_count'] = len(features)
+                validation['model_info']['sample_features'] = features[:5]
+                validation['tests_passed'] += 1
+                logger.info(f"✅ Features loaded: {len(features)} features")
+            except Exception as e:
+                validation['validation_errors'].append(f"Failed to load features: {e}")
+                validation['tests_failed'] += 1
+                logger.error(f"❌ Features load failed: {e}")
+                return validation
+            
+            # Test 4: Feature consistency
+            try:
+                expected_features = len(features)
+                scaler_features = getattr(scaler, 'n_features_in_', None)
+                
+                if scaler_features and scaler_features != expected_features:
+                    validation['warnings'].append(f"Feature count mismatch: scaler expects {scaler_features}, features file has {expected_features}")
+                    logger.warning(f"⚠️ Feature count mismatch: {scaler_features} vs {expected_features}")
+                else:
+                    validation['tests_passed'] += 1
+                    logger.info("✅ Feature consistency verified")
+            except Exception as e:
+                validation['validation_errors'].append(f"Feature consistency check failed: {e}")
+                validation['tests_failed'] += 1
+            
+            # Test 5: Model prediction test with dummy data
+            try:
+                # Create dummy data that matches expected features
+                dummy_data = np.random.randn(1, len(features))
+                
+                # Scale dummy data
+                dummy_scaled = scaler.transform(dummy_data)
+                
+                # Make prediction
+                prediction = ensemble_model.predict(dummy_scaled)
+                prob_prediction = ensemble_model.predict_proba(dummy_scaled)
+                
+                validation['model_info']['output_classes'] = len(prob_prediction[0])
+                validation['model_info']['sample_prediction'] = int(prediction[0])
+                validation['model_info']['sample_probabilities'] = [float(p) for p in prob_prediction[0]]
+                
+                validation['tests_passed'] += 1
+                logger.info(f"✅ Prediction test passed: {validation['model_info']['output_classes']} classes")
+                
+            except Exception as e:
+                validation['validation_errors'].append(f"Prediction test failed: {e}")
+                validation['tests_failed'] += 1
+                logger.error(f"❌ Prediction test failed: {e}")
+                return validation
+            
+            # Test 6: File timestamps (ensure models are recent)
+            try:
+                model_age_hours = (datetime.now().timestamp() - ensemble_path.stat().st_mtime) / 3600
+                
+                if model_age_hours > 168:  # 7 days
+                    validation['warnings'].append(f"Model is old: {model_age_hours:.1f} hours")
+                    logger.warning(f"⚠️ Model age: {model_age_hours:.1f} hours")
+                
+                validation['model_info']['model_age_hours'] = model_age_hours
+                validation['tests_passed'] += 1
+                
+            except Exception as e:
+                validation['warnings'].append(f"Could not check model age: {e}")
+            
+            # Overall validation result
+            if validation['tests_failed'] == 0:
+                validation['is_valid'] = True
+                logger.info("🎉 MODEL VALIDATION PASSED - Ready for production trading")
+            else:
+                logger.error(f"❌ MODEL VALIDATION FAILED - {validation['tests_failed']} tests failed")
+            
+            return validation
+            
+        except Exception as e:
+            validation['validation_errors'].append(f"Validation process failed: {e}")
+            logger.error(f"❌ Model validation process failed: {e}")
+            return validation
+    
+    def load_validated_model(self) -> Optional[Dict[str, Any]]:
+        """Load and cache a validated production model"""
+        try:
+            # Find latest model
+            model_files = self.find_latest_production_model()
+            if not model_files:
+                logger.error("❌ No production model found")
+                return None
+            
+            # Validate model
+            validation = self.validate_model_integrity(model_files)
+            if not validation['is_valid']:
+                logger.error("❌ Model validation failed - cannot load for trading")
+                for error in validation['validation_errors']:
+                    logger.error(f"   • {error}")
+                return None
+            
+            # Load validated model components
+            ensemble_model = joblib.load(model_files['ensemble'])
+            scaler = joblib.load(model_files['scaler'])
+            
+            with open(model_files['features'], 'r') as f:
+                features = json.load(f)
+            
+            model_package = {
+                'ensemble': ensemble_model,
+                'scaler': scaler,
+                'features': features,
+                'model_files': model_files,
+                'validation': validation,
+                'loaded_at': datetime.now().isoformat()
+            }
+            
+            # Cache the model
+            self.model_cache['production'] = model_package
+            
+            logger.info("✅ PRODUCTION MODEL LOADED AND CACHED")
+            logger.info(f"   🤖 Model: {validation['model_info']['ensemble_type']}")
+            logger.info(f"   ⚙️ Features: {len(features)}")
+            logger.info(f"   🎯 Classes: {validation['model_info']['output_classes']}")
+            
+            return model_package
+            
+        except Exception as e:
+            logger.error(f"❌ Failed to load validated model: {e}")
+            return None
+    
+    def predict_with_validation(self, features_dict: Dict[str, float], confidence_threshold: float = 0.6) -> Optional[Dict[str, Any]]:
+        """Make prediction with confidence validation"""
+        try:
+            # Ensure model is loaded
+            if 'production' not in self.model_cache:
+                model_package = self.load_validated_model()
+                if not model_package:
+                    return None
+            else:
+                model_package = self.model_cache['production']
+            
+            ensemble = model_package['ensemble']
+            scaler = model_package['scaler']
+            expected_features = model_package['features']
+            
+            # Prepare feature vector
+            feature_vector = []
+            missing_features = []
+            
+            for feature_name in expected_features:
+                if feature_name in features_dict:
+                    feature_vector.append(features_dict[feature_name])
+                else:
+                    feature_vector.append(0.0)  # Default value for missing features
+                    missing_features.append(feature_name)
+            
+            if missing_features:
+                logger.warning(f"⚠️ Missing features filled with 0.0: {len(missing_features)}")
+            
+            # Scale features
+            feature_array = np.array(feature_vector).reshape(1, -1)
+            scaled_features = scaler.transform(feature_array)
+            
+            # Make prediction
+            prediction = ensemble.predict(scaled_features)[0]
+            probabilities = ensemble.predict_proba(scaled_features)[0]
+            
+            # Calculate confidence
+            max_confidence = max(probabilities)
+            
+            prediction_result = {
+                'prediction': int(prediction),
+                'probabilities': [float(p) for p in probabilities],
+                'confidence': float(max_confidence),
+                'is_confident': max_confidence >= confidence_threshold,
+                'features_used': len(expected_features),
+                'missing_features': len(missing_features),
+                'timestamp': datetime.now().isoformat()
+            }
+            
+            # Log prediction details
+            logger.info(f"📊 MODEL PREDICTION:")
+            logger.info(f"   🎯 Class: {prediction}")
+            logger.info(f"   🔢 Confidence: {max_confidence:.3f}")
+            logger.info(f"   ✅ Meets threshold: {max_confidence >= confidence_threshold}")
+            logger.info(f"   ⚙️ Features: {len(expected_features)} used, {len(missing_features)} missing")
+            
+            return prediction_result
+            
+        except Exception as e:
+            logger.error(f"❌ Prediction failed: {e}")
+            return None
+    
+    def get_model_status(self) -> Dict[str, Any]:
+        """Get current model status"""
+        status = {
+            'timestamp': datetime.now().isoformat(),
+            'has_validated_model': 'production' in self.model_cache,
+            'models_directory': str(self.models_dir),
+            'available_models': []
+        }
+        
+        # Check for available model files
+        try:
+            ensemble_files = list(self.models_dir.glob("production_ensemble_*.joblib"))
+            status['available_models'] = [f.name for f in ensemble_files]
+        except Exception as e:
+            status['error'] = f"Could not check models directory: {e}"
+        
+        if 'production' in self.model_cache:
+            model_info = self.model_cache['production']['validation']['model_info']
+            status['loaded_model'] = {
+                'type': model_info.get('ensemble_type', 'unknown'),
+                'features': model_info.get('feature_count', 0),
+                'classes': model_info.get('output_classes', 0),
+                'loaded_at': self.model_cache['production']['loaded_at']
+            }
+        
+        return status
         self._load_performance_history()
     
     def _load_model(self) -> bool:

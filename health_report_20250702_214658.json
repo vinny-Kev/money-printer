@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-07-02T21:46:58.369799",
+  "overall_status": "CRITICAL",
+  "summary": {
+    "total_issues": 2,
+    "total_warnings": 0,
+    "checks_run": 4
+  },
+  "checks": {
+    "data_pipeline": {
+      "status": "HEALTHY",
+      "issues": [],
+      "warnings": [],
+      "stats": {
+        "parquet_files": 36,
+        "recent_files_24h": 36,
+        "accessible_files": 7
+      }
+    },
+    "model_pipeline": {
+      "status": "CRITICAL",
+      "issues": [
+        "Model pipeline check failed: name 'ModelPerformanceMetrics' is not defined"
+      ],
+      "warnings": [],
+      "stats": {}
+    },
+    "trading_safety": {
+      "status": "HEALTHY",
+      "issues": [],
+      "warnings": [],
+      "stats": {
+        "safety_metrics": {
+          "trades_today": 0,
+          "trades_hour": 0,
+          "consecutive_losses": 0,
+          "current_drawdown": 0.0,
+          "emergency_stop": false
+        },
+        "safety_check": {
+          "is_safe": true,
+          "checks_passed": 7,
+          "checks_failed": 0
+        }
+      }
+    },
+    "api_connectivity": {
+      "status": "CRITICAL",
+      "issues": [
+        "Binance API credentials not configured"
+      ],
+      "warnings": [],
+      "stats": {}
+    }
+  }
+}

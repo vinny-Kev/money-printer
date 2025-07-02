@@ -4,10 +4,14 @@ This replaces scattered configuration across different modules.
 """
 import os
 from pathlib import Path
-from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # dotenv not available - use os.environ directly
+    pass
 
 # Base paths
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -86,6 +90,24 @@ live_trading = not PAPER_TRADING  # For compatibility with trade_runner.py
 DEFAULT_TRADE_AMOUNT = 100  # USDT
 STOP_LOSS_PERCENT = 2.0
 TAKE_PROFIT_PERCENT = 4.0
+
+# PRODUCTION SAFETY SETTINGS
+MAX_TRADES_PER_DAY = 50
+MAX_TRADES_PER_HOUR = 10
+MIN_TRADE_INTERVAL_SECONDS = 30
+MAX_CONSECUTIVE_LOSSES = 5
+MAX_DRAWDOWN_PERCENT = 15.0
+EMERGENCY_STOP_CONDITIONS = {
+    "consecutive_losses": MAX_CONSECUTIVE_LOSSES,
+    "drawdown_percent": MAX_DRAWDOWN_PERCENT,
+    "stale_model_hours": 168,  # 7 days
+    "no_trades_warning_hours": 4
+}
+
+# MODEL VALIDATION SETTINGS
+MIN_MODEL_CONFIDENCE = 0.6
+ENSEMBLE_MODEL_REQUIRED = True  # Require ensemble models for production
+VALIDATE_MODEL_ON_STARTUP = True
 
 # Logging Configuration
 LOG_LEVEL = "INFO"

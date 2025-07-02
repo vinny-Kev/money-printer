@@ -1,0 +1,9 @@
+[
+  "price_change_pct",
+  "volume_zscore",
+  "open",
+  "high",
+  "low",
+  "close",
+  "volume"
+]

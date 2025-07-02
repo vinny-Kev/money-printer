@@ -19,9 +19,16 @@ parent_dir = os.path.dirname(current_dir)
 if parent_dir not in sys.path:
     sys.path.insert(0, parent_dir)
 
-from drive_manager import EnhancedDriveManager as DriveManager
-
+# Set up logger before imports
 logger = logging.getLogger(__name__)
+
+try:
+    from drive_manager import EnhancedDriveManager as DriveManager
+    HAS_DRIVE_MANAGER = True
+except ImportError as e:
+    logger.warning(f"Drive manager not available: {e}")
+    DriveManager = None
+    HAS_DRIVE_MANAGER = False
 
 class EnhancedStorageManager:
     """Enhanced storage manager with multiple fallback options"""
@@ -43,7 +50,7 @@ class EnhancedStorageManager:
         """Initialize available storage options"""
         # Try to initialize Google Drive
         self.drive_available = False
-        if self.drive_folder_id and not self.memory_only:
+        if self.drive_folder_id and not self.memory_only and HAS_DRIVE_MANAGER:
             try:
                 self.drive_manager = DriveManager()
                 if self.drive_manager.test_connection():
@@ -53,6 +60,8 @@ class EnhancedStorageManager:
                     logger.warning("⚠️ Google Drive connection failed, using fallback")
             except Exception as e:
                 logger.warning(f"⚠️ Google Drive initialization failed: {e}")
+        elif not HAS_DRIVE_MANAGER:
+            logger.info("ℹ️ Google Drive manager not available, using local storage only")
         
         # Set up local backup directory
         self.local_available = False
@@ -106,26 +115,46 @@ class EnhancedStorageManager:
         # Try Google Drive if available
         if self.drive_available and self.drive_manager:
             try:
-                import tempfile
+                # PRODUCTION FIX: Use absolute paths and explicit sync to GDrive mount
+                from pathlib import Path
+                from src.config import DATA_ROOT
                 
-                # Save as parquet for efficiency using proper temp directory
-                with tempfile.NamedTemporaryFile(suffix='.parquet', delete=False) as temp_file:
-                    temp_path = temp_file.name
+                # Create temp file in data directory (likely mounted to GDrive)
+                gdrive_temp_dir = DATA_ROOT / "temp_gdrive_sync"
+                gdrive_temp_dir.mkdir(parents=True, exist_ok=True)
                 
+                temp_path = gdrive_temp_dir / filename
+                
+                # Save to parquet with explicit path logging
                 data.to_parquet(temp_path, index=False)
+                logger.info(f"📁 GDRIVE: Saved temp file to absolute path: {temp_path.absolute()}")
                 
-                success = self.drive_manager.upload_file(temp_path, filename)
+                # Force filesystem sync before upload
+                import os
+                os.fsync(temp_path.open('rb').fileno())
+                
+                # Upload with absolute path verification
+                success = self.drive_manager.upload_file(str(temp_path.absolute()), filename)
                 if success:
                     results['drive_success'] = True
-                    logger.info(f"☁️ Uploaded {filename} to Google Drive ({len(data)} rows)")
+                    logger.info(f"☁️ GDRIVE SUCCESS: Uploaded {filename} from {temp_path.absolute()} ({len(data)} rows)")
+                    
+                    # Verify upload by checking file exists on drive
+                    drive_files = self.drive_manager.list_files()
+                    if filename in drive_files:
+                        logger.info(f"✅ GDRIVE VERIFIED: {filename} confirmed in drive listing")
+                    else:
+                        logger.warning(f"⚠️ GDRIVE WARNING: {filename} not found in drive listing after upload")
                 else:
-                    results['errors'].append("Google Drive upload returned False")
+                    results['errors'].append(f"Google Drive upload failed for {temp_path.absolute()}")
+                    logger.error(f"❌ GDRIVE FAILED: Upload returned False for {temp_path.absolute()}")
                 
-                # Clean up temp file
+                # Clean up temp file with explicit logging
                 try:
-                    os.remove(temp_path)
-                except:
-                    pass
+                    temp_path.unlink()
+                    logger.debug(f"🧹 Cleaned up temp file: {temp_path}")
+                except Exception as cleanup_error:
+                    logger.warning(f"⚠️ Failed to cleanup temp file {temp_path}: {cleanup_error}")
                     
             except Exception as e:
                 results['errors'].append(f"Google Drive save failed: {e}")
@@ -134,10 +163,25 @@ class EnhancedStorageManager:
         # Try local backup if available
         if self.local_available:
             try:
-                local_path = os.path.join(self.local_backup_dir, filename)
+                from pathlib import Path
+                local_path = Path(self.local_backup_dir) / filename
+                
+                # PRODUCTION FIX: Ensure directory exists and save with absolute path logging
+                local_path.parent.mkdir(parents=True, exist_ok=True)
                 data.to_parquet(local_path, index=False)
-                results['local_success'] = True
-                logger.info(f"💾 Saved {filename} to local backup ({len(data)} rows)")
+                
+                # Force filesystem sync
+                with open(local_path, 'rb') as f:
+                    os.fsync(f.fileno())
+                
+                # Verify file was actually written
+                if local_path.exists() and local_path.stat().st_size > 0:
+                    results['local_success'] = True
+                    logger.info(f"💾 LOCAL SUCCESS: Saved {filename} to {local_path.absolute()} ({len(data)} rows, {local_path.stat().st_size} bytes)")
+                else:
+                    results['errors'].append(f"Local file verification failed: {local_path.absolute()}")
+                    logger.error(f"❌ LOCAL FAILED: File not found or empty after save: {local_path.absolute()}")
+                    
             except Exception as e:
                 results['errors'].append(f"Local save failed: {e}")
                 logger.error(f"❌ Local save failed for {filename}: {e}")
